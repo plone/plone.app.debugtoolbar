@@ -54,7 +54,7 @@ User
 Packages
 --------
 
-    [ ] Package versions
+    [x] Package versions
 
 Published object
 ----------------
