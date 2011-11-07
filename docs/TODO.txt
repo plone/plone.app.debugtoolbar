@@ -31,10 +31,10 @@ XXX: Renders too early - status and cache headers are not included
 Global
 ------
 
-    [ ] Zope debug mode
-    [ ] Zope settings?
-    [ ] Zope version
-    [ ] ZODB connection
+    [x] Zope debug mode
+    [x] Zope settings?
+    [x] Zope version
+    [x] ZODB connection
 
 Theme
 -----

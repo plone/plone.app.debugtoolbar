@@ -1,0 +1,29 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-versions" i18n:translate="debug_toolbar_versions_title">
+    Versions <small>of installed packages</small>
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-versions-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the vesrions of all Python package
+        distributions known to Zope.
+    </p>
+
+    <h3 i18n:translate="">Packages</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">Version</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="item view/packages">
+                <td tal:content="item/name" />
+                <td tal:content="item/version" />
+            </tr>
+        </tbody>
+    </table>
+
+</div>

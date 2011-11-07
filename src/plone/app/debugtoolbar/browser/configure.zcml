@@ -54,5 +54,13 @@
         layer=".interfaces.IDebugToolbarLayer"
         />
     
+    <browser:viewlet
+        name="plone.app.debugtoolbar.versions"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".versions.VersionsViewlet"
+        template="versions.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
     
 </configure>
