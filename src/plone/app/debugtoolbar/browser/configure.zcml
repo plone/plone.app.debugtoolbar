@@ -14,6 +14,7 @@
         class=".toolbar.ToolbarViewlet"
         template="toolbar.pt"
         permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
         />
 
     <browser:viewletManager
@@ -21,6 +22,7 @@
         provides=".interfaces.IDebugToolbarViewletManager"
         permission="zope2.View"
         class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        layer=".interfaces.IDebugToolbarLayer"
         />
     
     <!-- Panels -->
@@ -31,6 +33,7 @@
         class=".request.RequestViewlet"
         template="request.pt"
         permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
         />
     
     <browser:viewlet
@@ -39,6 +42,16 @@
         class=".response.ResponseViewlet"
         template="response.pt"
         permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+    
+    <browser:viewlet
+        name="plone.app.debugtoolbar.global"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".global.GlobalViewlet"
+        template="global.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
         />
     
     

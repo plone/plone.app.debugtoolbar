@@ -1,3 +1,10 @@
+Infrastructure
+---------------
+
+[ ] Figure out a way to inject information that is available only very late in
+    the request (e.g. headers, status, Diazo information)
+
+
 Debug panels
 ------------
 
@@ -17,21 +24,25 @@ Response
 
 XXX: Renders too early - status and cache headers are not included
 
+    [ ] Status
     [x] Headers
     [ ] plone.app.caching rules
-
-Theme
------
-
-    [ ] Enabled browser layers
-    [ ] Skin
 
 Global
 ------
 
     [ ] Zope debug mode
     [ ] Zope settings?
+    [ ] Zope version
     [ ] ZODB connection
+
+Theme
+-----
+
+    [ ] Enabled browser layers
+    [ ] Skin
+    [ ] CSS composition
+    [ ] JS composition
 
 User
 ----
@@ -39,6 +50,19 @@ User
     [ ] User
     [ ] Local roles
     [ ] Global roles
+
+Packages
+--------
+
+    [ ] Package versions
+
+Published object
+----------------
+
+    [ ] Name
+    [ ] Path
+    [ ] Page template
+    [ ] z3c.jbot name
 
 Context
 -------
@@ -59,13 +83,6 @@ Workflow
     [ ] State(s)
     [ ] Workflow name(s)
 
-Published object
-----------------
-
-    [ ] Name
-    [ ] Path
-    [ ] Page template
-    [ ] z3c.jbot name
 
 Viewlets
 --------
@@ -73,10 +90,6 @@ Viewlets
     [ ] Shown
     [ ] Hidden
 
-Packages
---------
-
-    [ ] Package versions
 
 Logging
 -------

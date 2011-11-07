@@ -1,9 +1,13 @@
-<a id="debug-toolbar-trigger" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">Debug</a>
+<a id="debug-toolbar-trigger" class="debug-toolbar-trigger-button" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">&darr; Debug</a>
 <div id="debug-toolbar">
     
-    <h1 i18n:translate="debug_toolbar_title">Debug information</h1>
-    <a href="#" id="debug-toolbar-close" i18n:translate="debug_toolbar_close">Close</a>
+    <div id="debug-toolbar-wrapper">
 
-    <div id="debug-toolbar-panels" tal:content="structure provider:plone.debugtoolbar" />
+        <h1 i18n:translate="debug_toolbar_title">Debug information</h1>
+        <a href="#" id="debug-toolbar-close" class="debug-toolbar-trigger-button" i18n:translate="debug_toolbar_close">&uarr; Close</a>
+
+        <div id="debug-toolbar-panels" tal:content="structure provider:plone.debugtoolbar" />
+
+    </div>
 
 </div>

@@ -1,0 +1,96 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-global" i18n:translate="debug_toolbar_global_title">
+    Zope <small>global settings</small>
+    <span tal:condition="view/debug" class="label warning" i18n:translate="debug_toolbar_global_debug_mode">Debug mode</span>
+    <span tal:condition="not:view/debug" class="label success" i18n:translate="debug_toolbar_global_prod_mode">Production mode</span>
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-global-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the Zope server where Plone is running.
+    </p>
+
+    <h3 i18n:translate="">Servers</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">IP</th>
+                <th i18n:translate="">Port</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="item view/servers">
+                <td tal:content="item/server_name" />
+                <td><code tal:content="item/ip" /></td>
+                <td><code tal:content="item/port" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="">Environment</h3>
+
+    <table class="zebra-striped">
+        <tbody>
+            <tr>
+                <td i18n:translate="">Zope version</td>
+                <td tal:content="view/appInfo/version_txt" />
+            </tr>
+            <tr>
+                <td i18n:translate="">Python version</td>
+                <td tal:content="view/appInfo/sys_version" />
+            </tr>
+            <tr>
+                <td i18n:translate="">Process</td>
+                <td tal:content="view/appInfo/process_id" />
+            </tr>
+            <tr>
+                <td i18n:translate="">Running for</td>
+                <td tal:content="view/appInfo/process_time" />
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="">Databases</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">Mount point</th>
+                <th i18n:translate="">Location</th>
+                <th i18n:translate="">Size</th>
+                <th i18n:translate="">Cache size</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="db view/databases">
+                <td tal:content="db/name" />
+                <td tal:content="db/mount" />
+                <td tal:content="db/location" />
+                <td tal:content="db/size" />
+                <td tal:content="db/cacheSize" />
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="">Configuration options</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="item view/config">
+                <td tal:content="python:item[0]" />
+                <td><code tal:content="python:item[1]" /></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+</div>

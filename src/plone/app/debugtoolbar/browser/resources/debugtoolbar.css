@@ -1,18 +1,11 @@
-#debug-toolbar-trigger {
+.debug-toolbar-trigger-button {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 45%;
   display: block;
   margin: auto;
   z-index: 9999999999;
-}
-#debug-toolbar-close {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  display: block;
-  margin: auto;
-  z-index: 9999999999;
+  font-size: 80%;
 }
 
 #debug-toolbar {
@@ -21,12 +14,13 @@
   z-index: 9999999999;
   background-color: white;
   width: 100%;
-  padding: 1em;
   margin: 0;
   border-bottom: solid #333 1px;
-  max-width: 97%;
-  overflow: hidden;
   display: none;
+}
+
+#debug-toolbar-wrapper {
+  padding: 1em;
 }
 
 #debug-toolbar .debug-toolbar-header {
@@ -39,6 +33,7 @@
 
 #debug-toolbar .debug-toolbar-help {
   font-size: 80%;
+  margin-top: 1em;
 }
 
 #debug-toolbar .debug-toolbar-body {
