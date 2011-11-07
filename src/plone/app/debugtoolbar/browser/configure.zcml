@@ -1,0 +1,45 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plone">
+
+    <browser:resourceDirectory
+        name="plone.app.debugtoolbar"
+        directory="resources"
+        />
+
+    <browser:viewlet
+        name="plone.app.debugtoolbar.toolbar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class=".toolbar.ToolbarViewlet"
+        template="toolbar.pt"
+        permission="zope2.View"
+        />
+
+    <browser:viewletManager
+        name="plone.debugtoolbar"
+        provides=".interfaces.IDebugToolbarViewletManager"
+        permission="zope2.View"
+        class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        />
+    
+    <!-- Panels -->
+
+    <browser:viewlet
+        name="plone.app.debugtoolbar.request"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".request.RequestViewlet"
+        template="request.pt"
+        permission="zope2.View"
+        />
+    
+    <browser:viewlet
+        name="plone.app.debugtoolbar.response"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".response.ResponseViewlet"
+        template="response.pt"
+        permission="zope2.View"
+        />
+    
+    
+</configure>

@@ -1,0 +1,96 @@
+Debug panels
+------------
+
+Request
+-------
+
+    [x] Headers
+    [x] Variables in the request
+    [x] Cookies
+    [x] Request method
+    [x] Path
+    [x] URL
+    [x] Virtual URL
+
+Response
+--------
+
+XXX: Renders too early - status and cache headers are not included
+
+    [x] Headers
+    [ ] plone.app.caching rules
+
+Theme
+-----
+
+    [ ] Enabled browser layers
+    [ ] Skin
+
+Global
+------
+
+    [ ] Zope debug mode
+    [ ] Zope settings?
+    [ ] ZODB connection
+
+User
+----
+    
+    [ ] User
+    [ ] Local roles
+    [ ] Global roles
+
+Context
+-------
+
+    [ ] Module
+    [ ] Class
+    [ ] portal_type
+    [ ] FTI title, description
+    [ ] Views
+    [ ] Method aliases
+    [ ] Marker interfaces
+
+    [ ] __dict__ / browsable
+
+Workflow
+--------
+
+    [ ] State(s)
+    [ ] Workflow name(s)
+
+Published object
+----------------
+
+    [ ] Name
+    [ ] Path
+    [ ] Page template
+    [ ] z3c.jbot name
+
+Viewlets
+--------
+
+    [ ] Shown
+    [ ] Hidden
+
+Packages
+--------
+
+    [ ] Package versions
+
+Logging
+-------
+
+    [ ] Error log
+
+Performance
+-----------
+
+    [ ] Profiling
+
+Diazo
+-----
+
+    [ ] Rules file
+    [ ] Rules that have been executed
+    [ ] Rules that have not been executed

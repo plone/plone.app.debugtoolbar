@@ -1,0 +1,86 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-request" i18n:translate="debug_toolbar_request_title">
+    Request <small>that rendered this page</small>
+    <span i18n:name="method_get" tal:condition="python:request.method == 'GET'" class="label success" tal:content="request/method"/>
+    <span i18n:name="method_post" tal:condition="python:request.method != 'GET'" class="label important" tal:content="request/method"/>
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-request-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the request that rendered the current page.
+        Depending on the type of request, you will find information about the URL and
+        path, request headers, and form/query string variables.
+    </p>
+
+    <h3 i18n:translate="">URL</h3>
+
+    <table class="zebra-striped">
+        <tbody>
+            <tr>
+                <td i18n:translate="">URL</td>
+                <td><code tal:content="request/ACTUAL_URL" /></td>
+            </tr>
+             <tr tal:condition="request/QUERY_STRING">
+                <td i18n:translate="">Query string</td>
+                <td><code tal:content="request/QUERY_STRING" /></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Internal path</td>
+                <td><code tal:content="request/PATH_INFO" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <tal:block condition="nocall:request/form">
+        <h3 i18n:translate="">Request variables</h3>
+
+        <table class="zebra-striped">
+            <tbody>
+                <tr tal:repeat="v request/form/items">
+                    <td tal:content="python:v[0]" />
+                    <td><code tal:content="python:v[1]" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </tal:block>
+
+    <tal:block condition="nocall:request/cookies">
+        <h3 i18n:translate="">Cookies</h3>
+
+        <table class="zebra-striped">
+            <tbody>
+                <tr tal:repeat="v request/cookies/items">
+                    <td tal:content="python:v[0]" />
+                    <td><code tal:content="python:v[1]" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </tal:block>
+
+    <tal:block condition="nocall:view/headers">
+        <h3 i18n:translate="">Request headers</h3>
+
+        <table class="zebra-striped">
+            <tbody>
+                <tr tal:repeat="v view/headers">
+                    <td tal:content="python:v[0]" />
+                    <td><code tal:content="python:v[1]" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </tal:block>
+
+    <tal:block condition="nocall:view/environ">
+        <h3 i18n:translate="">Request environment</h3>
+
+        <table class="zebra-striped">
+            <tbody>
+                <tr tal:repeat="v view/environ">
+                    <td tal:content="python:v[0]" />
+                    <td><code tal:content="python:v[1]" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </tal:block>
+
+</div>

@@ -1,0 +1,9 @@
+<a id="debug-toolbar-trigger" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">Debug</a>
+<div id="debug-toolbar">
+    
+    <h1 i18n:translate="debug_toolbar_title">Debug information</h1>
+    <a href="#" id="debug-toolbar-close" i18n:translate="debug_toolbar_close">Close</a>
+
+    <div id="debug-toolbar-panels" tal:content="structure provider:plone.debugtoolbar" />
+
+</div>
