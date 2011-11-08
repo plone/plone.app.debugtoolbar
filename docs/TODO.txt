@@ -22,11 +22,9 @@ Request
 Response
 --------
 
-XXX: Renders too early - status and cache headers are not included
-
-    [ ] Status
+    [x] Status
     [x] Headers
-    [ ] plone.app.caching rules
+    [x] plone.app.caching rules
 
 Global
 ------

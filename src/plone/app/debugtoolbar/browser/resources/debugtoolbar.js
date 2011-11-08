@@ -1,6 +1,9 @@
 jQuery(function($) {
     
     $(function() {
+        $("#debug-toolbar").prependTo("html body");
+        $("#debug-toolbar-trigger").prependTo("html body");
+
         $("#debug-toolbar-trigger").click(function() {
             $('#debug-toolbar').slideDown();
             return false;

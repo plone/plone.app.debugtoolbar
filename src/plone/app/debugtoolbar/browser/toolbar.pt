@@ -1,3 +1,4 @@
+<script type="text/javascript">var PLONE_APP_DEBUGTOOLBAR_DATA = {};</script>
 <a id="debug-toolbar-trigger" class="debug-toolbar-trigger-button" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">&darr; Debug</a>
 <div id="debug-toolbar">
     

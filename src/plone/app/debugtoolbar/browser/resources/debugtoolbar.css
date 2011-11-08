@@ -38,6 +38,7 @@
 
 #debug-toolbar .debug-toolbar-body {
   display: none;
+  margin: 0 1em;
 }
 
 /* Typography, layout, patterns from Bootstrap.css */

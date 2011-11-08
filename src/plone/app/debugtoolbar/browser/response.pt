@@ -1,29 +1,40 @@
-<tal:block define="response request/response">
 <h2 class="debug-toolbar-header" id="debug-toolbar-response" i18n:translate="debug_toolbar_response_title">
     Response <small>returned to the browser</small>
-    <span i18n:name="method_get" tal:condition="python:response.status == 200" class="label success" tal:content="response/status"/>
-    <span i18n:name="method_post" tal:condition="python:response.status != 200" class="label important" tal:content="response/status"/>
+    <span id="debug-toolbar-response-status" i18n:name="method" class="label"></span>
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-response-body">
 
     <p class="debug-toolbar-help">
-        This panel shows information about response headers and content types.
+        This panel shows information about the HTTP response
     </p>
 
-    <tal:block condition="nocall:view/headers">
-        <h3 i18n:translate="">Response headers</h3>
+    <h3 i18n:translate="">Response headers</h3>
 
-        <table class="zebra-striped">
-            <tbody>
-                <tr tal:repeat="v view/headers">
-                    <td tal:content="python:v[0]" />
-                    <td><code tal:content="python:v[1]" /></td>
-                </tr>
-            </tbody>
-        </table>
-    </tal:block>
-    
+    <table id="debug-toolbar-response-headers" class="zebra-striped">
+        <tbody>
+        </tbody>
+    </table>    
 
 </div>
-</tal:block>
+<script type="text/javascript">
+jQuery(function($) {
+    $().ready(function() {
+        
+        var status = PLONE_APP_DEBUGTOOLBAR_DATA['response_status'];
+        var headers = PLONE_APP_DEBUGTOOLBAR_DATA['response_headers'];
+
+        if(status == 200) {
+            $("#debug-toolbar-response-status").addClass('success').html(status);
+        } else {
+            $("#debug-toolbar-response-status").addClass('important').html(status);
+        }
+
+        for(var i = 0; i < headers.length; ++i) {
+            $("#debug-toolbar-response-headers tbody").append(
+                "<" + "tr><" + "td>" + headers[i][0] + "<" + "/td><" + "td><" + "code>" + headers[i][1] + "<" + "/code><" + "/td><" + "/tr>"
+            );
+        }
+    });
+});
+</script>

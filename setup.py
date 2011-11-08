@@ -36,6 +36,8 @@ setup(name='plone.app.debugtoolbar',
       install_requires=[
           'setuptools',
           'Products.CMFPlone',
+          'zope.annotation',
+          'plone.transformchain',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

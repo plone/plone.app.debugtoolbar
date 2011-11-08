@@ -5,6 +5,8 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="plone">
   
+  <include package="zope.annotation" />
+  <include package="plone.transformchain" />
   <include package=".browser" />
 
   <genericsetup:registerProfile
@@ -16,4 +18,9 @@
       />
   <!-- -*- extra stuff goes here -*- -->
   
+  <adapter
+      factory=".delayedwrite.DelayedWriteTransformer"
+      name="plone.app.debugtoolbar.delayedwrite"
+      />
+
 </configure>
