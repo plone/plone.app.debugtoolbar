@@ -19,22 +19,29 @@
 </div>
 <script type="text/javascript">
 jQuery(function($) {
+
     $().ready(function() {
-        
         var status = PLONE_APP_DEBUGTOOLBAR_DATA['response_status'];
         var headers = PLONE_APP_DEBUGTOOLBAR_DATA['response_headers'];
 
-        if(status == 200) {
-            $("#debug-toolbar-response-status").addClass('success').html(status);
-        } else {
-            $("#debug-toolbar-response-status").addClass('important').html(status);
+        if(status != undefined) {
+            if(status == 200) {
+                $("#debug-toolbar-response-status").addClass('success').html(status);
+            } else {
+                $("#debug-toolbar-response-status").addClass('important').html(status);
+            }
+            delete PLONE_APP_DEBUGTOOLBAR_DATA['response_status']; 
         }
 
-        for(var i = 0; i < headers.length; ++i) {
-            $("#debug-toolbar-response-headers tbody").append(
-                "<" + "tr><" + "td>" + headers[i][0] + "<" + "/td><" + "td><" + "code>" + headers[i][1] + "<" + "/code><" + "/td><" + "/tr>"
-            );
+        if(headers != undefined) {
+            for(var i = 0; i < headers.length; ++i) {
+                $("#debug-toolbar-response-headers tbody").append(
+                    "<" + "tr><" + "td>" + headers[i][0] + "<" + "/td><" + "td><" + "code>" + headers[i][1] + "<" + "/code><" + "/td><" + "/tr>"
+                );
+            }
+            delete PLONE_APP_DEBUGTOOLBAR_DATA['response_headers'];            
         }
+
     });
 });
 </script>
