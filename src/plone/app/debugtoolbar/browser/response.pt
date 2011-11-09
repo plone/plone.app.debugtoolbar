@@ -18,11 +18,20 @@
 
 </div>
 <script type="text/javascript">
+var _debug_response_read = false;
 jQuery(function($) {
-
     $().ready(function() {
-        var status = PLONE_APP_DEBUGTOOLBAR_DATA['response_status'];
-        var headers = PLONE_APP_DEBUGTOOLBAR_DATA['response_headers'];
+
+        if(_debug_response_read) {
+            return;
+        }
+
+        _debug_response_read = true;
+
+        var data = _read_debug_cookie();
+
+        var status = data['response_status'];
+        var headers = data['response_headers'];
 
         if(status != undefined) {
             if(status == 200) {
@@ -30,7 +39,6 @@ jQuery(function($) {
             } else {
                 $("#debug-toolbar-response-status").addClass('important').html(status);
             }
-            delete PLONE_APP_DEBUGTOOLBAR_DATA['response_status']; 
         }
 
         if(headers != undefined) {
@@ -39,7 +47,6 @@ jQuery(function($) {
                     "<" + "tr><" + "td>" + headers[i][0] + "<" + "/td><" + "td><" + "code>" + headers[i][1] + "<" + "/code><" + "/td><" + "/tr>"
                 );
             }
-            delete PLONE_APP_DEBUGTOOLBAR_DATA['response_headers'];            
         }
 
     });

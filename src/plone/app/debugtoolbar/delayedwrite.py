@@ -24,25 +24,26 @@ class DelayedWriteTransformer(object):
 
     order = 9999
 
-    varname = "PLONE_APP_DEBUGTOOLBAR_DATA"
-
     def __init__(self, published, request):
         self.published = published
         self.request = request
     
     def transformUnicode(self, result, encoding):
-        return result.replace(u'var %s = {};' % self.varname,
-                              u'var %s = %s;' % (self.varname, self.getData()))
+        self.saveCookie()
+        return None
     
     def transformBytes(self, result, encoding):
-        return result.replace('var %s = {};' % self.varname,
-                              'var %s = %s;' % (self.varname, self.getData()))
+        self.saveCookie()
+        return None
 
     def transformIterable(self, result, encoding):
-        res = []
-        for r in result:
-            res.append(self.transformBytes(r, encoding))
-        return res
+        self.saveCookie()
+        return None
+    
+    def saveCookie(self):
+        data = self.getData()
+        if data is not None:
+            self.request.response.setCookie('plone.app.debugtoolbar', data, quoted=False, path='/')
         
     def getData(self):
         data = {}
@@ -51,6 +52,9 @@ class DelayedWriteTransformer(object):
             return data
         
         delayed = ann.get('plone.app.debugtoolbar.delayed', {})
+        if not delayed:
+            return None
+        
         for key, fn in delayed.items():
             data[key] = fn(self.request)
         

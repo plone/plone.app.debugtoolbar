@@ -7,4 +7,7 @@ class UserViewlet(ViewletBase):
         securityManager = getSecurityManager()
 
         self.user = securityManager.getUser()
-        self.fullname = self.user.getProperty('fullname')
+        try:
+            self.fullname = self.user.getProperty('fullname', None)
+        except AttributeError:
+            self.fullname = ""
