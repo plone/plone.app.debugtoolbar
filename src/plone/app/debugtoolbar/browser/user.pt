@@ -10,17 +10,17 @@
 
     <h3 i18n:translate="">User details</h3>
 
-    <table id="debug-toolbar-response-headers" class="zebra-striped">
+    <table class="zebra-striped">
         <tbody>
-            <tr>
+            <tr tal:condition="view/user/getId | nothing">
                 <td i18n:translate="">User id</td>
                 <td tal:content="view/user/getId" />
             </tr>
-            <tr>
+            <tr tal:condition="view/user/getUserName | nothing">
                 <td i18n:translate="">User name</td>
                 <td tal:content="view/user/getUserName" />
             </tr>
-            <tr>
+            <tr tal:condition="view/fullname | nothing">
                 <td i18n:translate="">Full name</td>
                 <td tal:content="view/fullname" />
             </tr>
@@ -32,7 +32,7 @@
                 <td i18n:translate="">Global roles</td>
                 <td tal:content="python:', '.join(view.user.getRoles())" />
             </tr>
-            <tr>
+            <tr tal:condition="view/user/getGroups | nothing" tal:on-error="nothing">
                 <td i18n:translate="">Groups</td>
                 <td tal:content="python:', '.join(view.user.getGroups())" tal:on-error="nothing" />
             </tr>

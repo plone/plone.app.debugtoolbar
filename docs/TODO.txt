@@ -45,9 +45,9 @@ Theme
 User
 ----
     
-    [ ] User
-    [ ] Local roles
-    [ ] Global roles
+    [x] User
+    [x] Local roles
+    [x] Global roles
 
 Packages
 --------
