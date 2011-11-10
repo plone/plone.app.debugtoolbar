@@ -1,5 +1,5 @@
 <h2 class="debug-toolbar-header" id="debug-toolbar-user" i18n:translate="debug_toolbar_user_title">
-    User <small>currently logged in</small>
+    User <small>information</small>
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-user-body">
