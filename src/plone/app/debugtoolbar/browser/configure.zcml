@@ -71,5 +71,14 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
+
+    <browser:viewlet
+        name="plone.app.debugtoolbar.theme"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".theme.ThemeViewlet"
+        template="theme.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
     
 </configure>

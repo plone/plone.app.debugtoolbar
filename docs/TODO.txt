@@ -1,7 +1,7 @@
 Infrastructure
 ---------------
 
-[ ] Figure out a way to inject information that is available only very late in
+[x] Figure out a way to inject information that is available only very late in
     the request (e.g. headers, status, Diazo information)
 
 
@@ -37,10 +37,10 @@ Global
 Theme
 -----
 
-    [ ] Enabled browser layers
-    [ ] Skin
-    [ ] CSS composition
-    [ ] JS composition
+    [x] Enabled browser layers
+    [x] Skin
+    [x] CSS composition
+    [x] JS composition
 
 User
 ----
@@ -72,6 +72,7 @@ Context
     [ ] Views
     [ ] Method aliases
     [ ] Marker interfaces
+    [ ] Provided interfaces
 
     [ ] __dict__ / browsable
 
@@ -80,14 +81,6 @@ Workflow
 
     [ ] State(s)
     [ ] Workflow name(s)
-
-
-Viewlets
---------
-
-    [ ] Shown
-    [ ] Hidden
-
 
 Logging
 -------
@@ -102,6 +95,7 @@ Performance
 Diazo
 -----
 
+    [ ] Enabled theme name
     [ ] Rules file
     [ ] Rules that have been executed
     [ ] Rules that have not been executed

@@ -1,0 +1,129 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-theme" i18n:translate="debug_toolbar_theme_title">
+    Theme <small>in use</small>
+    <span id="debug-toolbar-theme-status" i18n:name="method" class="label success" tal:content="view/themeName" />
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-theme-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the current theme
+    </p>
+
+    <h3 i18n:translate="">Enabled theme</h3>
+
+    <table class="zebra-striped">
+        <tbody>
+            <tr>
+                <td i18n:translate="">Theme name</td>
+                <td tal:content="view/themeName" />
+            </tr>
+            <tr>
+                <td i18n:translate="">Skin layers</td>
+                <td>
+                    <div tal:repeat="skin view/skinPaths"><code tal:content="nocall:skin" /></div>
+                </td>
+            </tr>
+            <tr tal:condition="nocall:view/themeLayer">
+                <td i18n:translate="">Theme layer</td>
+                <td><code tal:content="nocall:view/themeLayer/__identifier__" /></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Browser layers</td>
+                <td>
+                    <div tal:repeat="layer view/layers"><code tal:content="layer/__identifier__" /></div>
+                </td>
+            </tr>
+            <tr>
+                <td tal:define="debugMode view/css/getDebugMode">
+                    <span i18n:translate="">CSS composition</span>
+                    <span class="label warning" tal:condition="debugMode" i18n:translate="">Debug mode</span>
+                    <span class="label success" tal:condition="not:debugMode" i18n:translate="">Production mode</span>
+                </td>
+                <td>
+                    <ul tal:define="portal_url view/portal_url">
+                        <li tal:repeat="entry view/css/cookedresources | view/css/getCookedResources">
+                            <div>
+                                <a href=""
+                                   tal:define="portalHref string:${portal_url}/portal_css/${entry/getId}"
+                                   tal:attributes="href python:entry.isExternalResource() and entry.getId() or portalHref">
+                                    <b tal:content="entry/getId">ploneCustom.css</b>
+                                </a>
+                                <tal:block tal:condition="entry/getAuthenticated | nothing">
+                                - <strong i18n:translate="auth_only">restricted to authenticated users</strong>
+                                </tal:block>
+                                <tal:block tal:condition="not:entry/getAuthenticated">
+                                    <tal:block tal:condition="entry/getExpression | nothing">
+                                    - <span tal:replace="entry/getExpression" />
+                                    </tal:block>
+                                </tal:block>
+                                <tal:block tal:condition="entry/getConditionalcomment | nothing">
+                                - <span tal:replace="string:&lt;!--[if ${entry/getConditionalcomment}]&gt;" />
+                                </tal:block>
+                            </div>
+                            <ul tal:define="sheets view/css/concatenatedresources">
+                              <tal:stylesheets tal:define="portal nocall:view/portal"
+                                               tal:repeat="subentry python:sheets.get(entry.getId())">
+                                <li tal:define="resourceExists python:entry.isExternalResource() or path('exists:portal/%s' % subentry);"
+                                    tal:attributes="class python:resourceExists and None or 'notFound'">
+                                    <a href="" tal:define="subPortalHref string:${portal_url}/portal_css/${subentry}"
+                                               tal:attributes="href python:entry.isExternalResource() and subentry or subPortalHref"
+                                               tal:content="subentry">
+                                        plone.css
+                                    </a>
+                                    <span tal:condition="not:resourceExists" i18n:translate="resource_not_found">(resource not found or not accessible)</span>
+                                </li>
+                              </tal:stylesheets>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td tal:define="debugMode view/js/getDebugMode">
+                    <span i18n:translate="">JavaScript composition</span>
+                    <span class="label warning" tal:condition="debugMode" i18n:translate="">Debug mode</span>
+                    <span class="label success" tal:condition="not:debugMode" i18n:translate="">Production mode</span>
+                </td>
+                <td>
+                    <ul tal:define="portal_url view/portal_url">
+                        <li tal:repeat="entry view/js/cookedresources | view/js/getCookedResources">
+                            <div>
+                                <a href=""
+                                   tal:define="portalHref string:${portal_url}/portal_javascripts/${entry/getId}"
+                                   tal:attributes="href python:entry.isExternalResource() and entry.getId() or portalHref">
+                                    <b tal:content="entry/getId">plone_ecmascript.js</b>
+                                </a>
+                                <tal:block tal:condition="entry/getAuthenticated | nothing">
+                                - <strong i18n:translate="auth_only">restricted to authenticated users</strong>
+                                </tal:block>
+                                <tal:block tal:condition="not:entry/getAuthenticated">
+                                    <tal:block tal:condition="entry/getExpression | nothing">
+                                    - <span tal:replace="entry/getExpression" />
+                                    </tal:block>
+                                </tal:block>
+                                <tal:block tal:condition="entry/getConditionalcomment | nothing">
+                                - <span tal:replace="string:&lt;!--[if ${entry/getConditionalcomment}]&gt;" />
+                                </tal:block>
+                            </div>
+                            <ul tal:define="scripts view/js/concatenatedresources">
+                              <tal:scripts tal:define="portal nocall:view/portal"
+                                           tal:repeat="subentry python:scripts.get(entry.getId())">
+                                <li tal:define="resourceExists python:entry.isExternalResource() or path('exists:portal/%s' % subentry);"
+                                    tal:attributes="class python:resourceExists and None or 'notFound'">
+                                    <a href="" tal:define="subPortalHref string:${portal_url}/portal_javascripts/${subentry}"
+                                               tal:attributes="href python:entry.isExternalResource() and subentry or subPortalHref"
+                                               tal:content="subentry">
+                                        plone.js
+                                    </a>
+                                    <span tal:condition="not:resourceExists"  i18n:translate="resource_not_found">(resource not found or not accessible)</span>
+                                </li>
+                              </tal:scripts>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+
+</div>

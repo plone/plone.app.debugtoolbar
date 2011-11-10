@@ -129,6 +129,7 @@
 #debug-toolbar li {
   line-height: 18px;
   color: #808080;
+  display: block;
 }
 #debug-toolbar ul.unstyled {
   list-style: none;
