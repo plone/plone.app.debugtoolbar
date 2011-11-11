@@ -41,7 +41,7 @@
                     <span tal:content="info/name" />
                     <span tal:condition="info/granted" class="label success" i18n:translate="">Granted</span>
                 <td>
-                    <input type="checkbox" disabled="disabled" checked="python:info['acquired'] and 'checked' or None" />
+                    <input type="checkbox" disabled="disabled" tal:attributes="checked python:info['acquired'] and 'checked' or None" />
                 </td>
                 <td tal:repeat="role info/roles">
                     <input type="checkbox" disabled="disabled" tal:attributes="checked python:role and 'checked' or None" />

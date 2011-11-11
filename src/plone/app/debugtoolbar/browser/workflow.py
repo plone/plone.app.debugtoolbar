@@ -30,7 +30,7 @@ class WorkflowViewlet(ViewletBase):
 
         for p in self.context.permission_settings():
             name = p['name']
-            acquired = bool(p['acquire'])
+            acquired = p['acquire'] == 'CHECKED'
             granted = bool(sm.checkPermission(name, self.context))
 
             roles = [r['selected'] == 'SELECTED'
