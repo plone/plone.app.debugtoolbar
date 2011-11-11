@@ -81,4 +81,13 @@
         layer=".interfaces.IDebugToolbarLayer"
         />
     
+    <browser:viewlet
+        name="plone.app.debugtoolbar.workflow"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".workflow.WorkflowViewlet"
+        template="workflow.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+    
 </configure>

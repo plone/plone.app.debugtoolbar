@@ -1,0 +1,54 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-workflow" i18n:translate="debug_toolbar_workflow_title">
+    Workflow <small>and security</small>
+    <span tal:condition="view/workflowStatus" id="debug-toolbar-workflow-status" i18n:name="method" class="label success" tal:content="view/workflowStatus" />
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-workflow-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the workflow and security
+        of the current item.
+    </p>
+
+    <h3 i18n:translate="">Workflow information</h3>
+
+    <table class="zebra-striped">
+        <tbody>
+            <tr>
+                <td i18n:translate="">Workflow state(s)</td>
+                <td><code tal:repeat="state view/workflowStates" tal:content="state"/></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Workflow name(s)</td>
+                <td><code tal:repeat="name view/workflowNames" tal:content="name"/></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="">Permission matrix</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">Acquire</th>
+                <td tal:repeat="role view/roles" tal:content="role" />
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="info view/permissionInfo">
+                <td>
+                    <span tal:content="info/name" />
+                    <span tal:condition="info/granted" class="label success" i18n:translate="">Granted</span>
+                <td>
+                    <input type="checkbox" disabled="disabled" checked="python:info['acquired'] and 'checked' or None" />
+                </td>
+                <td tal:repeat="role info/roles">
+                    <input type="checkbox" disabled="disabled" tal:attributes="checked python:role and 'checked' or None" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

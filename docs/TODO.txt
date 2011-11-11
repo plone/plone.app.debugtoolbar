@@ -79,8 +79,9 @@ Context
 Workflow
 --------
 
-    [ ] State(s)
-    [ ] Workflow name(s)
+    [x] State(s)
+    [x] Workflow name(s)
+    [x] Permission matrix
 
 Logging
 -------
