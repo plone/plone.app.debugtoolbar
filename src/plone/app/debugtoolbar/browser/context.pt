@@ -26,8 +26,84 @@
                 <td><code tal:content="string:${view/cls/__module__}.${view/cls/__name__}" /></td>
             </tr>
             <tr>
-                <td i18n:translate="">Portal type</td>
-                <td><code tal:content="context/portal_type | nothing" /></td>
+                <td i18n:translate="">Provided interfaces</td>
+                <td>
+                    <ul>
+                        <li tal:repeat="interface view/provided"><code tal:content="interface/__identifier__" /></li>
+                    </ul>
+                </td>
+        </tbody>
+    </table>
+
+    <tal:block condition="nocall:view/fti">
+        <h3 i18n:translate="">Factory type information</h3>
+
+        <table class="zebra-striped">
+            <tbody>
+                <tr>
+                    <td i18n:translate="">Portal type</td>
+                    <td><code tal:content="view/fti/getId" /></td>
+                </tr>
+                <tr>
+                    <td i18n:translate="">Title</td>
+                    <td><code tal:content="view/fti/Title" /></td>
+                </tr>
+                <tr>
+                    <td i18n:translate="">Method aliases</td>
+                    <td>
+                        <dl>
+                            <tal:block repeat="alias view/methodAliases">
+                                <dt><code tal:content="python:alias[0]" /></dt>
+                                <dd><code tal:content="python:alias[1]" /></dd>
+                            </tal:block>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td i18n:translate="">Actions</td>
+                    <td>
+                        <dl>
+                            <tal:block repeat="action view/fti/listActions">
+                                <dt><code tal:content="action/getId" /></dt>
+                                <dd><code tal:content="action/getActionExpression" /></dd>
+                            </tal:block>
+                        </dl>
+                    </td>
+                </tr>
+                <tr tal:condition="view/defaultView">
+                    <td i18n:translate="">Default view</td>
+                    <td><code tal:content="view/defaultView" /></td>
+                </tr>
+                <tr tal:condition="view/viewMethods">
+                    <td i18n:translate="">View methods</td>
+                    <td>
+                        <div tal:repeat="method view/viewMethods"><code tal:content="method" /></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </tal:block>
+
+    <h3 i18n:translate="">Views</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">Class</th>
+                <th i18n:translate="">Template</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="v view/views">
+                <td><code tal:content="v/name" /></td>
+                
+                <td tal:condition="nocall:v/class"><code tal:content="string:${v/class/__module__}.${v/class/__name__}" /></td>
+                <td tal:condition="not:nocall:v/class"></td>
+
+                <td tal:condition="nocall:v/template"><code tal:content="v/template" /></td>
+                <td tal:condition="not:nocall:v/template"></td>
+
             </tr>
         </tbody>
     </table>

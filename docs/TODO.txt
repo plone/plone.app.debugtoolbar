@@ -71,11 +71,13 @@ Context
     [x] Class
     [x] portal_type
 
-    [ ] FTI title
-    [ ] Views
-    [ ] Method aliases
-    [ ] Marker interfaces
-    [ ] Provided interfaces
+    [x] FTI title
+    [x] Actions
+    [x] Views
+    [x] Method aliases
+
+    [x] Marker interfaces
+    [x] Provided interfaces
 
     [ ] __dict__ / browsable
 
