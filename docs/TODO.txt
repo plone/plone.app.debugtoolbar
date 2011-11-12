@@ -65,10 +65,13 @@ Published object
 Context
 -------
 
+    [ ] Physical path
+    [ ] Absolute URL
     [ ] Module
     [ ] Class
     [ ] portal_type
-    [ ] FTI title, description
+    
+    [ ] FTI title
     [ ] Views
     [ ] Method aliases
     [ ] Marker interfaces

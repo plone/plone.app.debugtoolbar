@@ -413,3 +413,7 @@
 #debug-toolbar .label.notice {
   background-color: #62cffc;
 }
+
+#debug-toolbar .label a {
+  color: inherit;
+}

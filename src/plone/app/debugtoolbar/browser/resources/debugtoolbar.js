@@ -30,7 +30,7 @@ jQuery(function($) {
             $('#debug-toolbar').slideDown();
             return false;
         });
-
+        
         $("#debug-toolbar-close").click(function() {
             $('#debug-toolbar').slideUp();
             return false;
@@ -38,8 +38,8 @@ jQuery(function($) {
 
         $(".debug-toolbar-header").click(function() {
             $('#' + $(this).attr('id') + '-body').toggle('fade');
-            return false;
         });
+        
     });
 
 });

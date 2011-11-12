@@ -1,5 +1,9 @@
 <h2 class="debug-toolbar-header" id="debug-toolbar-versions" i18n:translate="debug_toolbar_versions_title">
     Versions <small>of installed packages</small>
+    <span tal:condition="view/ploneVersion" class="label success" tal:content="view/ploneVersion" />
+    <span tal:condition="view/needUpgrading" class="label important">
+        <a tal:attributes="href string:${context/portal_url}/@@plone-upgrade" i18n:translate="debug_toolbar_upgrade_pending">Upgrade pending</a>
+    </span>
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-versions-body">
