@@ -57,9 +57,9 @@ Packages
 Published object
 ----------------
 
-    [ ] Name
-    [ ] Path
-    [ ] Page template
+    [x] Name
+    [x] Path
+    [x] Page template
     [ ] z3c.jbot name
 
 Context

@@ -90,4 +90,13 @@
         layer=".interfaces.IDebugToolbarLayer"
         />
     
+    <browser:viewlet
+        name="plone.app.debugtoolbar.published"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".published.PublishedViewlet"
+        template="published.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+    
 </configure>

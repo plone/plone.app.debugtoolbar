@@ -1,0 +1,36 @@
+<tal:block condition="nocall:view/published">
+<h2 class="debug-toolbar-header" id="debug-toolbar-published" i18n:translate="debug_toolbar_published_title">
+    Published <small>view or object</small>
+    <span tal:condition="view/name" class="label success" tal:content="view/name" />
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-published-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the published object. This is
+        usually a view or a legacy page template.
+    </p>
+
+    <h3 i18n:translate="">Details</h3>
+
+    <table class="zebra-striped">
+        <tbody>
+            <tr>
+                <td i18n:translate="">Name</td>
+                <td><code tal:content="view/name" /></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Class</td>
+                <td><code tal:content="string:${view/cls/__module__}.${view/cls/__name__}" /></td>
+            </tr>
+            <tr tal:condition="view/filename">
+                <td i18n:translate="">File</td>
+                <td><code tal:content="view/filename" /></td>
+            </tr>
+
+             
+        </tbody>
+    </table>
+
+</div>
+</tal:block>
