@@ -1,0 +1,35 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-context" i18n:translate="debug_toolbar_context_title">
+    Context <small>object</small>
+    <span class="label success" tal:content="context/__name__ | context/id | nothing" />
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-context-body">
+
+    <p class="debug-toolbar-help">
+        This panel shows information about the context object
+    </p>
+
+    <h3 i18n:translate="">Object</h3>
+
+    <table class="zebra-striped">
+        <tbody>
+            <tr>
+                <td i18n:translate="">URL</td>
+                <td><code tal:content="context/absolute_url | nothing" /></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Path</td>
+                <td><code tal:content="view/path | nothing" /></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Class</td>
+                <td><code tal:content="string:${view/cls/__module__}.${view/cls/__name__}" /></td>
+            </tr>
+            <tr>
+                <td i18n:translate="">Portal type</td>
+                <td><code tal:content="context/portal_type | nothing" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
