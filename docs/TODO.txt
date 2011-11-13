@@ -99,7 +99,7 @@ Interactive
 -----------
 
     [x] Interactive interpreter
-    [ ] TALES tester
+    [x] TALES tester
 
 Workflow
 --------
