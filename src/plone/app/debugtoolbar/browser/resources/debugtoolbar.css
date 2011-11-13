@@ -51,7 +51,8 @@
   margin: 1em;
   max-height: 20em;
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 
 #debug-toolbar #debug-toolbar-interactive-out code {

@@ -22,6 +22,9 @@ _read_debug_cookie = function() {
 
 function InteractivePrompt(target, path) {
     this.target = target;
+    this.submitHistory = [];
+    this.historyPosition = -1;
+
     if (path == undefined) {
         path = "./@@plone.app.debugtoolbar.interactive.response";
     }
@@ -29,6 +32,8 @@ function InteractivePrompt(target, path) {
 }
 InteractivePrompt.prototype.submit = function(line) {
     var out = this.target;
+    this.submitHistory.push(line);
+    this.historyPosition = this.submitHistory.length;
 
     jQuery.post(
         this.path,
@@ -75,12 +80,28 @@ jQuery(function($) {
             return false;
         });
 
-        $("#debug-toolbar-interactive-input").keypress(function (e) {
-            if(e.keyCode == 13) {
+        $("#debug-toolbar-interactive-input").keyup(function (e) {
+            if(e.keyCode == 13) { // enter
                 var line = $(this).val();
                 prompt.submit(line);
                 $(this).val("");
                 return false;    
+            } else if(e.keyCode == 38) { // up
+                if(prompt.historyPosition > 0 && prompt.submitHistory.length > 0) {
+                    --prompt.historyPosition;
+                    $(this).val(prompt.submitHistory[prompt.historyPosition]);
+                    return false;
+                }
+            } else if(e.keyCode == 40) { // down
+                if(prompt.historyPosition < prompt.submitHistory.length - 1 && prompt.submitHistory.length > 0) {
+                    ++prompt.historyPosition;
+                    $(this).val(prompt.submitHistory[prompt.historyPosition]);
+                    return false;
+                } else if(prompt.historyPosition >= prompt.submitHistory.length - 1) {
+                    prompt.historyPosition = prompt.submitHistory.length;
+                    $(this).val("");
+                    return false;
+                }
             }
         });
         
