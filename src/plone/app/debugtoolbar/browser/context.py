@@ -1,9 +1,13 @@
+import types
+import inspect
+
 from zope.interface import Interface
 from zope.interface import providedBy
 from zope.component import getAdapters
 from zope.publisher.interfaces import IView
 from zope.viewlet.viewlet import ViewletBase
 
+from Acquisition import aq_base
 from Products.CMFCore.interfaces import IDynamicType
 from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation
 from Products.Five.browser.metaconfigure import ViewMixinForTemplates
@@ -75,3 +79,47 @@ class ContextViewlet(ViewletBase):
                 pass
         
         self.views.sort(key=lambda v: v['name'])
+
+        self.methods = []
+        self.variables = []
+
+        _marker = object()
+        for name in sorted(dir(aq_base(self.context))):
+            attr = getattr(aq_base(self.context), name, _marker)
+            if attr is _marker:
+                continue
+            
+            if isinstance(attr, (int, long, float, basestring, bool, list, tuple, dict, set, frozenset)):
+                self.variables.append({
+                    'name': name,
+                    'primitive': True,
+                    'value': attr,
+                })
+            elif (
+                isinstance(attr, (types.MethodType, types.BuiltinFunctionType, types.BuiltinMethodType, types.FunctionType)) or
+                attr.__class__.__name__ == 'method-wrapper',
+            ):
+                
+                source = None
+                try:
+                    source = inspect.getsourcefile(attr)
+                except TypeError:
+                    None
+
+                signature = name + "()"
+                try:
+                    signature = name + inspect.formatargspec(*inspect.getargspec(attr))
+                except TypeError:
+                    pass
+
+                self.methods.append({
+                    'signature': signature,
+                    'filename': source,
+                    'help': inspect.getdoc(attr),
+                })
+            else:
+                self.variables.append({
+                    'name': name,
+                    'primitive': False,
+                    'value': str(attr),
+                })

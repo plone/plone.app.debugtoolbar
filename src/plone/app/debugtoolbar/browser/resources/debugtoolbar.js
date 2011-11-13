@@ -71,6 +71,11 @@ jQuery(function($) {
             $('#' + $(this).attr('id') + '-body').toggle('fade');
         });
 
+        // Section open/close
+        $(".debug-toolbar-section-header").click(function() {
+            $('#' + $(this).attr('id') + '-body').toggle('fade');
+        });
+
         // Interactive debug panel
         var prompt = new InteractivePrompt("#debug-toolbar-interactive-out");
         $("#debug-toolbar-interactive-input-submit").click(function () {

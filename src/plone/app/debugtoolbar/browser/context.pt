@@ -30,6 +30,7 @@
                 <td>
                     <div tal:repeat="interface view/provided"><code tal:content="interface/__identifier__" /></div>
                 </td>
+            </tr>
         </tbody>
     </table>
 
@@ -82,9 +83,58 @@
         </table>
     </tal:block>
 
-    <h3 i18n:translate="">Views</h3>
+    <h3 i18n:translate="" class="debug-toolbar-section-header" id="debug-toolbar-context-methods">
+        Methods
+        <label class="label default">Click to expand</label>
+    </h3>
 
-    <table class="zebra-striped">
+    <table class="debug-toolbar-section-body" id="debug-toolbar-context-methods-body" class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Signature</th>
+                <th i18n:translate="">Documentation</th>
+                <th i18n:translate="">Filename</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="method view/methods">
+                <td><code tal:content="method/signature" /></td>
+                <td tal:content="method/help" />
+                <td><code tal:content="method/filename" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="" class="debug-toolbar-section-header" id="debug-toolbar-context-variables">
+        Variables
+        <label class="label default">Click to expand</label>
+    </h3>
+
+    <table class="debug-toolbar-section-body" id="debug-toolbar-context-variables-body" class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Name</th>
+                <th i18n:translate="">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="var view/variables">
+                <td>
+                    <code tal:content="var/name" />
+                    <span class="label success" tal:condition="var/primitive" i18n:translate="">Primitive</span>
+                    <span class="label notice" tal:condition="not:var/primitive" i18n:translate="">Instance</span>
+                </td>
+                <td><code tal:content="var/value" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="" class="debug-toolbar-section-header" id="debug-toolbar-context-views">
+        Views
+        <label class="label default">Click to expand</label>
+    </h3>
+
+    <table class="debug-toolbar-section-body" id="debug-toolbar-context-views-body" class="zebra-striped">
         <thead>
             <tr>
                 <th i18n:translate="">Name</th>

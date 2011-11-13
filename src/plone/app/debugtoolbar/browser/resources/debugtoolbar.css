@@ -41,6 +41,14 @@
   margin: 0 1em;
 }
 
+#debug-toolbar .debug-toolbar-section-header {
+  cursor: pointer;
+}
+
+#debug-toolbar .debug-toolbar-section-body {
+  display: none;
+}
+
 /* Interactive prompt */
 
 #debug-toolbar-interactive-prompt {

@@ -92,7 +92,8 @@ Context
     [x] Marker interfaces
     [x] Provided interfaces
 
-    [ ] __dict__ / browsable
+    [x] Methods
+    [x] Variables
 
 Interactive
 -----------
