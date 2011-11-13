@@ -1,12 +1,25 @@
 Infrastructure
----------------
+==============
 
 [x] Figure out a way to inject information that is available only very late in
     the request (e.g. headers, status, Diazo information)
 
+[ ] Test coverage
+    
+    [ ] interactive.py
+    [ ] context.py
+    [ ] global.py
+    [ ] published.py
+    [ ] request.py
+    [ ] response.py
+    [ ] theme.py
+    [ ] user.py
+    [ ] versions.py
+    [ ] workflow.py
+    [ ] delayedwrite.py
 
 Debug panels
-------------
+============
 
 Request
 -------
@@ -84,7 +97,8 @@ Context
 Interactive
 -----------
 
-    [ ] Interactive interpreter
+    [x] Interactive interpreter
+    [ ] TALES tester
 
 Workflow
 --------
