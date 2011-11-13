@@ -28,9 +28,7 @@
             <tr>
                 <td i18n:translate="">Provided interfaces</td>
                 <td>
-                    <ul>
-                        <li tal:repeat="interface view/provided"><code tal:content="interface/__identifier__" /></li>
-                    </ul>
+                    <div tal:repeat="interface view/provided"><code tal:content="interface/__identifier__" /></div>
                 </td>
         </tbody>
     </table>
