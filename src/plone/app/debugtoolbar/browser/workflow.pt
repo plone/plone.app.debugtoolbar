@@ -32,7 +32,7 @@
             <tr>
                 <th i18n:translate="">Name</th>
                 <th i18n:translate="">Acquire</th>
-                <td tal:repeat="role view/roles" tal:content="role" />
+                <th tal:repeat="role view/roles" tal:content="role" />
             </tr>
         </thead>
         <tbody>
