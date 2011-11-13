@@ -1,5 +1,3 @@
-.. contents::
-
 Introduction
 ============
 
