@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0a1dev (unreleased)
----------------------
+1.0a1 (13/11/2011)
+------------------
 
-- Package created using zopeskel
-  [Martin Aspeli]
+- Iniital release
+  [optilude]
