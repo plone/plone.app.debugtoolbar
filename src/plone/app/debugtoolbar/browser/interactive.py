@@ -1,7 +1,9 @@
 import re
 import cgi
 import threading
+import traceback
 
+from zope.component import queryMultiAdapter
 from zope.publisher.browser import BrowserView
 from zope.viewlet.viewlet import ViewletBase
 
@@ -11,6 +13,7 @@ from paste.exceptions import formatter
 from AccessControl import Unauthorized
 from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
+from Products.PageTemplates.Expressions import getEngine
 
 class Variables(object):
     """Store local variables. Allow one set of variables per user id, and
@@ -48,6 +51,28 @@ class Variables(object):
 
 VARS = Variables()
 
+def htmlQuote(v):
+    # Borrowed from Paste
+    if v is None:
+        return ''
+    return cgi.escape(str(v), 1)
+
+def preserveWhitespace(v, quote=True):
+    # Borrowed from Paste
+    if quote:
+        v = htmlQuote(v)
+    
+    def _repl_nbsp(match):
+        if len(match.group(2)) == 1:
+            return '&nbsp;'
+        return match.group(1) + '&nbsp;' * (len(match.group(2))-1) + ' '
+    
+    v = v.replace('\n', '<br>\n')
+    v = re.sub(r'()(  +)', _repl_nbsp, v)
+    v = re.sub(r'(\n)( +)', _repl_nbsp, v)
+    v = re.sub(r'^()( +)', _repl_nbsp, v)
+    return '<code>%s</code>' % v
+
 class InteractiveViewlet(ViewletBase):
 
     def update(self):
@@ -84,27 +109,55 @@ class InteractiveResponse(BrowserView):
         line_html = formatter.str2html(line)
         return ('<code style="color: #060">&gt;&gt;&gt;</code> '
                 '%s<br />\n%s'
-                % (self.preserveWhitespace(line_html, quote=False),
-                   self.preserveWhitespace(output)))
-    
-    def preserveWhitespace(self, v, quote=True):
-        # Borrowed from Paste
-        if quote:
-            v = self.htmlQuote(v)
+                % (preserveWhitespace(line_html, quote=False),
+                   preserveWhitespace(output)))
+
+class TALESResponse(BrowserView):
+
+    def __call__(self):
+
+        if self.request.method != 'POST':
+            raise Unauthorized()
         
-        def _repl_nbsp(match):
-            if len(match.group(2)) == 1:
-                return '&nbsp;'
-            return match.group(1) + '&nbsp;' * (len(match.group(2))-1) + ' '
-        
-        v = v.replace('\n', '<br>\n')
-        v = re.sub(r'()(  +)', _repl_nbsp, v)
-        v = re.sub(r'(\n)( +)', _repl_nbsp, v)
-        v = re.sub(r'^()( +)', _repl_nbsp, v)
-        return '<code>%s</code>' % v
-    
-    def htmlQuote(self, v):
-        # Borrowed from Paste
-        if v is None:
+        line = self.request.form.get('line', '')
+        if not line.strip():
             return ''
-        return cgi.escape(str(v), 1)
+        
+        line = line.rstrip() + '\n'
+        
+        expr = self.compileExpression(line)
+        try:
+            output = expr(self.createExpressionContext())
+        except:
+            output = "%s" % traceback.format_exc()
+        
+        if isinstance(output, unicode):
+            output = output.encode('ascii', 'xmlcharrefreplace')
+        elif not isinstance(output, str):
+            output = repr(output)
+
+        return preserveWhitespace(output)
+    
+    def createExpressionContext(self):
+        portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        folder = self.context
+        if not folder.isPrincipiaFolderish:
+            folder = self.context.getParentNode()
+        
+        contextState = queryMultiAdapter((self.context, self.request), name=u"plone_context_state")
+        portalState = queryMultiAdapter((portal, self.request), name=u"plone_portal_state")
+
+        data = {
+            'context': self.context,
+            'folder': folder,
+            'request': self.request,
+            'portal': portal,
+            'context_state': contextState,
+            'portal_state': portalState,
+            'nothing': None,
+        }
+
+        return getEngine().getContext(data)
+
+    def compileExpression(self, text):
+        return getEngine().compile(text.strip())

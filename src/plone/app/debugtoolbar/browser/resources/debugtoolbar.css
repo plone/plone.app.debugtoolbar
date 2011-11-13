@@ -51,11 +51,11 @@
 
 /* Interactive prompt */
 
-#debug-toolbar-interactive-prompt {
+#debug-toolbar .debug-toolbar-interactive-prompt {
   margin: 1em;
 }
 
-#debug-toolbar-interactive-out {
+#debug-toolbar .debug-toolbar-out {
   margin: 1em;
   max-height: 20em;
   width: 100%;
@@ -63,7 +63,7 @@
   overflow-x: auto;
 }
 
-#debug-toolbar #debug-toolbar-interactive-out code {
+#debug-toolbar .debug-toolbar-out code {
   font-family: Monaco, Andale Mono, Courier New, monospace;
   font-size: 12px;
   -webkit-border-radius: 0;
@@ -80,16 +80,12 @@
   padding: 0;
 }
 
-#debug-toolbar #debug-toolbar-interactive-input {
+#debug-toolbar .debug-toolbar-interactive-prompt > input {
   margin-left: 2px;
-}
-
-
-#debug-toolbar #debug-toolbar-interactive-input {
   width: 80%;
 }
 
-#debug-toolbar #debug-toolbar-interactive-input-submit {
+#debug-toolbar .debug-toolbar-inherit-padding button {
   padding: 0.3em;
 }
 

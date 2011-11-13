@@ -1,5 +1,5 @@
 <h2 class="debug-toolbar-header" id="debug-toolbar-interactive" i18n:translate="debug_toolbar_interactive_title">
-    Interactive <small>introspector</small>
+    Interactive <small>introspection</small>
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-interactive-body">
@@ -10,6 +10,8 @@
         <code>context</code>, <code>request</code>, <code>portal</code>
         and <code>app</code> are available.
     </p>
+
+    <h3 i18n:translate="">Interactive prompt</h3>
 
     <div class="alert-message warning">
         <p i18n:translate="debug_toolbar_interactive_warning">
@@ -23,15 +25,34 @@
         </p>
     </div>
 
-    <div id="debug-toolbar-interactive-out">
+    <div class="debug-toolbar-out" id="debug-toolbar-interactive-out">
     </div>
 
-    <div id="debug-toolbar-interactive-prompt">
+    <div class="debug-toolbar-interactive-prompt">
 
         <code>&gt;&gt;&gt;</code>
         <input type="text" id="debug-toolbar-interactive-input" />
         <button id="debug-toolbar-interactive-input-submit" i18n:translate="">Execute</button>
 
+    </div>
+
+    <h3 i18n:translate="">TALES tester</h3>
+
+    <p class="debug-toolbar-help">
+        Use the command line below to test TALES expressions. The variables
+        <code>context</code>, <code>request</code>, <code>portal</code> and
+        <code>folder</code>, <code>portal_state</code> and <code>context_state</code>
+        are available.
+    </p>
+
+    <div class="debug-toolbar-interactive-prompt">
+
+        <input type="text" id="debug-toolbar-tales-input" />
+        <button id="debug-toolbar-tales-input-submit" i18n:translate="">Execute</button>
+
+    </div>
+
+    <div class="debug-toolbar-out" id="debug-toolbar-tales-out">
     </div>
 
 </div>

@@ -125,5 +125,12 @@
         permission="cmf.ManagePortal"
         layer=".interfaces.IDebugToolbarLayer"
         />
+
+    <browser:view
+        name="plone.app.debugtoolbar.interactive.tales"
+        class=".interactive.TALESResponse"
+        permission="cmf.ManagePortal"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
     
 </configure>

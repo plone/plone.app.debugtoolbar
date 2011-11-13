@@ -29,7 +29,7 @@ function InteractivePrompt(target, path) {
         path = "./@@plone.app.debugtoolbar.interactive.response";
     }
     this.path = path;
-}
+};
 InteractivePrompt.prototype.submit = function(line) {
     var out = this.target;
     this.submitHistory.push(line);
@@ -45,7 +45,33 @@ InteractivePrompt.prototype.submit = function(line) {
             }
         }
     );
-}
+};
+
+function TalesTester(target, path) {
+    this.target = target;
+    this.submitHistory = [];
+    this.historyPosition = -1;
+
+    if (path == undefined) {
+        path = "./@@plone.app.debugtoolbar.interactive.tales";
+    }
+    this.path = path;
+};
+TalesTester.prototype.submit = function(line) {
+    var out = this.target;
+    this.submitHistory.push(line);
+    this.historyPosition = this.submitHistory.length;
+
+    jQuery.post(
+        this.path,
+        {'line': line},
+        function(data) {
+            if(data != '') {
+                jQuery(out).html(data);
+            }
+        }
+    );
+};
 
 jQuery(function($) {
     
@@ -109,7 +135,38 @@ jQuery(function($) {
                 }
             }
         });
-        
+
+        // TALES tester
+        var talesTester = new TalesTester("#debug-toolbar-tales-out");
+        $("#debug-toolbar-tales-input-submit").click(function () {
+            var line = $("#debug-toolbar-tales-input").val();
+            talesTester.submit(line);
+            return false;
+        });
+
+        $("#debug-toolbar-tales-input").keyup(function (e) {
+            if(e.keyCode == 13) { // enter
+                var line = $(this).val();
+                talesTester.submit(line);
+                return false;    
+            } else if(e.keyCode == 38) { // up
+                if(talesTester.historyPosition > 0 && talesTester.submitHistory.length > 0) {
+                    --talesTester.historyPosition;
+                    $(this).val(talesTester.submitHistory[talesTester.historyPosition]);
+                    return false;
+                }
+            } else if(e.keyCode == 40) { // down
+                if(talesTester.historyPosition < talesTester.submitHistory.length - 1 && talesTester.submitHistory.length > 0) {
+                    ++talesTester.historyPosition;
+                    $(this).val(talesTester.submitHistory[talesTester.historyPosition]);
+                    return false;
+                } else if(talesTester.historyPosition >= talesTester.submitHistory.length - 1) {
+                    talesTester.historyPosition = talesTester.submitHistory.length;
+                    $(this).val("");
+                    return false;
+                }
+            }
+        });
 
 
     });
