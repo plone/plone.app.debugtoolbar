@@ -1,8 +1,20 @@
 Changelog
 =========
 
+1.0a2 (13/11/2011)
+------------------
+
+- Add interactive code debugging
+  [optilude]
+
+- Add TALES tester
+  [optilude]
+
+- Add details of context methods and attributes
+  [optilude]
+
 1.0a1 (13/11/2011)
 ------------------
 
-- Iniital release
+- Initial release
   [optilude]
