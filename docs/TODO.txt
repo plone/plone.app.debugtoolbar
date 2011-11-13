@@ -81,6 +81,11 @@ Context
 
     [ ] __dict__ / browsable
 
+Interactive
+-----------
+
+    [ ] Interactive interpreter
+
 Workflow
 --------
 

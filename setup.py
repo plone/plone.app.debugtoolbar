@@ -38,6 +38,7 @@ setup(name='plone.app.debugtoolbar',
           'Products.CMFPlone',
           'zope.annotation',
           'plone.transformchain',
+          'Paste',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

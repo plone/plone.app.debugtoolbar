@@ -1,0 +1,37 @@
+<h2 class="debug-toolbar-header" id="debug-toolbar-interactive" i18n:translate="debug_toolbar_interactive_title">
+    Interactive <small>introspector</small>
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-interactive-body">
+
+    <p class="debug-toolbar-help">
+        Use the Python interpreter line below to introspect
+        and interact with the context. The variables
+        <code>context</code>, <code>request</code>, <code>portal</code>
+        and <code>app</code> are available.
+    </p>
+
+    <div class="alert-message warning">
+        <p i18n:translate="debug_toolbar_interactive_warning">
+        <strong>Warning:</strong> 
+        It is possible to do considerable damage using this interactive 
+        prompt. Please use with caution and do not install on a production
+        server.  Only one session is allowed per user. If you open a new window
+        or tab, the variables saved in this session will be cleared. Since the
+        interactive scope is saved at process level, you may get erratic results
+        if you are using this against multiple load-balanced Zope instances.
+        </p>
+    </div>
+
+    <div id="debug-toolbar-interactive-out">
+    </div>
+
+    <div id="debug-toolbar-interactive-prompt">
+
+        <code>&gt;&gt;&gt;</code>
+        <input type="text" id="debug-toolbar-interactive-input" />
+        <button id="debug-toolbar-interactive-input-submit" i18n:translate="">Execute</button>
+
+    </div>
+
+</div>

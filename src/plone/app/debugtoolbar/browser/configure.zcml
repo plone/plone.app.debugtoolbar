@@ -3,6 +3,8 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plone">
 
+    <include package="Products.CMFCore" file="permissions.zcml" />
+
     <browser:resourceDirectory
         name="plone.app.debugtoolbar"
         directory="resources"
@@ -105,6 +107,22 @@
         class=".context.ContextViewlet"
         template="context.pt"
         permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+
+    <browser:viewlet
+        name="plone.app.debugtoolbar.interactive"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".interactive.InteractiveViewlet"
+        template="interactive.pt"
+        permission="cmf.ManagePortal"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+    
+    <browser:view
+        name="plone.app.debugtoolbar.interactive.response"
+        class=".interactive.InteractiveResponse"
+        permission="cmf.ManagePortal"
         layer=".interfaces.IDebugToolbarLayer"
         />
     
