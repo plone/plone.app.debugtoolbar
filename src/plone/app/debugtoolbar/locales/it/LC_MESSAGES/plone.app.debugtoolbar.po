@@ -1,21 +1,22 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translation of linguaplone.pot to Italian
+# Giacomo Spettoli <giacomo.spettoli@gmail.com>, 2011
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: plone.app.debugtoolbar\n"
 "POT-Creation-Date: 2011-11-14 02:37+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2011-11-14 02:37+0000\n"
+"Last-Translator: Giacomo Spettoli <giacomo.spettoli@gmail.com>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Plural-Forms: nplurals=2; plural=n!=1\n"
+"Language-Code: it\n"
+"Language-Name: Italiano\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone.app.debugtoolbar\n"
+"X-Is-Fallback-For: it-ch it-it\n"
 
 #: ./browser/workflow.pt:41
 msgid "Acquire"
