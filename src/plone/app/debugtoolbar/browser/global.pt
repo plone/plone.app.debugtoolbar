@@ -1,12 +1,19 @@
-<h2 class="debug-toolbar-header" id="debug-toolbar-global" i18n:translate="debug_toolbar_global_title">
-    Zope <small>global settings</small>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
+<h2 class="debug-toolbar-header" id="debug-toolbar-global">
+    <span tal:omit-tag="" i18n:translate="debug_toolbar_global_title">Zope <small>global settings</small></span>
     <span tal:condition="view/debug" class="label warning" i18n:translate="debug_toolbar_global_debug_mode">Debug mode</span>
     <span tal:condition="not:view/debug" class="label success" i18n:translate="debug_toolbar_global_prod_mode">Production mode</span>
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-global-body">
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         This panel shows information about the Zope server where Plone is running.
     </p>
 
@@ -94,3 +101,4 @@
     
 
 </div>
+</html>

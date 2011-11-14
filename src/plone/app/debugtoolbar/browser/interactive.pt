@@ -1,10 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
 <h2 class="debug-toolbar-header" id="debug-toolbar-interactive" i18n:translate="debug_toolbar_interactive_title">
     Interactive <small>introspection</small>
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-interactive-body">
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         Use the Python interpreter line below to introspect
         and interact with the context. The variables
         <code>context</code>, <code>request</code>, <code>portal</code>
@@ -38,7 +45,7 @@
 
     <h3 i18n:translate="">TALES tester</h3>
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         Use the command line below to test TALES expressions. The variables
         <code>context</code>, <code>request</code>, <code>portal</code> and
         <code>folder</code>, <code>portal_state</code> and <code>context_state</code>
@@ -56,3 +63,4 @@
     </div>
 
 </div>
+</html>

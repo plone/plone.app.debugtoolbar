@@ -1,11 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
 <h2 class="debug-toolbar-header" id="debug-toolbar-context" i18n:translate="debug_toolbar_context_title">
     Context <small>object</small>
-    <span class="label success" tal:content="context/__name__ | context/id | nothing" />
+    <span class="label success" i18n:name="context_name" tal:content="context/__name__ | context/id | nothing" />
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-context-body">
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         This panel shows information about the context object
     </p>
 
@@ -83,9 +90,9 @@
         </table>
     </tal:block>
 
-    <h3 i18n:translate="" class="debug-toolbar-section-header" id="debug-toolbar-context-methods">
-        Methods
-        <label class="label default">Click to expand</label>
+    <h3 class="debug-toolbar-section-header" id="debug-toolbar-context-methods">
+        <span tal:omit-tag="" i18n:translate="">Methods</span>
+        <label class="label default" i18n:translate="">Click to expand</label>
     </h3>
 
     <table class="debug-toolbar-section-body" id="debug-toolbar-context-methods-body" class="zebra-striped">
@@ -105,9 +112,9 @@
         </tbody>
     </table>
 
-    <h3 i18n:translate="" class="debug-toolbar-section-header" id="debug-toolbar-context-variables">
-        Variables
-        <label class="label default">Click to expand</label>
+    <h3 class="debug-toolbar-section-header" id="debug-toolbar-context-variables">
+        <span tal:omit-tag="" i18n:translate=""> Variables</span>
+        <label class="label default" i18n:translate="">Click to expand</label>
     </h3>
 
     <table class="debug-toolbar-section-body" id="debug-toolbar-context-variables-body" class="zebra-striped">
@@ -129,9 +136,9 @@
         </tbody>
     </table>
 
-    <h3 i18n:translate="" class="debug-toolbar-section-header" id="debug-toolbar-context-views">
-        Views
-        <label class="label default">Click to expand</label>
+    <h3 class="debug-toolbar-section-header" id="debug-toolbar-context-views">
+        <span tal:omit-tag="" i18n:translate="">Views</span>
+        <label class="label default" i18n:translate="">Click to expand</label>
     </h3>
 
     <table class="debug-toolbar-section-body" id="debug-toolbar-context-views-body" class="zebra-striped">
@@ -157,3 +164,4 @@
     </table>
 
 </div>
+</html>
