@@ -1,3 +1,10 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
 <a id="debug-toolbar-trigger" class="debug-toolbar-trigger-button" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">&darr; Debug</a>
 <div id="debug-toolbar">
     
@@ -11,3 +18,4 @@
     </div>
 
 </div>
+</html>
