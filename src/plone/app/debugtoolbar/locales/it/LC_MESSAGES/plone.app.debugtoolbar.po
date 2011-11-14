@@ -1,4 +1,4 @@
-# Translation of linguaplone.pot to Italian
+# Translation of plone.app.debugtoolbar.pot to Italian
 # Giacomo Spettoli <giacomo.spettoli@gmail.com>, 2011
 # 
 msgid ""
