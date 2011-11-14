@@ -1,0 +1,460 @@
+# Translation of plone.app.debugtoolbar.pot to Italian
+# Giacomo Spettoli <giacomo.spettoli@gmail.com>, 2011
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: plone.app.debugtoolbar\n"
+"POT-Creation-Date: 2011-11-14 02:37+0000\n"
+"PO-Revision-Date: 2011-11-14 02:37+0000\n"
+"Last-Translator: Giacomo Spettoli <giacomo.spettoli@gmail.com>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n!=1\n"
+"Language-Code: it\n"
+"Language-Name: Italiano\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone.app.debugtoolbar\n"
+"X-Is-Fallback-For: it-ch it-it\n"
+
+#: ./browser/workflow.pt:41
+msgid "Acquire"
+msgstr "Acquisisci"
+
+#: ./browser/context.pt:69
+msgid "Actions"
+msgstr "Azioni"
+
+#: ./browser/theme.pt:38
+msgid "Browser layers"
+msgstr ""
+
+#: ./browser/theme.pt:45
+msgid "CSS composition"
+msgstr "Composizione CSS"
+
+#: ./browser/global.pt:71
+msgid "Cache size"
+msgstr "Dimensione della cache"
+
+#: ./browser/context.pt:32
+#: ./browser/published.pt:30
+msgid "Class"
+msgstr "Classe"
+
+#: ./browser/context.pt:95
+msgid "Click to expand"
+msgstr "Clicca per espandere"
+
+#: ./browser/global.pt:85
+msgid "Configuration options"
+msgstr "Opzioni di configurazione"
+
+#: ./browser/request.pt:57
+msgid "Cookies"
+msgstr ""
+
+#: ./browser/global.pt:62
+msgid "Databases"
+msgstr ""
+
+#: ./browser/theme.pt:46
+msgid "Debug mode"
+msgstr "Modalità debug"
+
+#: ./browser/context.pt:80
+msgid "Default view"
+msgstr ""
+
+#: ./browser/published.pt:21
+msgid "Details"
+msgstr "Dettagli"
+
+#: ./browser/context.pt:102
+msgid "Documentation"
+msgstr "Documentazione"
+
+#: ./browser/theme.pt:19
+msgid "Enabled theme"
+msgstr "Tema attivo"
+
+#: ./browser/global.pt:39
+msgid "Environment"
+msgstr ""
+
+#: ./browser/interactive.pt:42
+msgid "Execute"
+msgstr "Esegui"
+
+#: ./browser/context.pt:45
+msgid "Factory type information"
+msgstr "Informazioni factory type"
+
+#: ./browser/published.pt:34
+msgid "File"
+msgstr ""
+
+#: ./browser/context.pt:103
+msgid "Filename"
+msgstr ""
+
+#: ./browser/user.pt:32
+msgid "Full name"
+msgstr "Nome completo"
+
+#: ./browser/user.pt:40
+msgid "Global roles"
+msgstr "Ruoli globali"
+
+#: ./browser/workflow.pt:49
+msgid "Granted"
+msgstr ""
+
+#: ./browser/user.pt:44
+msgid "Groups"
+msgstr "Gruppi"
+
+#: ./browser/global.pt:26
+msgid "IP"
+msgstr ""
+
+#: ./browser/context.pt:132
+msgid "Instance"
+msgstr "Istanza"
+
+#: ./browser/interactive.pt:21
+msgid "Interactive prompt"
+msgstr "Prompt interattivo"
+
+#: ./browser/request.pt:37
+msgid "Internal path"
+msgstr ""
+
+#: ./browser/theme.pt:90
+msgid "JavaScript composition"
+msgstr "Composizione JavaScript"
+
+#: ./browser/user.pt:36
+msgid "Local roles"
+msgstr "Ruoli locali"
+
+#: ./browser/global.pt:69
+msgid "Location"
+msgstr "Locazione"
+
+#: ./browser/context.pt:58
+msgid "Method aliases"
+msgstr "Gli alias del metodo"
+
+#: ./browser/context.pt:94
+msgid "Methods"
+msgstr "Metodi"
+
+#: ./browser/global.pt:68
+msgid "Mount point"
+msgstr "Punto di montaggio"
+
+#: ./browser/context.pt:123
+#: ./browser/global.pt:25
+#: ./browser/published.pt:26
+msgid "Name"
+msgstr "Nome"
+
+#: ./browser/context.pt:19
+msgid "Object"
+msgstr "Oggetto"
+
+#: ./browser/versions.pt:25
+msgid "Packages"
+msgstr "Pacchetti"
+
+#: ./browser/context.pt:28
+msgid "Path"
+msgstr ""
+
+#: ./browser/workflow.pt:35
+msgid "Permission matrix"
+msgstr "Matrice dei permessi"
+
+#: ./browser/global.pt:27
+msgid "Port"
+msgstr "Porta"
+
+#: ./browser/context.pt:50
+msgid "Portal type"
+msgstr ""
+
+#: ./browser/context.pt:131
+msgid "Primitive"
+msgstr ""
+
+#: ./browser/global.pt:52
+msgid "Process"
+msgstr "Processo"
+
+#: ./browser/theme.pt:47
+msgid "Production mode"
+msgstr "Modalità di produzione"
+
+#: ./browser/context.pt:36
+msgid "Provided interfaces"
+msgstr "Interfacce fornite"
+
+#: ./browser/global.pt:48
+msgid "Python version"
+msgstr "Versione di Python"
+
+#: ./browser/request.pt:33
+msgid "Query string"
+msgstr "Stringa di query"
+
+#: ./browser/request.pt:83
+msgid "Request environment"
+msgstr ""
+
+#: ./browser/request.pt:70
+msgid "Request headers"
+msgstr "Intestazioni della request"
+
+#: ./browser/request.pt:44
+msgid "Request variables"
+msgstr "Variabili della request"
+
+#: ./browser/response.pt:19
+msgid "Response headers"
+msgstr "Intestazioni della response"
+
+#: ./browser/global.pt:56
+msgid "Running for"
+msgstr "In esecuzione da"
+
+#: ./browser/global.pt:20
+msgid "Servers"
+msgstr ""
+
+#: ./browser/context.pt:101
+msgid "Signature"
+msgstr "Firma"
+
+#: ./browser/global.pt:70
+msgid "Size"
+msgstr "Dimensione"
+
+#: ./browser/theme.pt:28
+msgid "Skin layers"
+msgstr ""
+
+#: ./browser/interactive.pt:46
+msgid "TALES tester"
+msgstr ""
+
+#: ./browser/context.pt:149
+msgid "Template"
+msgstr ""
+
+#: ./browser/theme.pt:34
+msgid "Theme layer"
+msgstr ""
+
+#: ./browser/theme.pt:24
+msgid "Theme name"
+msgstr "Nome del tema"
+
+#: ./browser/response.pt:15
+msgid "This panel shows information about the HTTP response"
+msgstr "Questo pannello mostra le informazioni sulla response HTTP"
+
+#: ./browser/global.pt:16
+msgid "This panel shows information about the Zope server where Plone is running."
+msgstr "Questo pannello mostra informazioni sul server Zope su cui Plone è in esecuzione."
+
+#: ./browser/context.pt:15
+msgid "This panel shows information about the context object"
+msgstr "Questo pannello mostra le informazioni sul oggetto di contesto"
+
+#: ./browser/theme.pt:15
+msgid "This panel shows information about the current theme"
+msgstr "Questo pannello mostra le informazioni sul tema corrente"
+
+#: ./browser/user.pt:15
+msgid "This panel shows information about the currently logged in user, if any."
+msgstr "Questo pannello mostra le informazioni sul utente attualmente loggato, se disponibile."
+
+#: ./browser/published.pt:16
+msgid "This panel shows information about the published object. This is usually a view or a legacy page template."
+msgstr "Questo pannello mostra le informazioni sul oggetto pubblicato. Questo è di solito una vista o un vecchio page template."
+
+#: ./browser/request.pt:18
+msgid "This panel shows information about the request that rendered the current page. Depending on the type of request, you will find information about the URL and path, request headers, and form/query string variables."
+msgstr "Questo pannello mostra le informazioni sulla request che ha generato la pagina corrente. A seconda del tipo di request, si potranno trovare informazioni sul URL e il path, sulle intestazioni della request, e variabili di stringa di form/query."
+
+#: ./browser/versions.pt:20
+msgid "This panel shows information about the versions of all Python package distributions known to Zope."
+msgstr "Questo pannello mostra le informazioni sulle versioni di tutte le distribuzioni di pacchetti Python utilizzati da Zope"
+
+#: ./browser/workflow.pt:15
+msgid "This panel shows information about the workflow and security of the current item."
+msgstr "Questo pannello mostra le informazioni sul workflow e sulla sicurezza dell'elemento corrente."
+
+#: ./browser/context.pt:54
+msgid "Title"
+msgstr "Titolo"
+
+#: ./browser/context.pt:24
+#: ./browser/request.pt:24
+msgid "URL"
+msgstr ""
+
+#: ./browser/interactive.pt:14
+msgid "Use the Python interpreter line below to introspect and interact with the context. The variables <code>context</code>, <code>request</code>, <code>portal</code> and <code>app</code> are available."
+msgstr "Utilizza la linea interprete Python qui sotto per fare introspezione e per interagire con il contesto. Sono disponibili le variabili <code>context</code>, <code>request</code>, <code>portal</code> e <code>app</code>"
+
+#: ./browser/interactive.pt:48
+msgid "Use the command line below to test TALES expressions. The variables <code>context</code>, <code>request</code>, <code>portal</code> and <code>folder</code>, <code>portal_state</code> and <code>context_state</code> are available."
+msgstr "Utilizza la linea di comando qui sotto per testare le espressioni TALES. Sono disponibili le variabili <code>context</code>, <code>request</code>, <code>portal</code> and <code>folder</code>, <code>portal_state</code> e <code>context_state</code>"
+
+#: ./browser/user.pt:19
+msgid "User details"
+msgstr "Dettagli utente"
+
+#: ./browser/user.pt:24
+msgid "User id"
+msgstr "Id utente"
+
+#: ./browser/user.pt:28
+msgid "User name"
+msgstr ""
+
+#: ./browser/context.pt:124
+#: ./browser/global.pt:91
+msgid "Value"
+msgstr "Valore"
+
+#: ./browser/context.pt:116
+msgid "Variables"
+msgstr "Variabili"
+
+#: ./browser/versions.pt:31
+msgid "Version"
+msgstr "Versione"
+
+#: ./browser/context.pt:84
+msgid "View methods"
+msgstr "Metodi view"
+
+#: ./browser/context.pt:140
+msgid "Views"
+msgstr "Viste"
+
+#: ./browser/workflow.pt:20
+msgid "Workflow information"
+msgstr "Informazioni sul workflow"
+
+#: ./browser/workflow.pt:29
+msgid "Workflow name(s)"
+msgstr "Nome(i) del workflow"
+
+#: ./browser/workflow.pt:25
+msgid "Workflow state(s)"
+msgstr "Stati del workflow"
+
+#: ./browser/global.pt:44
+msgid "Zope version"
+msgstr "Versione di Zope"
+
+#. Default: "restricted to authenticated users"
+#: ./browser/theme.pt:59
+msgid "auth_only"
+msgstr "riservato agli utenti autenticati"
+
+#. Default: "&uarr; Close"
+#: ./browser/toolbar.pt:14
+msgid "debug_toolbar_close"
+msgstr "&uarr; Chiudi"
+
+#. Default: "Context <small>object</small> ${context_name}"
+#: ./browser/context.pt:10
+msgid "debug_toolbar_context_title"
+msgstr "Contesto <small>oggetto</small> ${context_name}"
+
+#. Default: "Debug mode"
+#: ./browser/global.pt:10
+msgid "debug_toolbar_global_debug_mode"
+msgstr "Modalità Debug"
+
+#. Default: "Production mode"
+#: ./browser/global.pt:11
+msgid "debug_toolbar_global_prod_mode"
+msgstr "Modalità Produzione"
+
+#. Default: "Zope <small>global settings</small>"
+#: ./browser/global.pt:9
+msgid "debug_toolbar_global_title"
+msgstr "Zope <small>impostazioni globali</small>"
+
+#. Default: "Interactive <small>introspection</small>"
+#: ./browser/interactive.pt:8
+msgid "debug_toolbar_interactive_title"
+msgstr "Interattivo <small>introspezione</small>"
+
+#. Default: "<strong>Warning:</strong> It is possible to do considerable damage using this interactive prompt. Please use with caution and do not install on a production server. Only one session is allowed per user. If you open a new window or tab, the variables saved in this session will be cleared. Since the interactive scope is saved at process level, you may get erratic results if you are using this against multiple load-balanced Zope instances."
+#: ./browser/interactive.pt:24
+msgid "debug_toolbar_interactive_warning"
+msgstr "<strong>Attenzione:</strong> E' possibile danneggiare seriamente il sito utilizzando questo prompt. Si prega di usare cautela e di non installare questo prodotto su server di produzione. E' permessa solo una sessione per ogni utente. Se si apre una nuova finestra o tab, le variabili salvate in questa sessione verranno cancellate. Siccome lo scope interattivo è salvato a livello di processo, è possibile ricevere risultati errati se si sta utilizzando questo prompt su istanze multiple di Zope in load-balacing."
+
+#. Default: "Published <small>view or object</small> ${view_name}"
+#: ./browser/published.pt:11
+msgid "debug_toolbar_published_title"
+msgstr "Published <small>vista o oggetto</small> ${view_name}"
+
+#. Default: "Request <small>that rendered this page</small>"
+#: ./browser/request.pt:9
+msgid "debug_toolbar_request_title"
+msgstr "Request <small>che ha generato questa pagina</small>"
+
+#. Default: "Response <small>returned to the browser</small> ${method}"
+#: ./browser/response.pt:10
+msgid "debug_toolbar_response_title"
+msgstr "Response <small>restituita al browser</small> ${method}"
+
+#. Default: "Theme <small>in use</small> ${method}"
+#: ./browser/theme.pt:10
+msgid "debug_toolbar_theme_title"
+msgstr "Tema <small>in uso</small> ${method}"
+
+#. Default: "Debug information"
+#: ./browser/toolbar.pt:13
+msgid "debug_toolbar_title"
+msgstr "Informazioni di debug"
+
+#. Default: "&darr; Debug"
+#: ./browser/toolbar.pt:8
+msgid "debug_toolbar_trigger"
+msgstr ""
+
+#. Default: "Upgrade pending"
+#: ./browser/versions.pt:14
+msgid "debug_toolbar_upgrade_pending"
+msgstr "Aggiornamento disponibile"
+
+#. Default: "User <small>information</small> ${user_name}"
+#: ./browser/user.pt:10
+msgid "debug_toolbar_user_title"
+msgstr "Utente <small>informazioni</small> ${user_name}"
+
+#. Default: "Versions <small>of installed packages</small>"
+#: ./browser/versions.pt:9
+msgid "debug_toolbar_versions_titlev"
+msgstr "Versioni <small>dei pacchetti installati</small>"
+
+#. Default: "Workflow <small>and security</small> ${method}"
+#: ./browser/workflow.pt:10
+msgid "debug_toolbar_workflow_title"
+msgstr "Workflow <small>e sicurezza</small> ${method}"
+
+#. Default: "(resource not found or not accessible)"
+#: ./browser/theme.pt:80
+msgid "resource_not_found"
+msgstr "(risorsa non trovata o non accessibile)"
+

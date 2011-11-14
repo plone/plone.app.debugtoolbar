@@ -1,11 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
 <h2 class="debug-toolbar-header" id="debug-toolbar-user" i18n:translate="debug_toolbar_user_title">
     User <small>information</small>
-    <span tal:condition="view/user/getUserName | nothing" class="label success" tal:content="view/user/getUserName" />
+    <span tal:condition="view/user/getUserName | nothing" i18n:name="user_name" class="label success" tal:content="view/user/getUserName" />
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-user-body">
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         This panel shows information about the currently logged in user, if any.
     </p>
 
@@ -41,3 +48,4 @@
     </table>    
 
 </div>
+</html>

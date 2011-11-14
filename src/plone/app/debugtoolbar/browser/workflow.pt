@@ -1,3 +1,10 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
 <h2 class="debug-toolbar-header" id="debug-toolbar-workflow" i18n:translate="debug_toolbar_workflow_title">
     Workflow <small>and security</small>
     <span tal:condition="view/workflowStatus" id="debug-toolbar-workflow-status" i18n:name="method" class="label success" tal:content="view/workflowStatus" />
@@ -5,7 +12,7 @@
 
 <div class="debug-toolbar-body" id="debug-toolbar-workflow-body">
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         This panel shows information about the workflow and security
         of the current item.
     </p>
@@ -32,7 +39,7 @@
             <tr>
                 <th i18n:translate="">Name</th>
                 <th i18n:translate="">Acquire</th>
-                <th tal:repeat="role view/roles" tal:content="role" />
+                <th tal:repeat="role view/roles" tal:content="role" i18n:translate="" i18n:domain="plone"/>
             </tr>
         </thead>
         <tbody>
@@ -52,3 +59,4 @@
 
 
 </div>
+</html>

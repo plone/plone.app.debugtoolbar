@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0a3 (unreleased)
+------------------
+
+- completed i18n support and added it translation 
+  [giacomos]
+
 1.0a2 (13/11/2011)
 ------------------
 

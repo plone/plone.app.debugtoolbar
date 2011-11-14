@@ -1,12 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
 <tal:block condition="nocall:view/published">
 <h2 class="debug-toolbar-header" id="debug-toolbar-published" i18n:translate="debug_toolbar_published_title">
     Published <small>view or object</small>
-    <span tal:condition="view/name" class="label success" tal:content="view/name" />
+    <span tal:condition="view/name" i18n:name="view_name" class="label success" tal:content="view/name" />
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-published-body">
 
-    <p class="debug-toolbar-help">
+    <p class="debug-toolbar-help" i18n:translate="">
         This panel shows information about the published object. This is
         usually a view or a legacy page template.
     </p>
@@ -34,3 +41,4 @@
 
 </div>
 </tal:block>
+</html>

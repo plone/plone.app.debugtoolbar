@@ -1,5 +1,14 @@
-<h2 class="debug-toolbar-header" id="debug-toolbar-versions" i18n:translate="debug_toolbar_versions_title">
-    Versions <small>of installed packages</small>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
+<h2 class="debug-toolbar-header" id="debug-toolbar-versions" >
+    <span tal:omit-tag="" i18n:translate="debug_toolbar_versions_titlev">
+        Versions <small>of installed packages</small>
+    </span>
     <span tal:condition="view/ploneVersion" class="label success" tal:content="view/ploneVersion" />
     <span tal:condition="view/needUpgrading" class="label important">
         <a tal:attributes="href string:${context/portal_url}/@@plone-upgrade" i18n:translate="debug_toolbar_upgrade_pending">Upgrade pending</a>
@@ -8,8 +17,8 @@
 
 <div class="debug-toolbar-body" id="debug-toolbar-versions-body">
 
-    <p class="debug-toolbar-help">
-        This panel shows information about the vesrions of all Python package
+    <p class="debug-toolbar-help" i18n:translate="">
+        This panel shows information about the versions of all Python package
         distributions known to Zope.
     </p>
 
@@ -31,3 +40,4 @@
     </table>
 
 </div>
+</html>
