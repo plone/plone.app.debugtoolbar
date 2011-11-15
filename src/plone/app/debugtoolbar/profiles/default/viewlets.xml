@@ -11,5 +11,5 @@
   <viewlet name="plone.app.debugtoolbar.workflow"/>
   <viewlet name="plone.app.debugtoolbar.global"/>
   <viewlet name="plone.app.debugtoolbar.versions"/>
- </order>>
+ </order>
 </object>
