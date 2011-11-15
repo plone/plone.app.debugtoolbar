@@ -17,7 +17,20 @@
       directory="profiles/default"
       description="Development tools for Plone"
       provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title gs_profiles_default_title;
+                       description gs_profiles_default_description;"
       />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Plone debug toolbar Uninstall Profile"
+      directory="profiles/uninstall"
+      description="Removes Development tools for Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title gs_profiles_uninstall_title;
+                       description gs_profiles_uninstall_description;"
+      />
+
   <!-- -*- extra stuff goes here -*- -->
   
   <adapter

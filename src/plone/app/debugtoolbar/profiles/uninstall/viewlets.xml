@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<object>
+ <hidden manager="plone.debugtoolbar" skinname="*">
+  <viewlet name="plone.app.debugtoolbar.context"/>
+  <viewlet name="plone.app.debugtoolbar.interactive"/>
+  <viewlet name="plone.app.debugtoolbar.request"/>
+  <viewlet name="plone.app.debugtoolbar.response"/>
+  <viewlet name="plone.app.debugtoolbar.published"/>
+  <viewlet name="plone.app.debugtoolbar.theme"/>
+  <viewlet name="plone.app.debugtoolbar.user"/>
+  <viewlet name="plone.app.debugtoolbar.workflow"/>
+  <viewlet name="plone.app.debugtoolbar.global"/>
+  <viewlet name="plone.app.debugtoolbar.versions"/>
+ </hidden>
+</object>
