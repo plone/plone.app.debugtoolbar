@@ -33,9 +33,12 @@
                 <td><code tal:content="string:${view/cls/__module__}.${view/cls/__name__}" /></td>
             </tr>
             <tr>
-                <td i18n:translate="">Provided interfaces</td>
+                <td i18n:translate="">Provided interfaces<br /><em>(*) Marker interfaces</em></td>
                 <td>
-                    <div tal:repeat="interface view/provided"><code tal:content="interface/__identifier__" /></div>
+                  <div tal:repeat="interface view/provided">
+                    <code tal:condition="interface/is_marker">(*)</code>
+                    <code tal:content="interface/dottedname" />
+                  </div>
                 </td>
             </tr>
         </tbody>
@@ -152,7 +155,7 @@
         <tbody>
             <tr tal:repeat="v view/views">
                 <td><code tal:content="v/name" /></td>
-                
+
                 <td tal:condition="nocall:v/class"><code tal:content="string:${v/class/__module__}.${v/class/__name__}" /></td>
                 <td tal:condition="not:nocall:v/class"></td>
 

@@ -4,7 +4,13 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
-- completed i18n support and added it translation 
+- Emphasize marker interfaces in context view
+  [glenfant]
+
+- Provide same variables as in portal_actions in TAL tests
+  [glenfant]
+
+- completed i18n support and added it translation
   [giacomos]
 
 1.0a2 (13/11/2011)

@@ -2,7 +2,7 @@ import types
 import inspect
 
 from zope.interface import Interface
-from zope.interface import providedBy
+from zope.interface import providedBy, directlyProvidedBy
 from zope.component import getAdapters
 from zope.publisher.interfaces import IView
 from zope.viewlet.viewlet import ViewletBase
@@ -15,7 +15,7 @@ from Products.Five.browser.metaconfigure import ViewMixinForTemplates
 class ContextViewlet(ViewletBase):
 
     def update(self):
-        
+
         self.path = '/'.join(self.context.getPhysicalPath())
         self.cls = self.context.__class__
 
@@ -25,18 +25,21 @@ class ContextViewlet(ViewletBase):
         if IDynamicType.providedBy(self.context):
             self.fti = self.context.getTypeInfo()
             self.methodAliases = sorted(self.fti.getMethodAliases().items())
-        
+
         self.defaultView = None
         self.viewMethods = []
         if IDynamicViewTypeInformation.providedBy(self.fti):
             self.defaultView = self.fti.defaultView(self.context)
             self.viewMethods = self.fti.getAvailableViewMethods(self.context)
-        
+
+        directly_provided = directlyProvidedBy(self.context)
         self.provided = list(providedBy(self.context).flattened())
         self.provided.sort(key=lambda i: i.__identifier__)
-
+        self.provided = ({'dottedname': i.__identifier__,
+                          'is_marker': i in directly_provided}
+                          for i in self.provided)
         self.views = []
-        
+
         generator = getAdapters((self.context, self.request,), Interface)
         while True:
             try:
@@ -60,7 +63,7 @@ class ContextViewlet(ViewletBase):
 
                 # Deal with silly Five metaclasses
                 if (
-                    module == 'Products.Five.metaclass' and 
+                    module == 'Products.Five.metaclass' and
                     len(cls.__bases__) > 0
                 ):
                     cls = cls.__bases__[0]
@@ -77,7 +80,7 @@ class ContextViewlet(ViewletBase):
             except:
                 # Some adapters don't initialise cleanly
                 pass
-        
+
         self.views.sort(key=lambda v: v['name'])
 
         self.methods = []
@@ -88,7 +91,8 @@ class ContextViewlet(ViewletBase):
             attr = getattr(aq_base(self.context), name, _marker)
             if attr is _marker:
                 continue
-            
+
+            # FIXME: Should we include ComputedAttribute here ? [glenfant]
             if isinstance(attr, (int, long, float, basestring, bool, list, tuple, dict, set, frozenset)):
                 self.variables.append({
                     'name': name,
@@ -99,7 +103,7 @@ class ContextViewlet(ViewletBase):
                 isinstance(attr, (types.MethodType, types.BuiltinFunctionType, types.BuiltinMethodType, types.FunctionType)) or
                 attr.__class__.__name__ == 'method-wrapper',
             ):
-                
+
                 source = None
                 try:
                     source = inspect.getsourcefile(attr)
