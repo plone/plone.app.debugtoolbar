@@ -109,10 +109,10 @@ jQuery(function($) {
             var $res = $(this).closest('.debug-toolbar-body').find('code:contains("'+$input.val()+'")');
             if($res.size()){
                 // drop all previous results
-                $('.search-result-wrapper').remove();
+                $('.search-result-wrapper > a').remove();
+                $('.search-result-wrapper code').unwrap();
                 // look for results
                 $res.each(function(i){
-                    console.log(this);
                     var $this = $(this);
                     if($this.closest('.debug-toolbar-section-body').is(':hidden')){
                         // collapsed section
