@@ -102,6 +102,52 @@ jQuery(function($) {
             $('#' + $(this).attr('id') + '-body').toggle('fade');
         });
 
+        // Section search
+        $('.search-section button').click(function(){
+            var $input = $(this).prev('input[type="text"]');
+            // find
+            var $res = $(this).closest('.debug-toolbar-body').find('code:contains("'+$input.val()+'")');
+            if($res.size()){
+                // drop all previous results
+                $('.search-result-wrapper').remove();
+                // look for results
+                $res.each(function(i){
+                    console.log(this);
+                    var $this = $(this);
+                    if($this.closest('.debug-toolbar-section-body').is(':hidden')){
+                        // collapsed section
+                        $this.closest('.debug-toolbar-section-body').show();
+                    }
+                    $this.wrap('<div class="search-result-wrapper" style="background:green;color:#fff;padding:4px"/>');
+                    // add search link
+                    $('.search-result-links a.search').clone().appendTo($this.parent())    
+                    .click(function(){
+                        $('html, body').animate({scrollTop: $input.offset().top}, 1000);
+                        return false;
+                    });
+                    if($res.size()>1 && i>0){
+                        // add next link
+                        $('.search-result-links a.prev').clone().appendTo($this.parent())
+                        .click(function(){
+                            $('html, body').animate({scrollTop: $($res.get(i-1)).offset().top}, 1000);
+                        });
+                    }
+                    if($res.size()>1 && !($res.size()-1==i)){
+                        // add next link
+                        $('.search-result-links a.next').clone().appendTo($this.parent())
+                        .click(function(){
+                            $('html, body').animate({scrollTop: $($res.get(i+1)).offset().top}, 1000);
+                        });
+                    }
+                });
+                // go to 1st result
+                $('html, body').animate({scrollTop: $res.offset().top}, 2000);
+                $input.css({'border':'1px solid green'});
+            }else{
+                $input.css({'border':'1px solid red'});
+            }
+        });
+
         // Interactive debug panel
         var prompt = new InteractivePrompt("#debug-toolbar-interactive-out");
         $("#debug-toolbar-interactive-input-submit").click(function () {

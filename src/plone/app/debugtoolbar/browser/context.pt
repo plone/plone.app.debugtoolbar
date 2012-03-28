@@ -11,6 +11,8 @@
 </h2>
 
 <div class="debug-toolbar-body" id="debug-toolbar-context-body">
+    
+    <metal:search use-macro="context/@@plone.debugtoolbar.macros/search-section" />
 
     <p class="debug-toolbar-help" i18n:translate="">
         This panel shows information about the context object

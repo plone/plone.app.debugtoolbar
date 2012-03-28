@@ -1,0 +1,24 @@
+<metal:search define-macro="search-section">
+	<div class="search-result-links" style="display:none">
+		<a style="cursor:pointer;padding-left:10px;"
+		   class="search"
+		   i18n:translate="">search again
+		</a> |
+		<a style="cursor:pointer;padding-left:10px;"
+		   class="prev"
+		   i18n:translate="">prev
+		</a> |
+		<a style="cursor:pointer;padding-left:10px;"
+		   class="next"
+		   i18n:translate="">next
+		</a>
+	</div>
+
+	<div class="search-section" style="display:inline-block">
+		<span class="label" i18n:translate="">
+			Search section:
+		</span>
+		<input type="text" name="q" />
+		<button>search</button>
+	</div>
+</metal:search>
