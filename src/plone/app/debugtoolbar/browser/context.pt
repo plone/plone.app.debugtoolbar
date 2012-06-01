@@ -108,7 +108,12 @@
         </thead>
         <tbody>
             <tr tal:repeat="method view/methods">
-                <td><code tal:content="method/signature" /></td>
+                <td>
+                  <code tal:content="method/signature" />
+                  <tal:has_security tal:condition="method/secu_infos|nothing">
+                    <br /><span tal:content="method/secu_infos" />
+                  </tal:has_security>
+                </td>
                 <td tal:content="method/help" />
                 <td><code tal:content="method/filename" /></td>
             </tr>

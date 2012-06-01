@@ -105,22 +105,35 @@ class ContextViewlet(ViewletBase):
             ):
 
                 source = None
-                try:
-                    source = inspect.getsourcefile(attr)
-                except TypeError:
-                    None
+                if name.endswith('__roles__'):
+                    # name without '__roles__' is the last in self.methods since we're in a sorted(...) loop
+                    if callable(attr):
+                        secu_infos = attr()
+                    else:
+                        secu_infos = attr
+                    if secu_infos is None:
+                        secu_label = 'Public'
+                    else:
+                        secu_label = 'Roles: ' + ', '.join([r for r in secu_infos[:-1]])
+                        secu_label += '. Permission: ' + secu_infos[-1][1:-11]  # _x_Permission -> x
+                    self.methods[-1]['secu_infos'] = secu_label
+                else:
+                    try:
+                        source = inspect.getsourcefile(attr)
+                    except TypeError:
+                        None
 
-                signature = name + "()"
-                try:
-                    signature = name + inspect.formatargspec(*inspect.getargspec(attr))
-                except TypeError:
-                    pass
+                    signature = name + "()"
+                    try:
+                        signature = name + inspect.formatargspec(*inspect.getargspec(attr))
+                    except TypeError:
+                        pass
 
-                self.methods.append({
-                    'signature': signature,
-                    'filename': source,
-                    'help': inspect.getdoc(attr),
-                })
+                    self.methods.append({
+                        'signature': signature,
+                        'filename': source,
+                        'help': inspect.getdoc(attr),
+                    })
             else:
                 self.variables.append({
                     'name': name,

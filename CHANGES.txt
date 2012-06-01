@@ -4,6 +4,10 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
+- Removed 'xxx__roles__' methods from Context / Methods viewlet and added
+  roles + permission for each method when available.
+  [glenfant]
+
 - Emphasize marker interfaces in context view
   [glenfant]
 
