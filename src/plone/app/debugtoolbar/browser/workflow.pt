@@ -34,7 +34,7 @@
 
     <h3 i18n:translate="">Permission matrix</h3>
 
-    <table class="zebra-striped">
+    <table class="zebra-striped condensed-table bordered-table">
         <thead>
             <tr>
                 <th i18n:translate="">Name</th>

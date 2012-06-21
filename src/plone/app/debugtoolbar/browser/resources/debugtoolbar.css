@@ -276,12 +276,17 @@
   padding: 0;
   font-size: 13px;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 #debug-toolbar table th,
 #debug-toolbar table td {
   padding: 10px 10px 9px;
   line-height: 18px;
   text-align: left;
+}
+#debug-toolbar table td.mark {
+  text-align: center;
+  vertical-align: middle;
 }
 #debug-toolbar table th {
   padding-top: 9px;
