@@ -7,6 +7,12 @@ Changelog
 - completed i18n support and added it translation 
   [giacomos]
 
+- replace checkboxes with mark symbols in permission matrix
+  [gaudenz]
+
+- permission matrix display improvements
+  [gaudenz]
+
 1.0a2 (13/11/2011)
 ------------------
 
