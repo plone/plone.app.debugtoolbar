@@ -4,6 +4,9 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
+- added Spanish translation and Uninstall GenericSetup profile
+  [macagua]
+
 - completed i18n support and added it translation 
   [giacomos]
 
