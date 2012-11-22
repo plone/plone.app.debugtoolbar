@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <object>
- <order manager="plone.debugtoolbar" skinname="*">
+ <hidden manager="plone.debugtoolbar" skinname="*">
   <viewlet name="plone.app.debugtoolbar.context"/>
   <viewlet name="plone.app.debugtoolbar.interactive"/>
   <viewlet name="plone.app.debugtoolbar.request"/>
@@ -11,5 +11,5 @@
   <viewlet name="plone.app.debugtoolbar.workflow"/>
   <viewlet name="plone.app.debugtoolbar.global"/>
   <viewlet name="plone.app.debugtoolbar.versions"/>
- </order>
+ </hidden>
 </object>
