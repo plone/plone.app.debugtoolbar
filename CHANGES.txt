@@ -4,6 +4,9 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
+- add reload panel
+  [vangheem]
+
 - added Spanish translation and Uninstall GenericSetup profile
   [macagua]
 

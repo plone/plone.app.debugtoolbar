@@ -132,5 +132,14 @@
         permission="cmf.ManagePortal"
         layer=".interfaces.IDebugToolbarLayer"
         />
+
+    <browser:viewlet
+        name="plone.app.debugtoolbar.reload"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".reload.ReloadViewlet"
+        template="reload.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
     
 </configure>
