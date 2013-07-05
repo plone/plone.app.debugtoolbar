@@ -4,7 +4,11 @@ Changelog
 1.0dev (unreleased)
 -------------------
 
-- Nothing changed yet
+- Fix themelayer. Use IBrowserSkinType instead of generic 
+  Interface which can return an real utility instead of an
+  iface and broke the page rendering. Skin Layer must inherits
+  from IBrowserSkinType
+  [toutpt]
 
 1.0a3 (2013-02-06)
 ------------------

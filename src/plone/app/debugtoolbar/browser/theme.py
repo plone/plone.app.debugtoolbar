@@ -2,8 +2,10 @@ from zope.interface import Interface
 from zope.interface import directlyProvidedBy
 from zope.component import queryUtility
 from zope.viewlet.viewlet import ViewletBase
+from zope.publisher.interfaces.browser import IBrowserSkinType
 
 from Products.CMFCore.utils import getToolByName
+
 
 class ThemeViewlet(ViewletBase):
 
@@ -23,7 +25,7 @@ class ThemeViewlet(ViewletBase):
         self.skinPaths = dict(skins.getSkinPaths()).get(self.themeName, '').split(',')
 
         # Browser layers
-        self.themeLayer = queryUtility(Interface, name=self.themeName)
+        self.themeLayer = queryUtility(IBrowserSkinType, name=self.themeName)
         self.layers = list(directlyProvidedBy(self.request).flattened())
 
         # CSS/JS composition
