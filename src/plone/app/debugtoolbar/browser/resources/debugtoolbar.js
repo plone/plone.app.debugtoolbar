@@ -168,7 +168,16 @@ jQuery(function($) {
             }
         });
 
-
+        $('#debug-toolbar-reload-body form').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: 'POST',
+                success: function(){
+                    window.location.reload();
+                }
+            });
+        });
     });
 
 });

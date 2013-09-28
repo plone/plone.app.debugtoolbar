@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
+<h2 class="debug-toolbar-header" id="debug-toolbar-reload">
+    <span i18n:translate="debug_toolbar_reload_title">
+        Reload
+    </span>
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-reload-body">
+
+    <p class="debug-toolbar-help" i18n:translate="">
+        This panel shows allows you to quickly reload code, zcml, js, css.
+    </p>
+
+    <tal:canreload tal:condition="view/reload_installed">
+        <form method="POST" tal:attributes="action view/code_url">
+            <input type="submit" value="Reload Code" />
+        </form>
+        <form method="POST" tal:attributes="action view/zcml_url">
+            <input type="submit" value="Reload ZCML" />
+        </form>
+    </tal:canreload>
+
+    <form method="POST" tal:attributes="action view/js_url">
+        <input type="submit" value="Reload JavaScript" />
+    </form>
+    <form method="POST" tal:attributes="action view/css_url">
+        <input type="submit" value="Reload CSS" />
+    </form>
+</div>
+</html>
