@@ -3,8 +3,17 @@ Changelog
 
 1.0dev (unreleased)
 -------------------
+- Removed 'xxx__roles__' methods from Context / Methods viewlet and added
+  roles + permission for each method when available.
+  [glenfant]
 
-- Fix themelayer. Use IBrowserSkinType instead of generic 
+- Emphasize marker interfaces in context view
+  [glenfant]
+
+- Provide same variables as in portal_actions in TAL tests
+  [glenfant]
+
+- Fix themelayer. Use IBrowserSkinType instead of generic
   Interface which can return an real utility instead of an
   iface and broke the page rendering. Skin Layer must inherits
   from IBrowserSkinType
@@ -13,13 +22,15 @@ Changelog
 1.0a3 (2013-02-06)
 ------------------
 
+- completed i18n support and added it translation
+
 - add reload panel
   [vangheem]
 
 - added Spanish translation and Uninstall GenericSetup profile
   [macagua]
 
-- completed i18n support and added it translation 
+- completed i18n support and added it translation
   [giacomos]
 
 - replace checkboxes with mark symbols in permission matrix

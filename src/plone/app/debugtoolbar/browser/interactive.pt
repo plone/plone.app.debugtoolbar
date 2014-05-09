@@ -1,35 +1,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="plone.app.debugtoolbar"
-    tal:omit-tag="">
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone.app.debugtoolbar"
+      tal:omit-tag="">
 
-<h2 class="debug-toolbar-header" id="debug-toolbar-interactive" i18n:translate="debug_toolbar_interactive_title">
+  <h2 class="debug-toolbar-header" id="debug-toolbar-interactive" i18n:translate="debug_toolbar_interactive_title">
     Interactive <small>introspection</small>
-</h2>
+  </h2>
 
-<div class="debug-toolbar-body" id="debug-toolbar-interactive-body">
+  <div class="debug-toolbar-body" id="debug-toolbar-interactive-body">
 
     <p class="debug-toolbar-help" i18n:translate="">
-        Use the Python interpreter line below to introspect
-        and interact with the context. The variables
-        <code>context</code>, <code>request</code>, <code>portal</code>
-        and <code>app</code> are available.
+      Use the Python interpreter line below to introspect and interact with the
+      context. The variables
+      <code>context</code>, <code>request</code>, <code>portal</code>
+      and <code>app</code> are available.
     </p>
 
     <h3 i18n:translate="">Interactive prompt</h3>
 
     <div class="alert-message warning">
-        <p i18n:translate="debug_toolbar_interactive_warning">
-        <strong>Warning:</strong> 
-        It is possible to do considerable damage using this interactive 
+      <p i18n:translate="debug_toolbar_interactive_warning">
+        <strong>Warning:</strong>
+        It is possible to do considerable damage using this interactive
         prompt. Please use with caution and do not install on a production
         server.  Only one session is allowed per user. If you open a new window
         or tab, the variables saved in this session will be cleared. Since the
         interactive scope is saved at process level, you may get erratic results
         if you are using this against multiple load-balanced Zope instances.
-        </p>
+      </p>
     </div>
 
     <div class="debug-toolbar-out" id="debug-toolbar-interactive-out">
@@ -37,30 +37,37 @@
 
     <div class="debug-toolbar-interactive-prompt">
 
-        <code>&gt;&gt;&gt;</code>
-        <input type="text" id="debug-toolbar-interactive-input" />
-        <button id="debug-toolbar-interactive-input-submit" i18n:translate="">Execute</button>
+      <code>&gt;&gt;&gt;</code>
+      <input type="text" id="debug-toolbar-interactive-input" />
+      <button id="debug-toolbar-interactive-input-submit" i18n:translate="">Execute</button>
 
     </div>
 
     <h3 i18n:translate="">TALES tester</h3>
 
     <p class="debug-toolbar-help" i18n:translate="">
-        Use the command line below to test TALES expressions. The variables
-        <code>context</code>, <code>request</code>, <code>portal</code> and
-        <code>folder</code>, <code>portal_state</code> and <code>context_state</code>
-        are available.
+      Use the command line below to test TALES expressions. The same variables
+      as in the Plone Actions tool (portal_actions)
+      <code>context</code> (with aliases (<code>object</code> and <code>here</code>,
+      <code>object_url</code>, <code>folder</code>, <code>folder_url</code>,
+      <code>portal</code>, <code>portal_url</code>, <code>nothing</code>,
+      <code>request</code>, <code>modules</code>, <code>member</code>,
+      <code>globals_view</code>, <code>plone_portal_state</code>,
+      <code>plone_context_state</code>, <code>plone_tools</code>,
+      <code>checkPermission</code> are available. Be warned
+      that <code>request</code> is a new request for the TALES tester, and not
+      the request object for this page.
     </p>
 
     <div class="debug-toolbar-interactive-prompt">
 
-        <input type="text" id="debug-toolbar-tales-input" />
-        <button id="debug-toolbar-tales-input-submit" i18n:translate="">Execute</button>
+      <input type="text" id="debug-toolbar-tales-input" />
+      <button id="debug-toolbar-tales-input-submit" i18n:translate="">Execute</button>
 
     </div>
 
     <div class="debug-toolbar-out" id="debug-toolbar-tales-out">
     </div>
 
-</div>
+  </div>
 </html>
