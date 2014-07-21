@@ -41,7 +41,7 @@ InteractivePrompt.prototype.submit = function(line) {
         function(data) {
             if(data != '') {
                 jQuery(out).append(data);
-                jQuery(out).animate({ scrollTop: jQuery(out).attr('scrollHeight') }, "fast");
+                jQuery(out).animate({ scrollTop: jQuery(out).prop('scrollHeight') }, "fast");
             }
         }
     );
