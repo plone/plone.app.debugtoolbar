@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0dev (unreleased)
--------------------
+1.0 (2014-08-13)
+----------------
 
 - Fix ``scrollHeight`` for the interactive prompt for jQuery 1.7+. Now,
   executing code jumps again to the latest prompt message.
@@ -23,6 +23,7 @@ Changelog
   iface and broke the page rendering. Skin Layer must inherits
   from IBrowserSkinType
   [toutpt]
+
 
 1.0a3 (2013-02-06)
 ------------------
