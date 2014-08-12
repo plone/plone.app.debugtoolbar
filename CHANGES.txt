@@ -3,6 +3,11 @@ Changelog
 
 1.0dev (unreleased)
 -------------------
+
+- Fix ``scrollHeight`` for the interactive prompt for jQuery 1.7+. Now,
+  executing code jumps again to the latest prompt message.
+  [thet]
+
 - Removed 'xxx__roles__' methods from Context / Methods viewlet and added
   roles + permission for each method when available.
   [glenfant]
@@ -13,7 +18,7 @@ Changelog
 - Provide same variables as in portal_actions in TAL tests
   [glenfant]
 
-- Fix themelayer. Use IBrowserSkinType instead of generic
+- Fix themelayer. Use IBrowserSkinType instead of generic 
   Interface which can return an real utility instead of an
   iface and broke the page rendering. Skin Layer must inherits
   from IBrowserSkinType
