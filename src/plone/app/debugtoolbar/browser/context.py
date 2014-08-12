@@ -114,7 +114,17 @@ class ContextViewlet(ViewletBase):
                     if secu_infos is None:
                         secu_label = 'Public'
                     else:
-                        secu_label = 'Roles: ' + ', '.join([r for r in secu_infos[:-1]])
+                        secu_label = ''
+                        try:
+                            secu_label += 'Roles: ' + ', '.join([r for r in secu_infos[:-1]])
+                        except TypeError:
+                            # Avoid "TypeError: sequence index must be
+                            # integer, not 'slice'", which occurs with the
+                            # ``C`` security implementation. This is a rare
+                            # case. In development you normally use the
+                            # ``Python`` security implementation, where this
+                            # error doesn't occur.
+                            pass
                         secu_label += '. Permission: ' + secu_infos[-1][1:-11]  # _x_Permission -> x
                     self.methods[-1]['secu_infos'] = secu_label
                 else:
