@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
+<h2 class="debug-toolbar-header" id="debug-toolbar-catalog" i18n:translate="debug_toolbar_catalog_title">
+    Catalog
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-catalog-body">
+
+    <p class="debug-toolbar-help" i18n:translate="">
+        This panel shows information about the information stored in the portal catalog of the current item.
+    </p>
+
+    <h3 i18n:translate="">Indexed values</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Index name</th>
+                <th i18n:translate="">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="ind view/indices">
+                <td><code tal:content="ind/name" /></td>
+                <td><code tal:content="ind/value" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 i18n:translate="">Metadata values</h3>
+
+    <table class="zebra-striped">
+        <thead>
+            <tr>
+                <th i18n:translate="">Attribute name</th>
+                <th i18n:translate="">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="attr view/metadata">
+                <td><code tal:content="attr/name" /></td>
+                <td><code tal:content="attr/value" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</html>

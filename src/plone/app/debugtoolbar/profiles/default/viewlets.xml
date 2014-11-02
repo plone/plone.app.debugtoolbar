@@ -9,6 +9,7 @@
   <viewlet name="plone.app.debugtoolbar.theme"/>
   <viewlet name="plone.app.debugtoolbar.user"/>
   <viewlet name="plone.app.debugtoolbar.workflow"/>
+  <viewlet name="plone.app.debugtoolbar.catalog"/>
   <viewlet name="plone.app.debugtoolbar.global"/>
   <viewlet name="plone.app.debugtoolbar.versions"/>
   <viewlet name="plone.app.debugtoolbar.reload"/>

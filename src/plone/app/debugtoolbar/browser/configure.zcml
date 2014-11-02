@@ -26,7 +26,7 @@
         class="plone.app.viewletmanager.manager.OrderedViewletManager"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <!-- Panels -->
 
     <browser:viewlet
@@ -37,7 +37,7 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:viewlet
         name="plone.app.debugtoolbar.response"
         manager=".interfaces.IDebugToolbarViewletManager"
@@ -46,7 +46,7 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:viewlet
         name="plone.app.debugtoolbar.global"
         manager=".interfaces.IDebugToolbarViewletManager"
@@ -55,7 +55,7 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:viewlet
         name="plone.app.debugtoolbar.versions"
         manager=".interfaces.IDebugToolbarViewletManager"
@@ -82,7 +82,7 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:viewlet
         name="plone.app.debugtoolbar.workflow"
         manager=".interfaces.IDebugToolbarViewletManager"
@@ -91,7 +91,7 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:viewlet
         name="plone.app.debugtoolbar.published"
         manager=".interfaces.IDebugToolbarViewletManager"
@@ -100,7 +100,7 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:viewlet
         name="plone.app.debugtoolbar.context"
         manager=".interfaces.IDebugToolbarViewletManager"
@@ -118,7 +118,7 @@
         permission="cmf.ManagePortal"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
     <browser:view
         name="plone.app.debugtoolbar.interactive.response"
         class=".interactive.InteractiveResponse"
@@ -141,5 +141,14 @@
         permission="zope2.View"
         layer=".interfaces.IDebugToolbarLayer"
         />
-    
+
+    <browser:viewlet
+        name="plone.app.debugtoolbar.catalog"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".catalog.CatalogViewlet"
+        template="catalog.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+
 </configure>
