@@ -4,6 +4,11 @@ Changelog
 1.1 (unreleased)
 ----------------
 
+- Add panel with catalog info: indexed values and metadata of the current
+  object.
+  [sunew]
+
+
 1.0 (2014-08-13)
 ----------------
 
@@ -21,7 +26,7 @@ Changelog
 - Provide same variables as in portal_actions in TAL tests
   [glenfant]
 
-- Fix themelayer. Use IBrowserSkinType instead of generic 
+- Fix themelayer. Use IBrowserSkinType instead of generic
   Interface which can return an real utility instead of an
   iface and broke the page rendering. Skin Layer must inherits
   from IBrowserSkinType
