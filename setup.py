@@ -1,3 +1,4 @@
+
 from setuptools import setup, find_packages
 
 version = '1.1dev'
@@ -42,6 +43,7 @@ setup(
         'zope.annotation',
         'plone.transformchain',
         'Paste',
+        'collective.monkeypatcher',
     ],
     extras_require={'test': ['plone.app.testing']},
     entry_points="""

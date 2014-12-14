@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone.app.debugtoolbar"
+    tal:omit-tag="">
+
+<h2 class="debug-toolbar-header" id="debug-toolbar-events" i18n:translate="debug_toolbar_catalog_title">
+    Events
+</h2>
+
+<div class="debug-toolbar-body" id="debug-toolbar-events-body" tal:define="events view/events">
+
+    <p class="debug-toolbar-help" i18n:translate="">
+        This panel shows information about notified events during the current request.
+    </p>
+
+    <table class="zebra-striped" tal:condition="events">
+        <tr>
+            <th>event</th>
+            <th>event __dict__</th>
+            <th>duration</th>
+        </tr>
+        <tr tal:repeat="item events">
+            <td tal:content="nocall: item/event" />
+            <td tal:content="python:item['event'].__dict__" />
+            <td tal:content="item/duration" />
+        </tr>
+
+    </table>
+    <p tal:condition="not: events" i18n:translate="">
+    No events logged for this request.
+    </p>
+
+    <p class="discreet" i18n:translate="">
+    These events are currently blacklisted.
+    Set the TOOLBAR_EVENTS_BLACKLIST environment variable to control the blackist.
+    <ul>
+      <li tal:repeat="fq_name view/blacklist" tal:content="fq_name">
+    </ul>
+    </p>
+</div>
+</html>

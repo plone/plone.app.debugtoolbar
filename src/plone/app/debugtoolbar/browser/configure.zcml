@@ -151,4 +151,13 @@
         layer=".interfaces.IDebugToolbarLayer"
         />
 
+    <browser:viewlet
+        name="plone.app.debugtoolbar.events"
+        manager=".interfaces.IDebugToolbarViewletManager"
+        class=".events.EventsViewlet"
+        template="events.pt"
+        permission="zope2.View"
+        layer=".interfaces.IDebugToolbarLayer"
+        />
+
 </configure>

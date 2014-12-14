@@ -7,6 +7,10 @@ Changelog
 New:
 
 - Added panel with catalog info: indexed values and metadata of the current
+- List fired events for current request.
+  [jaroel]
+
+- Add panel with catalog info: indexed values and metadata of the current
   object.
   [sunew]
 
