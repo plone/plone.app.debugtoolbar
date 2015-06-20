@@ -1,3 +1,3 @@
-Martin Aspeli, Author
-Giacomo Spettoli, i18n
-Leonardo Caballero, Spanish Translation, Uninstall GenericSetup profile
+- Martin Aspeli, Author
+- Giacomo Spettoli, i18n
+- Leonardo Caballero, Spanish Translation, Uninstall GenericSetup profile
