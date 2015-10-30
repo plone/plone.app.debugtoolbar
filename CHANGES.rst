@@ -4,7 +4,9 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Add panel with catalog info: indexed values and metadata of the current
+New:
+
+- Added panel with catalog info: indexed values and metadata of the current
   object.
   [sunew]
 
