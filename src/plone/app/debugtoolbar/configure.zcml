@@ -5,11 +5,16 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="plone">
   
+  <i18n:registerTranslations directory="locales" />
+  
   <include package="zope.annotation" />
   <include package="plone.transformchain" />
   <include package=".browser" />
 
-  <i18n:registerTranslations directory="locales" />
+  <adapter
+      factory=".delayedwrite.DelayedWriteTransformer"
+      name="plone.app.debugtoolbar.delayedwrite"
+      />
 
   <genericsetup:registerProfile
       name="default"
@@ -20,7 +25,6 @@
       i18n:attributes="title gs_profiles_default_title;
                        description gs_profiles_default_description;"
       />
-
   <genericsetup:registerProfile
       name="uninstall"
       title="Plone debug toolbar Uninstall Profile"
@@ -30,12 +34,13 @@
       i18n:attributes="title gs_profiles_uninstall_title;
                        description gs_profiles_uninstall_description;"
       />
-
-  <!-- -*- extra stuff goes here -*- -->
-  
-  <adapter
-      factory=".delayedwrite.DelayedWriteTransformer"
-      name="plone.app.debugtoolbar.delayedwrite"
+  <genericsetup:upgradeStep
+      title="Remove CSS and JS from registry."
+      source="1"
+      destination="2"
+      sortkey="1"
+      handler=".upgrades.upgrade_1_to_2"
+      profile="plone.app.debugtoolbar:default"
       />
-
+  
 </configure>
