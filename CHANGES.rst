@@ -6,6 +6,13 @@ Changelog
 
 New:
 
+- Add a ``plone.app.debugtoolbar.toolbar`` tile for displaying in plone.app.blocks layouts.
+  [thet]
+
+- Plone 5 compatibility: Don't register JS and CSS but include them inline.
+  Includes upgrade step.
+  [thet]
+
 - Added panel with catalog info: indexed values and metadata of the current
   object.
   [sunew]
