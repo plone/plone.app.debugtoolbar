@@ -1,7 +1,7 @@
 import json
 
 from zope.interface import Interface
-from zope.interface import implements
+from zope.interface import implementer
 from zope.component import adapts
 from zope.annotation.interfaces import IAnnotations
 
@@ -18,8 +18,8 @@ def delay(request, name, fn):
         return
     ann.setdefault('plone.app.debugtoolbar.delayed', {})[name] = fn
 
+@implementer(ITransform)
 class DelayedWriteTransformer(object):
-    implements(ITransform)
     adapts(Interface, IDebugToolbarLayer)
 
     order = 9999
