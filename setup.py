@@ -30,7 +30,7 @@ setup(
     keywords='plone debug toolbar',
     author='Martin Aspeli',
     author_email='optilude@gmail.com',
-    url='',
+    url='https://pypi.python.org/pypi/plone.app.debugtoolbar/',
     license='gpl',
     packages=find_packages('src'),
     package_dir={'': 'src'},
