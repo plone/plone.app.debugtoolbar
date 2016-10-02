@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from zope.publisher.interfaces import IView
 from zope.viewlet.viewlet import ViewletBase
 from zope.pagetemplate.interfaces import IPageTemplateSubclassing

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import json
 
 from zope.interface import Interface

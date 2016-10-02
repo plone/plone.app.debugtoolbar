@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pkg_resources
 from zope.viewlet.viewlet import ViewletBase
 from Products.CMFCore.utils import getToolByName

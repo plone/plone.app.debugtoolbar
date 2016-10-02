@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from zope.viewlet.viewlet import ViewletBase
 
 from AccessControl import getSecurityManager
