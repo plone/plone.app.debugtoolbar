@@ -30,6 +30,7 @@
         />
 
     <configure zcml:condition="installed plone.app.standardtiles">
+      <include package="plone.tiles" file="meta.zcml"/>
       <plone:tile
           name="plone.app.debugtoolbar.toolbar"
           class=".tile.ToolbarTile"
