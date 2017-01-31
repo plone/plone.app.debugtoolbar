@@ -4,8 +4,8 @@ from zope.viewlet.viewlet import ViewletBase
 class GlobalViewlet(ViewletBase):
 
     def update(self):
-        from Globals import DevelopmentMode
-        self.debug = DevelopmentMode
+        from App.config import getConfiguration
+        self.debug = getConfiguration().debug_mode
 
         import App.config
         config = App.config.getConfiguration()
@@ -19,9 +19,9 @@ class GlobalViewlet(ViewletBase):
                 continue
 
             self.config.append((name, getattr(config, name)))
-        
+
         self.servers = config.servers
-        
+
         self.appInfo = self.context.getPhysicalRoot()['Control_Panel']
 
         self.databases = []
