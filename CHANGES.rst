@@ -14,6 +14,9 @@ New features:
 
 Bug fixes:
 
+- Fix imports from Globals that was removed in Zope4
+  [pbauer]
+
 - Add coding headers on python files.
   [gforcada]
 
