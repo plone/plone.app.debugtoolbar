@@ -14,7 +14,8 @@ New features:
 
 Bug fixes:
 
-- *add item here*
+- Fix problem with debugtoolbar panel opening on click but immediately closing again.
+  [sunew]
 
 
 1.1.2 (2017-03-31)
