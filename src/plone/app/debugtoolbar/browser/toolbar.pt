@@ -5,13 +5,13 @@
     i18n:domain="plone.app.debugtoolbar"
     tal:omit-tag="">
 
+<link rel="stylesheet" href="++resource++plone.app.debugtoolbar/debugtoolbar.css" type="text/css" media="screen" charset="utf-8"/>
+<script type="text/javascript" charset="utf-8" src="++resource++plone.app.debugtoolbar/debugtoolbar.js"/>
+
 <a id="debug-toolbar-trigger" class="debug-toolbar-trigger-button" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">&darr; Debug</a>
 <div id="debug-toolbar">
 
     <div id="debug-toolbar-wrapper">
-
-        <link rel="stylesheet" href="++resource++plone.app.debugtoolbar/debugtoolbar.css" type="text/css" media="screen" charset="utf-8"/>
-        <script type="text/javascript" charset="utf-8" src="++resource++plone.app.debugtoolbar/debugtoolbar.js"/>
 
         <h1 i18n:translate="debug_toolbar_title">Debug information</h1>
         <a href="#" id="debug-toolbar-close" class="debug-toolbar-trigger-button" i18n:translate="debug_toolbar_close">&uarr; Close</a>
