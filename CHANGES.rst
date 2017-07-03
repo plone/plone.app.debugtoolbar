@@ -4,14 +4,6 @@ Changelog
 1.1.3 (unreleased)
 ------------------
 
-Breaking changes:
-
-- *add item here*
-
-New features:
-
-- *add item here*
-
 Bug fixes:
 
 - Fix problem with debugtoolbar panel opening on click but immediately closing again.
