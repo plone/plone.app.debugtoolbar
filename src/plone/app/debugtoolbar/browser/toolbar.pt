@@ -6,7 +6,7 @@
     tal:omit-tag="">
 
 <link rel="stylesheet" href="++resource++plone.app.debugtoolbar/debugtoolbar.css" type="text/css" media="screen" charset="utf-8"/>
-<script type="text/javascript" charset="utf-8" src="++resource++plone.app.debugtoolbar/debugtoolbar.js"/>
+<script type="text/javascript" charset="utf-8" src="++resource++plone.app.debugtoolbar/debugtoolbar.js"></script>
 
 <a id="debug-toolbar-trigger" class="debug-toolbar-trigger-button" href="#debug-toolbar" i18n:translate="debug_toolbar_trigger">&darr; Debug</a>
 <div id="debug-toolbar">

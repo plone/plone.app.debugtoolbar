@@ -14,7 +14,8 @@ New features:
 
 Bug fixes:
 
-- *add item here*
+- Make it work in chrome, as '<script />' no longer works.
+  [jaroel]
 
 
 1.1.3 (2017-07-03)
