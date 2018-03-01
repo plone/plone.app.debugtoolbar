@@ -14,6 +14,9 @@ New features:
 
 Bug fixes:
 
+- Remove unittest2 dependency
+  [kakshay21]
+
 - Make it work in chrome, as '<script />' no longer works.
   [jaroel]
 
