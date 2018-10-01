@@ -20,7 +20,7 @@ setup(
     description="Debug toolbar for Plone",
     long_description=long_description,
     # Get more strings from
-    # https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    # https://pypi.org/classifiers/
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 5.0",
@@ -33,7 +33,7 @@ setup(
     keywords='plone debug toolbar',
     author='Martin Aspeli',
     author_email='optilude@gmail.com',
-    url='https://pypi.python.org/pypi/plone.app.debugtoolbar/',
+    url='https://pypi.org/project/plone.app.debugtoolbar/',
     license='GPL',
     packages=find_packages('src'),
     package_dir={'': 'src'},
