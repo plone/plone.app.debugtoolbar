@@ -52,7 +52,7 @@
                 <td i18n:translate="">Process</td>
                 <td tal:content="view/appInfo/process_id" />
             </tr>
-            <tr>
+            <tr tal:condition="view/appInfo/process_time|nothing">
                 <td i18n:translate="">Running for</td>
                 <td tal:content="view/appInfo/process_time" />
             </tr>

@@ -22,7 +22,11 @@ class GlobalViewlet(ViewletBase):
 
         self.servers = config.servers
 
-        self.appInfo = self.context.getPhysicalRoot()['Control_Panel']
+        try:
+            self.appInfo = self.context.getPhysicalRoot()['Control_Panel']
+        except KeyError:
+            # bbb import for Zope2
+            self.appInfo = self.context.getPhysicalRoot().Control_Panel
 
         self.databases = []
         paths = dict([(x[1], x[0],) for x in config.dbtab.mount_paths.items()])
