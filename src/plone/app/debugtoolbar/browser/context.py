@@ -95,7 +95,7 @@ class ContextViewlet(ViewletBase):
                 continue
 
             # FIXME: Should we include ComputedAttribute here ? [glenfant]
-            if isinstance(attr, (int, long, float, six.string_types, bool, list, tuple, dict, set, frozenset)):
+            if isinstance(attr, (int, float, six.string_types, bool, list, tuple, dict, set, frozenset)):
                 self.variables.append({
                     'name': name,
                     'primitive': True,
