@@ -26,7 +26,8 @@ function InteractivePrompt(target, path) {
     this.historyPosition = -1;
 
     if (path == undefined) {
-        path = "./@@plone.app.debugtoolbar.interactive.response";
+        // path = "./@@plone.app.debugtoolbar.interactive.response";
+        path = location.href + "/@@plone.app.debugtoolbar.interactive.response";        
     }
     this.path = path;
 };
@@ -53,7 +54,8 @@ function TalesTester(target, path) {
     this.historyPosition = -1;
 
     if (path == undefined) {
-        path = "./@@plone.app.debugtoolbar.interactive.tales";
+        // path = "./@@plone.app.debugtoolbar.interactive.tales";
+        path = location.href + "/@@plone.app.debugtoolbar.interactive.tales";        
     }
     this.path = path;
 };
