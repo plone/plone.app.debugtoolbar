@@ -29,6 +29,8 @@ setup(
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
     ],
     keywords='plone debug toolbar',
     author='Martin Aspeli',
@@ -46,6 +48,7 @@ setup(
         'zope.annotation',
         'plone.transformchain',
         'Paste',
+        'six'
     ],
     extras_require={'test': ['plone.app.testing']},
     entry_points="""
