@@ -22,7 +22,6 @@ class GlobalViewlet(ViewletBase):
             self.config.append((name, getattr(config, name)))
 
         # BBB: import for Zope2
-        # TODO servers info not available or in a different place?
         try:
             self.servers = config.servers
         except AttributeError:
@@ -52,6 +51,8 @@ class GlobalViewlet(ViewletBase):
                     'mount': paths.get(name, None),
                 })
             except LockError:
+                # lock error when trying to access database
+                # https://github.com/zopefoundation/Zope/issues/360
                 db_config = db.config
                 self.databases.append({
                     'name': name,
