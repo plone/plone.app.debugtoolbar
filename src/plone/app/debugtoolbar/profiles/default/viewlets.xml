@@ -14,4 +14,5 @@
   <viewlet name="plone.app.debugtoolbar.versions"/>
   <viewlet name="plone.app.debugtoolbar.reload"/>
  </order>
+ <hidden manager="plone.debugtoolbar" skinname="*" purge="True"/>
 </object>
