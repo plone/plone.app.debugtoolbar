@@ -17,24 +17,26 @@
         This panel shows information about the Zope server where Plone is running.
     </p>
 
-    <h3 i18n:translate="">Servers</h3>
+    <tal:servers condition="view/servers">
+      <h3 i18n:translate="">Servers</h3>
 
-    <table class="zebra-striped">
-        <thead>
-            <tr>
-                <th i18n:translate="">Name</th>
-                <th i18n:translate="">IP</th>
-                <th i18n:translate="">Port</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr tal:repeat="item view/servers">
-                <td tal:content="item/server_name" />
-                <td><code tal:content="item/ip" /></td>
-                <td><code tal:content="item/port" /></td>
-            </tr>
-        </tbody>
-    </table>
+      <table class="zebra-striped">
+          <thead>
+              <tr>
+                  <th i18n:translate="">Name</th>
+                  <th i18n:translate="">IP</th>
+                  <th i18n:translate="">Port</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr tal:repeat="item view/servers">
+                  <td tal:content="item/server_name" />
+                  <td><code tal:content="item/ip" /></td>
+                  <td><code tal:content="item/port" /></td>
+              </tr>
+          </tbody>
+      </table>
+    </tal:servers>
 
     <h3 i18n:translate="">Environment</h3>
 
@@ -52,7 +54,7 @@
                 <td i18n:translate="">Process</td>
                 <td tal:content="view/appInfo/process_id" />
             </tr>
-            <tr>
+            <tr tal:condition="view/appInfo/process_time|nothing">
                 <td i18n:translate="">Running for</td>
                 <td tal:content="view/appInfo/process_time" />
             </tr>

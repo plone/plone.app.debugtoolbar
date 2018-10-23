@@ -1,26 +1,26 @@
 # -*- coding: utf-8 -*-
+from plone.app.debugtoolbar.testing import PLONE_APP_DEBUGTOOLBAR_INTEGRATION_TESTING  # noqa: E501
+from Products.CMFPlone.utils import get_installer
+
 import unittest
 
-from Products.CMFCore.utils import getToolByName
 
-from plone.app.debugtoolbar.testing import\
-    PLONE_APP_DEBUGTOOLBAR_INTEGRATION_TESTING
-
-
-class TestExample(unittest.TestCase):
+class TestSetup(unittest.TestCase):
 
     layer = PLONE_APP_DEBUGTOOLBAR_INTEGRATION_TESTING
-    
+
     def setUp(self):
         self.app = self.layer['app']
         self.portal = self.layer['portal']
-        self.qi_tool = getToolByName(self.portal, 'portal_quickinstaller')
-    
+        self.request = self.layer['request']
+        self.qi_tool = get_installer(self.portal, self.request)
+
     def test_product_is_installed(self):
-        """ Validate that our products GS profile has been run and the product 
+        """ Validate that our products GS profile has been run and the product
             installed
         """
         pid = 'plone.app.debugtoolbar'
-        installed = [p['id'] for p in self.qi_tool.listInstalledProducts()]
-        self.assertTrue(pid in installed,
-                        'package appears not to have been installed')
+        self.assertTrue(
+            self.qi_tool.is_product_installed(pid),
+            'package appears not to have been installed',
+        )

@@ -3,6 +3,7 @@ import re
 import cgi
 import threading
 import traceback
+import six
 
 from zope.component import queryMultiAdapter
 from zope.publisher.browser import BrowserView
@@ -133,7 +134,7 @@ class TALESResponse(BrowserView):
         except:
             output = "%s" % traceback.format_exc()
 
-        if isinstance(output, unicode):
+        if isinstance(output, six.text_type):
             output = output.encode('ascii', 'xmlcharrefreplace')
         elif not isinstance(output, str):
             output = repr(output)
