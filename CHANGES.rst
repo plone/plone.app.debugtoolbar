@@ -1,10 +1,8 @@
 Changelog
 =========
 
-1.1.5 (unreleased)
+1.2.0 (unreleased)
 ------------------
-
-Prepare for Python 2 / 3 compatibility [jmevissen]
 
 Breaking changes:
 
@@ -12,7 +10,8 @@ Breaking changes:
 
 New features:
 
-- *add item here*
+- Add support for Python 3.
+  [jmevissen]
 
 Bug fixes:
 

@@ -2,6 +2,7 @@
 from AccessControl import getSecurityManager
 from zope.viewlet.viewlet import ViewletBase
 
+
 class UserViewlet(ViewletBase):
 
     def update(self):

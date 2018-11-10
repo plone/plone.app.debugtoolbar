@@ -2,6 +2,7 @@
 from zope.viewlet.viewlet import ViewletBase
 from zc.lockfile import LockError
 
+
 class GlobalViewlet(ViewletBase):
 
     def update(self):

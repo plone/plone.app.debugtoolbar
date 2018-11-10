@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
 
-version = '1.1.5.dev0'
+version = '1.2.0.dev0'
 
 long_description = (
     open('README.rst').read()
@@ -48,7 +48,7 @@ setup(
         'zope.annotation',
         'plone.transformchain',
         'Paste',
-        'six'
+        'six',
     ],
     extras_require={'test': ['plone.app.testing']},
     entry_points="""

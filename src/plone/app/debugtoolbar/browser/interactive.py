@@ -1,22 +1,21 @@
 # -*- coding: utf-8 -*-
-import re
-import cgi
-import threading
-import traceback
-import six
-
+from AccessControl import getSecurityManager
+from AccessControl import Unauthorized
+from paste.evalexception import evalcontext
+from paste.exceptions import formatter
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.PloneBaseTool import createExprContext
+from Products.PageTemplates.Expressions import getEngine
 from zope.component import queryMultiAdapter
 from zope.publisher.browser import BrowserView
 from zope.viewlet.viewlet import ViewletBase
 
-from paste.evalexception import evalcontext
-from paste.exceptions import formatter
+import cgi
+import re
+import six
+import threading
+import traceback
 
-from AccessControl import Unauthorized
-from AccessControl import getSecurityManager
-from Products.CMFCore.utils import getToolByName
-from Products.PageTemplates.Expressions import getEngine
-from Products.CMFPlone.PloneBaseTool import createExprContext
 
 class Variables(object):
     """Store local variables. Allow one set of variables per user id, and
@@ -33,7 +32,8 @@ class Variables(object):
             if userId not in self._storage:
                 return
 
-            if force or self._storage[userId]['path'] != '/'.join(context.getPhysicalPath()):
+            if force or self._storage[userId]['path'] != '/'.join(
+                    context.getPhysicalPath()):
                 del self._storage[userId]
 
     def get(self, context):
@@ -54,11 +54,13 @@ class Variables(object):
 
 VARS = Variables()
 
+
 def htmlQuote(v):
     # Borrowed from Paste
     if v is None:
         return ''
     return cgi.escape(str(v), 1)
+
 
 def preserveWhitespace(v, quote=True):
     # Borrowed from Paste
@@ -76,10 +78,12 @@ def preserveWhitespace(v, quote=True):
     v = re.sub(r'^()( +)', _repl_nbsp, v)
     return '<code>%s</code>' % v
 
+
 class InteractiveViewlet(ViewletBase):
 
     def update(self):
         VARS.invalidate(self.context, force=True)
+
 
 class InteractiveResponse(BrowserView):
 
@@ -115,6 +119,7 @@ class InteractiveResponse(BrowserView):
                 % (preserveWhitespace(line_html, quote=False),
                    preserveWhitespace(output)))
 
+
 class TALESResponse(BrowserView):
 
     def __call__(self):
@@ -131,7 +136,7 @@ class TALESResponse(BrowserView):
         expr = self.compileExpression(line)
         try:
             output = expr(self.createExpressionContext())
-        except:
+        except Exception:
             output = "%s" % traceback.format_exc()
 
         if isinstance(output, six.text_type):
@@ -141,13 +146,15 @@ class TALESResponse(BrowserView):
 
         return preserveWhitespace(output)
 
-
     def createExpressionContext(self):
         """Using the Plone expression context with all its variables
         """
-        context_state = queryMultiAdapter((self.context, self.request), name=u'plone_context_state')
-        portal_state = queryMultiAdapter((self.context, self.request), name=u'plone_portal_state')
-        return createExprContext(context_state.folder(), portal_state.portal(), self.context)
+        context_state = queryMultiAdapter(
+            (self.context, self.request), name=u'plone_context_state')
+        portal_state = queryMultiAdapter(
+            (self.context, self.request), name=u'plone_portal_state')
+        return createExprContext(
+            context_state.folder(), portal_state.portal(), self.context)
 
     def compileExpression(self, text):
         return getEngine().compile(text.strip())

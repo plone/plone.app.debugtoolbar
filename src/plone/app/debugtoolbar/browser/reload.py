@@ -4,9 +4,9 @@ from zope.component import getMultiAdapter
 from zope.viewlet.viewlet import ViewletBase
 
 try:
-    import plone.reload
+    import plone.reload  # noqa
     RELOAD_INSTALLED = True
-except:
+except ImportError:
     RELOAD_INSTALLED = False
 
 

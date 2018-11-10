@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
-from zope.viewlet.viewlet import ViewletBase
-
 from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
+from zope.viewlet.viewlet import ViewletBase
+
 
 class WorkflowViewlet(ViewletBase):
 
     def update(self):
-        
+
         # Workflow
         workflow = getToolByName(self.context, 'portal_workflow')
 
-        self.workflowStatus = workflow.getInfoFor(self.context, 'review_state', None)
+        self.workflowStatus = workflow.getInfoFor(
+            self.context, 'review_state', None)
 
         workflows = workflow.getWorkflowsFor(self.context)
 
@@ -35,8 +36,8 @@ class WorkflowViewlet(ViewletBase):
             granted = bool(sm.checkPermission(name, self.context))
 
             roles = [r['selected'] == 'SELECTED'
-                        for r in self.context.rolesOfPermission(name)]
-            
+                     for r in self.context.rolesOfPermission(name)]
+
             self.permissionInfo.append({
                 'name': name,
                 'granted': granted,

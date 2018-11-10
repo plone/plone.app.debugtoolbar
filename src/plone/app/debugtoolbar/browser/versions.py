@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-import pkg_resources
-from zope.viewlet.viewlet import ViewletBase
 from Products.CMFCore.utils import getToolByName
+from zope.viewlet.viewlet import ViewletBase
+
+import pkg_resources
+
 
 class VersionsViewlet(ViewletBase):
 
@@ -13,14 +15,14 @@ class VersionsViewlet(ViewletBase):
             name = distribution.project_name
             packages.append({
                 'name': name,
-                'version':distribution.version,
+                'version': distribution.version,
             })
 
             if name.lower() == 'plone':
                 self.ploneVersion = distribution.version
-            elif self.ploneVersion is None and name.lower() == 'products.cmfplone':
+            elif self.ploneVersion is None and name.lower() == 'products.cmfplone':  # noqa: E501
                 self.ploneVersion = distribution.version
-            
+
         self.packages = sorted(packages, key=lambda x: x['name'].lower())
 
         mt = getToolByName(self.context, 'portal_migration')

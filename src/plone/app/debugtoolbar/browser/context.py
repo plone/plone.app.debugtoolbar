@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-import types
-import inspect
-import six
-
-from zope.interface import Interface
-from zope.interface import providedBy, directlyProvidedBy
-from zope.component import getAdapters
-from zope.publisher.interfaces import IView
-from zope.viewlet.viewlet import ViewletBase
-
 from Acquisition import aq_base
 from Products.CMFCore.interfaces import IDynamicType
 from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation
 from Products.Five.browser.metaconfigure import ViewMixinForTemplates
+from zope.component import getAdapters
+from zope.interface import Interface
+from zope.interface import providedBy, directlyProvidedBy
+from zope.publisher.interfaces import IView
+from zope.viewlet.viewlet import ViewletBase
+
+import inspect
+import six
+import types
+
 
 class ContextViewlet(ViewletBase):
 
@@ -39,7 +39,7 @@ class ContextViewlet(ViewletBase):
         self.provided.sort(key=lambda i: i.__identifier__)
         self.provided = ({'dottedname': i.__identifier__,
                           'is_marker': i in directly_provided}
-                          for i in self.provided)
+                         for i in self.provided)
         self.views = []
 
         generator = getAdapters((self.context, self.request,), Interface)
@@ -79,7 +79,7 @@ class ContextViewlet(ViewletBase):
                 })
             except StopIteration:
                 break
-            except:
+            except Exception:
                 # Some adapters don't initialise cleanly
                 pass
 
@@ -95,20 +95,21 @@ class ContextViewlet(ViewletBase):
                 continue
 
             # FIXME: Should we include ComputedAttribute here ? [glenfant]
-            if isinstance(attr, (int, float, six.string_types, bool, list, tuple, dict, set, frozenset)):
+            if isinstance(attr, (int, float, six.string_types, bool, list, tuple, dict, set, frozenset)):  # noqa: E501
                 self.variables.append({
                     'name': name,
                     'primitive': True,
                     'value': attr,
                 })
             elif (
-                isinstance(attr, (types.MethodType, types.BuiltinFunctionType, types.BuiltinMethodType, types.FunctionType)) or
+                isinstance(attr, (types.MethodType, types.BuiltinFunctionType, types.BuiltinMethodType, types.FunctionType)) or  # noqa: E501
                 attr.__class__.__name__ == 'method-wrapper',
             ):
 
                 source = None
                 if name.endswith('__roles__'):
-                    # name without '__roles__' is the last in self.methods since we're in a sorted(...) loop
+                    # name without '__roles__' is the last in self.methods
+                    # since we're in a sorted(...) loop
                     if callable(attr):
                         secu_infos = attr()
                     else:
@@ -118,7 +119,8 @@ class ContextViewlet(ViewletBase):
                     else:
                         secu_label = ''
                         try:
-                            secu_label += 'Roles: ' + ', '.join([r for r in secu_infos[:-1]])
+                            secu_label += 'Roles: ' + ', '.join(
+                                [r for r in secu_infos[:-1]])
                         except TypeError:
                             # Avoid "TypeError: sequence index must be
                             # integer, not 'slice'", which occurs with the
@@ -127,7 +129,8 @@ class ContextViewlet(ViewletBase):
                             # ``Python`` security implementation, where this
                             # error doesn't occur.
                             pass
-                        secu_label += '. Permission: ' + secu_infos[-1][1:-11]  # _x_Permission -> x
+                        # _x_Permission -> x
+                        secu_label += '. Permission: ' + secu_infos[-1][1:-11]
                     self.methods[-1]['secu_infos'] = secu_label
                 else:
                     try:
@@ -137,7 +140,8 @@ class ContextViewlet(ViewletBase):
 
                     signature = name + "()"
                     try:
-                        signature = name + inspect.formatargspec(*inspect.getargspec(attr))
+                        signature = name + inspect.formatargspec(
+                            *inspect.getargspec(attr))
                     except TypeError:
                         pass
 

@@ -1,3 +1,4 @@
 - Martin Aspeli, Author
 - Giacomo Spettoli, i18n
 - Leonardo Caballero, Spanish Translation, Uninstall GenericSetup profile
+- Jan Mevissen, py3 porting

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
+from Products.CMFCore.utils import getToolByName
 from zope.viewlet.viewlet import ViewletBase
 
-from AccessControl import getSecurityManager
-from Products.CMFCore.utils import getToolByName
 
 class CatalogViewlet(ViewletBase):
 
