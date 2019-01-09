@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.1.5 (unreleased)
+1.2.0 (2019-01-09)
 ------------------
 
 Breaking changes:
