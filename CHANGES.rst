@@ -4,15 +4,13 @@ Changelog
 1.1.5 (unreleased)
 ------------------
 
-Prepare for Python 2 / 3 compatibility [jmevissen]
-
 Breaking changes:
 
 - *add item here*
 
 New features:
 
-- *add item here*
+- Prepare for Python 2 / 3 compatibility [jmevissen]
 
 Bug fixes:
 
