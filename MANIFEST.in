@@ -2,3 +2,6 @@ graft docs
 graft src
 include *rst *txt
 global-exclude *.pyc
+include pyproject.toml
+recursive-exclude news *
+exclude news
