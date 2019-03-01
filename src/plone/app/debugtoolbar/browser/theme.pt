@@ -40,7 +40,7 @@
                     <div tal:repeat="layer view/layers"><code tal:content="layer/__identifier__" /></div>
                 </td>
             </tr>
-            <tr>
+            <tr tal:condition="nocall:view/css">
                 <td tal:define="debugMode view/css/getDebugMode">
                     <span i18n:translate="">CSS composition</span>
                     <span class="label warning" tal:condition="debugMode" i18n:translate="">Debug mode</span>
@@ -85,7 +85,7 @@
                     </ul>
                 </td>
             </tr>
-            <tr>
+            <tr tal:condition="nocall:view/js">
                 <td tal:define="debugMode view/js/getDebugMode">
                     <span i18n:translate="">JavaScript composition</span>
                     <span class="label warning" tal:condition="debugMode" i18n:translate="">Debug mode</span>
@@ -131,7 +131,7 @@
                 </td>
             </tr>
         </tbody>
-    </table>    
+    </table>
 
 </div>
 </html>
