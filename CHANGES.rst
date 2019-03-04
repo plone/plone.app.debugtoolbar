@@ -12,17 +12,9 @@ Changelog
 1.2.0 (2019-01-09)
 ------------------
 
-Breaking changes:
-
-- *add item here*
-
 New features:
 
 - Prepare for Python 2 / 3 compatibility [jmevissen]
-
-Bug fixes:
-
-- *add item here*
 
 
 1.1.4 (2018-03-07)
