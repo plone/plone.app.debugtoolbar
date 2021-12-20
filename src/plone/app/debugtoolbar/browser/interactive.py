@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import re
-import cgi
 import threading
 import traceback
 import six
@@ -17,6 +16,13 @@ from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
 from Products.PageTemplates.Expressions import getEngine
 from Products.CMFPlone.PloneBaseTool import createExprContext
+
+
+try:
+    from html import escape
+except ImportError:
+    from cgi import escape
+
 
 class Variables(object):
     """Store local variables. Allow one set of variables per user id, and
@@ -58,7 +64,8 @@ def htmlQuote(v):
     # Borrowed from Paste
     if v is None:
         return ''
-    return cgi.escape(str(v), 1)
+    return escape(str(v), 1)
+
 
 def preserveWhitespace(v, quote=True):
     # Borrowed from Paste
