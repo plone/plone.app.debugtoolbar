@@ -48,7 +48,7 @@
     <p class="debug-toolbar-help" i18n:translate="">
       Use the command line below to test TALES expressions. The same variables
       as in the Plone Actions tool (portal_actions)
-      <code>context</code> (with aliases (<code>object</code> and <code>here</code>,
+      <code>context</code> (with aliases <code>object</code> and <code>here</code>),
       <code>object_url</code>, <code>folder</code>, <code>folder_url</code>,
       <code>portal</code>, <code>portal_url</code>, <code>nothing</code>,
       <code>request</code>, <code>modules</code>, <code>member</code>,
