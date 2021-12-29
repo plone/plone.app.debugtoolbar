@@ -1,2 +1,0 @@
-Fix missing zcml directive when `plone.app.standardtiles` is installed.
-[petschki]

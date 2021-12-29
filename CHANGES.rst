@@ -8,6 +8,19 @@ Changelog
 
 .. towncrier release notes start
 
+1.2.3 (2021-12-29)
+------------------
+
+Bug fixes:
+
+
+- Fix missing zcml directive when `plone.app.standardtiles` is installed.
+  [petschki] (#18)
+- Fix brackets in toolbar-help
+  [djowett] (#25)
+- Fix a compatibility issue with Python 3.8 (#27)
+
+
 1.2.2 (2020-04-20)
 ------------------
 
