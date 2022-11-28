@@ -141,7 +141,7 @@ class TALESResponse(BrowserView):
         except:
             output = "%s" % traceback.format_exc()
 
-        if isinstance(output, six.text_type):
+        if isinstance(output, six.text_type) and six.PY2:
             output = output.encode('ascii', 'xmlcharrefreplace')
         elif not isinstance(output, str):
             output = repr(output)

@@ -137,8 +137,11 @@ class ContextViewlet(ViewletBase):
 
                     signature = name + "()"
                     try:
-                        signature = name + inspect.formatargspec(*inspect.getargspec(attr))
-                    except TypeError:
+                        if six.PY2:
+                            signature = name + inspect.formatargspec(*inspect.getargspec(attr))
+                        else:
+                            signature = name + str(inspect.signature(attr))
+                    except (TypeError, ValueError):
                         pass
 
                     self.methods.append({
