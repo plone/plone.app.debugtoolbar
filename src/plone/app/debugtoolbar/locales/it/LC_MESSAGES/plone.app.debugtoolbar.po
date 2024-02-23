@@ -1,10 +1,10 @@
 # Translation of plone.app.debugtoolbar.pot to Italian
 # Giacomo Spettoli <giacomo.spettoli@gmail.com>, 2011
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: plone.app.debugtoolbar\n"
-"POT-Creation-Date: 2011-11-14 02:37+0000\n"
+"POT-Creation-Date: 2024-02-22 23:58+0000\n"
 "PO-Revision-Date: 2011-11-14 02:37+0000\n"
 "Last-Translator: Giacomo Spettoli <giacomo.spettoli@gmail.com>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -22,9 +22,13 @@ msgstr ""
 msgid "Acquire"
 msgstr "Acquisisci"
 
-#: ./browser/context.pt:69
+#: ./browser/context.pt:72
 msgid "Actions"
 msgstr "Azioni"
+
+#: ./browser/catalog.pt:40
+msgid "Attribute name"
+msgstr ""
 
 #: ./browser/theme.pt:38
 msgid "Browser layers"
@@ -34,7 +38,7 @@ msgstr ""
 msgid "CSS composition"
 msgstr "Composizione CSS"
 
-#: ./browser/global.pt:71
+#: ./browser/global.pt:73
 msgid "Cache size"
 msgstr "Dimensione della cache"
 
@@ -43,11 +47,11 @@ msgstr "Dimensione della cache"
 msgid "Class"
 msgstr "Classe"
 
-#: ./browser/context.pt:95
+#: ./browser/context.pt:98
 msgid "Click to expand"
 msgstr "Clicca per espandere"
 
-#: ./browser/global.pt:85
+#: ./browser/global.pt:87
 msgid "Configuration options"
 msgstr "Opzioni di configurazione"
 
@@ -55,7 +59,7 @@ msgstr "Opzioni di configurazione"
 msgid "Cookies"
 msgstr ""
 
-#: ./browser/global.pt:62
+#: ./browser/global.pt:64
 msgid "Databases"
 msgstr ""
 
@@ -63,7 +67,7 @@ msgstr ""
 msgid "Debug mode"
 msgstr "Modalità debug"
 
-#: ./browser/context.pt:80
+#: ./browser/context.pt:83
 msgid "Default view"
 msgstr ""
 
@@ -71,7 +75,7 @@ msgstr ""
 msgid "Details"
 msgstr "Dettagli"
 
-#: ./browser/context.pt:102
+#: ./browser/context.pt:105
 msgid "Documentation"
 msgstr "Documentazione"
 
@@ -79,7 +83,7 @@ msgstr "Documentazione"
 msgid "Enabled theme"
 msgstr "Tema attivo"
 
-#: ./browser/global.pt:39
+#: ./browser/global.pt:41
 msgid "Environment"
 msgstr ""
 
@@ -87,7 +91,7 @@ msgstr ""
 msgid "Execute"
 msgstr "Esegui"
 
-#: ./browser/context.pt:45
+#: ./browser/context.pt:48
 msgid "Factory type information"
 msgstr "Informazioni factory type"
 
@@ -95,7 +99,7 @@ msgstr "Informazioni factory type"
 msgid "File"
 msgstr ""
 
-#: ./browser/context.pt:103
+#: ./browser/context.pt:106
 msgid "Filename"
 msgstr ""
 
@@ -115,11 +119,19 @@ msgstr ""
 msgid "Groups"
 msgstr "Gruppi"
 
-#: ./browser/global.pt:26
+#: ./browser/global.pt:27
 msgid "IP"
 msgstr ""
 
-#: ./browser/context.pt:132
+#: ./browser/catalog.pt:23
+msgid "Index name"
+msgstr ""
+
+#: ./browser/catalog.pt:18
+msgid "Indexed values"
+msgstr ""
+
+#: ./browser/context.pt:140
 msgid "Instance"
 msgstr "Istanza"
 
@@ -139,24 +151,28 @@ msgstr "Composizione JavaScript"
 msgid "Local roles"
 msgstr "Ruoli locali"
 
-#: ./browser/global.pt:69
+#: ./browser/global.pt:71
 msgid "Location"
 msgstr "Locazione"
 
-#: ./browser/context.pt:58
+#: ./browser/catalog.pt:35
+msgid "Metadata values"
+msgstr ""
+
+#: ./browser/context.pt:61
 msgid "Method aliases"
 msgstr "Gli alias del metodo"
 
-#: ./browser/context.pt:94
+#: ./browser/context.pt:97
 msgid "Methods"
 msgstr "Metodi"
 
-#: ./browser/global.pt:68
+#: ./browser/global.pt:70
 msgid "Mount point"
 msgstr "Punto di montaggio"
 
-#: ./browser/context.pt:123
-#: ./browser/global.pt:25
+#: ./browser/context.pt:131
+#: ./browser/global.pt:26
 #: ./browser/published.pt:26
 msgid "Name"
 msgstr "Nome"
@@ -177,19 +193,19 @@ msgstr ""
 msgid "Permission matrix"
 msgstr "Matrice dei permessi"
 
-#: ./browser/global.pt:27
+#: ./browser/global.pt:28
 msgid "Port"
 msgstr "Porta"
 
-#: ./browser/context.pt:50
+#: ./browser/context.pt:53
 msgid "Portal type"
 msgstr ""
 
-#: ./browser/context.pt:131
+#: ./browser/context.pt:139
 msgid "Primitive"
 msgstr ""
 
-#: ./browser/global.pt:52
+#: ./browser/global.pt:54
 msgid "Process"
 msgstr "Processo"
 
@@ -198,16 +214,24 @@ msgid "Production mode"
 msgstr "Modalità di produzione"
 
 #: ./browser/context.pt:36
-msgid "Provided interfaces"
-msgstr "Interfacce fornite"
+msgid "Provided interfaces<br /><em>(*) Marker interfaces</em>"
+msgstr ""
 
-#: ./browser/global.pt:48
+#: ./browser/global.pt:50
 msgid "Python version"
 msgstr "Versione di Python"
 
 #: ./browser/request.pt:33
 msgid "Query string"
 msgstr "Stringa di query"
+
+#: ./browser/reload.pt:33
+msgid "Reload CSS"
+msgstr ""
+
+#: ./browser/reload.pt:30
+msgid "Reload JavaScript"
+msgstr ""
 
 #: ./browser/request.pt:83
 msgid "Request environment"
@@ -225,19 +249,19 @@ msgstr "Variabili della request"
 msgid "Response headers"
 msgstr "Intestazioni della response"
 
-#: ./browser/global.pt:56
+#: ./browser/global.pt:58
 msgid "Running for"
 msgstr "In esecuzione da"
 
-#: ./browser/global.pt:20
+#: ./browser/global.pt:21
 msgid "Servers"
 msgstr ""
 
-#: ./browser/context.pt:101
+#: ./browser/context.pt:104
 msgid "Signature"
 msgstr "Firma"
 
-#: ./browser/global.pt:70
+#: ./browser/global.pt:72
 msgid "Size"
 msgstr "Dimensione"
 
@@ -249,7 +273,7 @@ msgstr ""
 msgid "TALES tester"
 msgstr ""
 
-#: ./browser/context.pt:149
+#: ./browser/context.pt:157
 msgid "Template"
 msgstr ""
 
@@ -260,6 +284,10 @@ msgstr ""
 #: ./browser/theme.pt:24
 msgid "Theme name"
 msgstr "Nome del tema"
+
+#: ./browser/reload.pt:16
+msgid "This panel shows allows you to quickly reload code, zcml, js, css."
+msgstr ""
 
 #: ./browser/response.pt:15
 msgid "This panel shows information about the HTTP response"
@@ -281,6 +309,10 @@ msgstr "Questo pannello mostra le informazioni sul tema corrente"
 msgid "This panel shows information about the currently logged in user, if any."
 msgstr "Questo pannello mostra le informazioni sul utente attualmente loggato, se disponibile."
 
+#: ./browser/catalog.pt:14
+msgid "This panel shows information about the information stored in the portal catalog of the current item."
+msgstr ""
+
 #: ./browser/published.pt:16
 msgid "This panel shows information about the published object. This is usually a view or a legacy page template."
 msgstr "Questo pannello mostra le informazioni sul oggetto pubblicato. Questo è di solito una vista o un vecchio page template."
@@ -297,7 +329,7 @@ msgstr "Questo pannello mostra le informazioni sulle versioni di tutte le distri
 msgid "This panel shows information about the workflow and security of the current item."
 msgstr "Questo pannello mostra le informazioni sul workflow e sulla sicurezza dell'elemento corrente."
 
-#: ./browser/context.pt:54
+#: ./browser/context.pt:57
 msgid "Title"
 msgstr "Titolo"
 
@@ -311,8 +343,8 @@ msgid "Use the Python interpreter line below to introspect and interact with the
 msgstr "Utilizza la linea interprete Python qui sotto per fare introspezione e per interagire con il contesto. Sono disponibili le variabili <code>context</code>, <code>request</code>, <code>portal</code> e <code>app</code>"
 
 #: ./browser/interactive.pt:48
-msgid "Use the command line below to test TALES expressions. The variables <code>context</code>, <code>request</code>, <code>portal</code> and <code>folder</code>, <code>portal_state</code> and <code>context_state</code> are available."
-msgstr "Utilizza la linea di comando qui sotto per testare le espressioni TALES. Sono disponibili le variabili <code>context</code>, <code>request</code>, <code>portal</code> and <code>folder</code>, <code>portal_state</code> e <code>context_state</code>"
+msgid "Use the command line below to test TALES expressions. The same variables as in the Plone Actions tool (portal_actions) <code>context</code> (with aliases <code>object</code> and <code>here</code>), <code>object_url</code>, <code>folder</code>, <code>folder_url</code>, <code>portal</code>, <code>portal_url</code>, <code>nothing</code>, <code>request</code>, <code>modules</code>, <code>member</code>, <code>globals_view</code>, <code>plone_portal_state</code>, <code>plone_context_state</code>, <code>plone_tools</code>, <code>checkPermission</code> are available. Be warned that <code>request</code> is a new request for the TALES tester, and not the request object for this page."
+msgstr ""
 
 #: ./browser/user.pt:19
 msgid "User details"
@@ -326,12 +358,13 @@ msgstr "Id utente"
 msgid "User name"
 msgstr ""
 
-#: ./browser/context.pt:124
-#: ./browser/global.pt:91
+#: ./browser/catalog.pt:24
+#: ./browser/context.pt:132
+#: ./browser/global.pt:93
 msgid "Value"
 msgstr "Valore"
 
-#: ./browser/context.pt:116
+#: ./browser/context.pt:124
 msgid "Variables"
 msgstr "Variabili"
 
@@ -339,11 +372,11 @@ msgstr "Variabili"
 msgid "Version"
 msgstr "Versione"
 
-#: ./browser/context.pt:84
+#: ./browser/context.pt:87
 msgid "View methods"
 msgstr "Metodi view"
 
-#: ./browser/context.pt:140
+#: ./browser/context.pt:148
 msgid "Views"
 msgstr "Viste"
 
@@ -359,7 +392,7 @@ msgstr "Nome(i) del workflow"
 msgid "Workflow state(s)"
 msgstr "Stati del workflow"
 
-#: ./browser/global.pt:44
+#: ./browser/global.pt:46
 msgid "Zope version"
 msgstr "Versione di Zope"
 
@@ -368,8 +401,13 @@ msgstr "Versione di Zope"
 msgid "auth_only"
 msgstr "riservato agli utenti autenticati"
 
+#. Default: "Catalog"
+#: ./browser/catalog.pt:8
+msgid "debug_toolbar_catalog_title"
+msgstr ""
+
 #. Default: "&uarr; Close"
-#: ./browser/toolbar.pt:14
+#: ./browser/toolbar.pt:17
 msgid "debug_toolbar_close"
 msgstr "&uarr; Chiudi"
 
@@ -408,6 +446,11 @@ msgstr "<strong>Attenzione:</strong> E' possibile danneggiare seriamente il sito
 msgid "debug_toolbar_published_title"
 msgstr "Published <small>vista o oggetto</small> ${view_name}"
 
+#. Default: "Reload"
+#: ./browser/reload.pt:9
+msgid "debug_toolbar_reload_title"
+msgstr ""
+
 #. Default: "Request <small>that rendered this page</small>"
 #: ./browser/request.pt:9
 msgid "debug_toolbar_request_title"
@@ -424,12 +467,12 @@ msgid "debug_toolbar_theme_title"
 msgstr "Tema <small>in uso</small> ${method}"
 
 #. Default: "Debug information"
-#: ./browser/toolbar.pt:13
+#: ./browser/toolbar.pt:16
 msgid "debug_toolbar_title"
 msgstr "Informazioni di debug"
 
 #. Default: "&darr; Debug"
-#: ./browser/toolbar.pt:8
+#: ./browser/toolbar.pt:11
 msgid "debug_toolbar_trigger"
 msgstr ""
 
@@ -457,4 +500,3 @@ msgstr "Workflow <small>e sicurezza</small> ${method}"
 #: ./browser/theme.pt:80
 msgid "resource_not_found"
 msgstr "(risorsa non trovata o non accessibile)"
-
