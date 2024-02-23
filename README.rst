@@ -6,7 +6,7 @@ running Plone site at your fingertips.
 
 
 Translations
-------------
+============
 
 This product has been translated into
 
@@ -16,11 +16,12 @@ This product has been translated into
 
 
 Installation
-------------
+============
 
 Simply install it in your build (e.g. by adding it to the ``eggs`` list in your Buildout):
 
 ::
+
     [buildout]
 
     ...
