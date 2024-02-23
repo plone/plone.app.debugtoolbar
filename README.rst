@@ -2,9 +2,34 @@ Introduction
 ============
 
 ``plone.app.debugtoolbar`` provides a wealth of debug information about a
-running Plone site at your fingertips. Simply install it in your build
-(e.g. by adding it to the ``eggs`` list in your Buildout and re-running
-buildout) and install it into your Plone site.
+running Plone site at your fingertips.
+
+
+Translations
+------------
+
+This product has been translated into
+
+- Italian (thanks, Giacomo Spettoli)
+
+- Spanish (thanks, Leonardo J. Caballero G.)
+
+
+Installation
+------------
+
+Simply install it in your build (e.g. by adding it to the ``eggs`` list in your Buildout):
+
+::
+    [buildout]
+
+    ...
+
+    eggs =
+        plone.app.debugtoolbar
+
+
+and re-running the ``bin/buildout`` command and install it into your Plone site.
 
 You should now see a ``Debug`` link at the top of your site. Click it to open
 the debug drawer. Click on a panel to view relevant information.
@@ -16,7 +41,7 @@ Panels include:
   interact with the current context (only available to users with the
   ``Manage portal`` permission)
 * Request, showing information about the request that produced the current page
-* Response, showing informationa about the response that produced the current
+* Response, showing information about the response that produced the current
   page
 * Published, showing information about the page template or view that was
   published
@@ -30,7 +55,7 @@ Safety
 ======
 
 The debug toolbar provides a lot of information about your Plone site that you
-may not want the world to know. It could also have a noticable performance
+may not want the world to know. It could also have a noticeable performance
 impact, and for users with the ``Manage portal`` permission it provides access
 to an interactive interpreter where arbitrary Python statements can be executed,
 allowing a user to bypass Zope security.
@@ -41,7 +66,9 @@ Integration
 ===========
 
 Each panels is included as a viewlet. You can register new panels using a
-viewlet registration like this::
+viewlet registration like this:
+
+::
 
     <browser:viewlet
         name="plone.app.debugtoolbar.somepanel"
@@ -53,3 +80,17 @@ viewlet registration like this::
         />
 
 See ``plone.app.debugtoolbar.browser`` for plenty of examples of panels.
+
+
+Contribute
+----------
+
+- Issue Tracker: https://github.com/plone/plone.app.debugtoolbar/issues
+- Source Code: https://github.com/plone/plone.app.debugtoolbar
+- Documentation: https://github.com/plone/plone.app.debugtoolbar/blob/master/README.rst
+
+
+License
+-------
+
+The project is licensed under the GPLv2.
