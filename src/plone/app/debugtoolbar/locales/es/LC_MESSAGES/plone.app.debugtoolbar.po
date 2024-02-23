@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: plone.app.debugtoolbar\n"
-"POT-Creation-Date: 2011-11-14 02:37+0000\n"
+"POT-Creation-Date: 2024-02-22 23:58+0000\n"
 "PO-Revision-Date: 2011-11-15 00:45-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -25,6 +25,10 @@ msgstr "Adquirir"
 #: ./browser/context.pt:69
 msgid "Actions"
 msgstr "Acciones"
+
+#: ./browser/catalog.pt:40
+msgid "Attribute name"
+msgstr ""
 
 #: ./browser/theme.pt:38
 msgid "Browser layers"
@@ -119,6 +123,14 @@ msgstr "Grupos"
 msgid "IP"
 msgstr "Dirección IP"
 
+#: ./browser/catalog.pt:23
+msgid "Index name"
+msgstr ""
+
+#: ./browser/catalog.pt:18
+msgid "Indexed values"
+msgstr ""
+
 #: ./browser/context.pt:132
 msgid "Instance"
 msgstr "Instancia"
@@ -142,6 +154,10 @@ msgstr "Roles locales"
 #: ./browser/global.pt:69
 msgid "Location"
 msgstr "Ubicación"
+
+#: ./browser/catalog.pt:35
+msgid "Metadata values"
+msgstr ""
 
 #: ./browser/context.pt:58
 msgid "Method aliases"
@@ -198,7 +214,8 @@ msgid "Production mode"
 msgstr "Modo de producción"
 
 #: ./browser/context.pt:36
-msgid "Provided interfaces"
+#, fuzzy
+msgid "Provided interfaces<br /><em>(*) Marker interfaces</em>"
 msgstr "Interfases proveídas"
 
 #: ./browser/global.pt:48
@@ -208,6 +225,14 @@ msgstr "Versión de Python"
 #: ./browser/request.pt:33
 msgid "Query string"
 msgstr "Cadena de Query"
+
+#: ./browser/reload.pt:33
+msgid "Reload CSS"
+msgstr ""
+
+#: ./browser/reload.pt:30
+msgid "Reload JavaScript"
+msgstr ""
 
 #: ./browser/request.pt:83
 msgid "Request environment"
@@ -261,6 +286,10 @@ msgstr "Capa de tema"
 msgid "Theme name"
 msgstr "Nombre del tema"
 
+#: ./browser/reload.pt:16
+msgid "This panel shows allows you to quickly reload code, zcml, js, css."
+msgstr ""
+
 #: ./browser/response.pt:15
 msgid "This panel shows information about the HTTP response"
 msgstr "Este panel muestra la información acerca de la respuesta HTTP"
@@ -280,6 +309,10 @@ msgstr "Este panel muestra la información acerca del actual tema"
 #: ./browser/user.pt:15
 msgid "This panel shows information about the currently logged in user, if any."
 msgstr "Este panel muestra la información acerca del usuario actualmente conectado, en su caso."
+
+#: ./browser/catalog.pt:14
+msgid "This panel shows information about the information stored in the portal catalog of the current item."
+msgstr ""
 
 #: ./browser/published.pt:16
 msgid "This panel shows information about the published object. This is usually a view or a legacy page template."
@@ -311,7 +344,8 @@ msgid "Use the Python interpreter line below to introspect and interact with the
 msgstr "Usar la linea del interprete Python a continuación para la introspección y la interacción con el contexto. Esta son las variables disponibles <code>context</code>, <code>request</code>, <code>portal</code> y <code>app</code>"
 
 #: ./browser/interactive.pt:48
-msgid "Use the command line below to test TALES expressions. The variables <code>context</code>, <code>request</code>, <code>portal</code> and <code>folder</code>, <code>portal_state</code> and <code>context_state</code> are available."
+#, fuzzy
+msgid "Use the command line below to test TALES expressions. The same variables as in the Plone Actions tool (portal_actions) <code>context</code> (with aliases <code>object</code> and <code>here</code>), <code>object_url</code>, <code>folder</code>, <code>folder_url</code>, <code>portal</code>, <code>portal_url</code>, <code>nothing</code>, <code>request</code>, <code>modules</code>, <code>member</code>, <code>globals_view</code>, <code>plone_portal_state</code>, <code>plone_context_state</code>, <code>plone_tools</code>, <code>checkPermission</code> are available. Be warned that <code>request</code> is a new request for the TALES tester, and not the request object for this page."
 msgstr "Usar la linea de comando a continuación para probar las expresiones TALES. Esta son las variables disponibles <code>context</code>, <code>request</code>, <code>portal</code> y <code>folder</code>, <code>portal_state</code> y <code>context_state</code>"
 
 #: ./browser/user.pt:19
@@ -326,8 +360,9 @@ msgstr "Identificador de usuario"
 msgid "User name"
 msgstr "Nombre de usuario"
 
-#: ./browser/context.pt:124
-#: ./browser/global.pt:91
+#: ./browser/catalog.pt:24
+#: ./browser/context.pt:132
+#: ./browser/global.pt:93
 msgid "Value"
 msgstr "Valor"
 
@@ -368,6 +403,11 @@ msgstr "Versión de Zope"
 msgid "auth_only"
 msgstr "restringida a los usuarios autenticados"
 
+#. Default: "Catalog"
+#: ./browser/catalog.pt:8
+msgid "debug_toolbar_catalog_title"
+msgstr ""
+
 #. Default: "&uarr; Close"
 #: ./browser/toolbar.pt:14
 msgid "debug_toolbar_close"
@@ -407,6 +447,11 @@ msgstr "<strong>Advertencia:</strong> Es posible hacer un daño considerable usa
 #: ./browser/published.pt:11
 msgid "debug_toolbar_published_title"
 msgstr "<small>vista o objeto</small> Publicado ${view_name}"
+
+#. Default: "Reload"
+#: ./browser/reload.pt:9
+msgid "debug_toolbar_reload_title"
+msgstr ""
 
 #. Default: "Request <small>that rendered this page</small>"
 #: ./browser/request.pt:9
@@ -457,4 +502,3 @@ msgstr "Flujo de trabajo <small>y seguridad</small> ${method}"
 #: ./browser/theme.pt:80
 msgid "resource_not_found"
 msgstr "(recurso que no se encuentra o no es accesible)"
-

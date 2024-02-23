@@ -1,0 +1,35 @@
+# Translation of plone.app.debugtoolbar.pot to Italian
+# Giacomo Spettoli <giacomo.spettoli@gmail.com>, 2024
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plone\n"
+"POT-Creation-Date: 2024-02-22 23:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Giacomo Spettoli <giacomo.spettoli@gmail.com>\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n!=1\n"
+"Language-Code: it\n"
+"Language-Name: Italiano\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+"X-Is-Fallback-For: it-ch it-it\n"
+
+#: ./configure.zcml:27
+msgid "Development tools for Plone"
+msgstr ""
+
+#: ./configure.zcml:27
+msgid "Plone debug toolbar"
+msgstr ""
+
+#: ./configure.zcml:36
+msgid "Plone debug toolbar Uninstall Profile"
+msgstr ""
+
+#: ./configure.zcml:36
+msgid "Removes Development tools for Plone"
+msgstr ""

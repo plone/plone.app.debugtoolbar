@@ -27,10 +27,10 @@
     </tal:canreload>
 
     <form method="POST" tal:attributes="action view/js_url">
-        <input type="submit" value="Reload JavaScript" />
+        <input type="submit" value="Reload JavaScript" i18n:attributes="value" />
     </form>
     <form method="POST" tal:attributes="action view/css_url">
-        <input type="submit" value="Reload CSS" />
+        <input type="submit" value="Reload CSS" i18n:attributes="value" />
     </form>
 </div>
 </html>
