@@ -8,6 +8,21 @@ Changelog
 
 .. towncrier release notes start
 
+1.4.0 (2024-03-19)
+------------------
+
+New features:
+
+
+- Added more improvements about i18n support [macagua]
+
+  Updated Spanish translation [macagua]
+
+  Updated the documentation [macagua]
+
+  Upgraded the buildout configuration to Plone 6.0 version [macagua] (#31)
+
+
 1.3.0 (2022-12-02)
 ------------------
 
