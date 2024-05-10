@@ -52,6 +52,7 @@ Panels include:
 * Zope, showing information about how the Zope server is configured
 * Versions, listing the versions of every package known to the Zope process
 
+
 Safety
 ======
 
@@ -62,6 +63,7 @@ to an interactive interpreter where arbitrary Python statements can be executed,
 allowing a user to bypass Zope security.
 
 In other words: **Do not install this package on your production server**.
+
 
 Integration
 ===========
@@ -81,6 +83,14 @@ viewlet registration like this:
         />
 
 See ``plone.app.debugtoolbar.browser`` for plenty of examples of panels.
+
+
+The debug toolbar registers itself as a viewlet in the portal footer within the
+`plone.app.layout.viewlets.interfaces.IPortalFooter` viewlet manager.
+If you have a custom theme without any viewlet managers included, you can also
+directly include the debug toolbar as a view like so::
+
+    <tal:debug replace="structure context/@@plone.app.debugtoolbar.toolbar|nothing"/>
 
 
 Contribute
