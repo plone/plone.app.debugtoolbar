@@ -1,18 +1,33 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="plone.app.debugtoolbar"
-    tal:omit-tag="">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      xml:lang="en"
+      tal:omit-tag=""
+      i18n:domain="plone.app.debugtoolbar"
+>
 
-<h2 class="debug-toolbar-header" id="debug-toolbar-workflow" i18n:translate="debug_toolbar_workflow_title">
-    Workflow <small>and security</small>
-    <span tal:condition="view/workflowStatus" id="debug-toolbar-workflow-status" i18n:name="method" class="label success" tal:content="view/workflowStatus" />
-</h2>
+  <h2 class="debug-toolbar-header"
+      id="debug-toolbar-workflow"
+      i18n:translate="debug_toolbar_workflow_title"
+  >
+    Workflow
+    <small>and security</small>
+    <span class="label success"
+          id="debug-toolbar-workflow-status"
+          tal:condition="view/workflowStatus"
+          tal:content="view/workflowStatus"
+          i18n:name="method"
+    ></span>
+  </h2>
 
-<div class="debug-toolbar-body" id="debug-toolbar-workflow-body">
+  <div class="debug-toolbar-body"
+       id="debug-toolbar-workflow-body"
+  >
 
-    <p class="debug-toolbar-help" i18n:translate="">
+    <p class="debug-toolbar-help"
+       i18n:translate=""
+    >
         This panel shows information about the workflow and security
         of the current item.
     </p>
@@ -20,44 +35,61 @@
     <h3 i18n:translate="">Workflow information</h3>
 
     <table class="zebra-striped">
-        <tbody>
-            <tr>
-                <td i18n:translate="">Workflow state(s)</td>
-                <td><code tal:repeat="state view/workflowStates" tal:content="state"/></td>
-            </tr>
-            <tr>
-                <td i18n:translate="">Workflow name(s)</td>
-                <td><code tal:repeat="name view/workflowNames" tal:content="name"/></td>
-            </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <td i18n:translate="">Workflow state(s)</td>
+          <td><code tal:repeat="state view/workflowStates"
+                  tal:content="state"
+            ></code></td>
+        </tr>
+        <tr>
+          <td i18n:translate="">Workflow name(s)</td>
+          <td><code tal:repeat="name view/workflowNames"
+                  tal:content="name"
+            ></code></td>
+        </tr>
+      </tbody>
     </table>
 
     <h3 i18n:translate="">Permission matrix</h3>
 
     <table class="zebra-striped condensed-table bordered-table">
-        <thead>
-            <tr>
-                <th i18n:translate="">Name</th>
-                <th i18n:translate="">Acquire</th>
-                <th tal:repeat="role view/roles" tal:content="role" i18n:translate="" i18n:domain="plone"/>
-            </tr>
-        </thead>
-        <tbody>
-            <tr tal:repeat="info view/permissionInfo">
-                <td>
-                    <span tal:content="info/name" />
-                    <span tal:condition="info/granted" class="label success" i18n:translate="">Granted</span>
-                </td>
-                <td class="mark">
-                    <span tal:omit-tag="" tal:condition="info/acquired">&radic;</span>
-                </td>
-                <td class="mark" tal:repeat="role info/roles">
-                    <span tal:omit-tag="" tal:condition="role">&radic;</span>
-                </td>
-            </tr>
-        </tbody>
+      <thead>
+        <tr>
+          <th i18n:translate="">Name</th>
+          <th i18n:translate="">Acquire</th>
+          <th tal:repeat="role view/roles"
+              tal:content="role"
+              i18n:domain="plone"
+              i18n:translate=""
+          ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr tal:repeat="info view/permissionInfo">
+          <td>
+            <span tal:content="info/name"></span>
+            <span class="label success"
+                  tal:condition="info/granted"
+                  i18n:translate=""
+            >Granted</span>
+          </td>
+          <td class="mark">
+            <span tal:condition="info/acquired"
+                  tal:omit-tag=""
+            >&radic;</span>
+          </td>
+          <td class="mark"
+              tal:repeat="role info/roles"
+          >
+            <span tal:condition="role"
+                  tal:omit-tag=""
+            >&radic;</span>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
 
-</div>
+  </div>
 </html>

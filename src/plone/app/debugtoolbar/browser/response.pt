@@ -1,30 +1,45 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="plone.app.debugtoolbar"
-    tal:omit-tag="">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      xml:lang="en"
+      tal:omit-tag=""
+      i18n:domain="plone.app.debugtoolbar"
+>
 
-<h2 class="debug-toolbar-header" id="debug-toolbar-response" i18n:translate="debug_toolbar_response_title">
-    Response <small>returned to the browser</small>
-    <span id="debug-toolbar-response-status" i18n:name="method" class="label"></span>
-</h2>
+  <h2 class="debug-toolbar-header"
+      id="debug-toolbar-response"
+      i18n:translate="debug_toolbar_response_title"
+  >
+    Response
+    <small>returned to the browser</small>
+    <span class="label"
+          id="debug-toolbar-response-status"
+          i18n:name="method"
+    ></span>
+  </h2>
 
-<div class="debug-toolbar-body" id="debug-toolbar-response-body">
+  <div class="debug-toolbar-body"
+       id="debug-toolbar-response-body"
+  >
 
-    <p class="debug-toolbar-help" i18n:translate="">
+    <p class="debug-toolbar-help"
+       i18n:translate=""
+    >
         This panel shows information about the HTTP response
     </p>
 
     <h3 i18n:translate="">Response headers</h3>
 
-    <table id="debug-toolbar-response-headers" class="zebra-striped">
-        <tbody>
-        </tbody>
-    </table>    
+    <table class="zebra-striped"
+           id="debug-toolbar-response-headers"
+    >
+      <tbody>
+      </tbody>
+    </table>
 
-</div>
-<script type="text/javascript">
+  </div>
+  <script type="text/javascript">
 var _debug_response_read = false;
 jQuery(function($) {
     $().ready(function() {
@@ -58,5 +73,5 @@ jQuery(function($) {
 
     });
 });
-</script>
+  </script>
 </html>

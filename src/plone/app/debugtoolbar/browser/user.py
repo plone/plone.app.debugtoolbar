@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
 from AccessControl import getSecurityManager
 from zope.viewlet.viewlet import ViewletBase
+
 
 class UserViewlet(ViewletBase):
 
@@ -9,6 +9,6 @@ class UserViewlet(ViewletBase):
 
         self.user = securityManager.getUser()
         try:
-            self.fullname = self.user.getProperty('fullname', None)
+            self.fullname = self.user.getProperty("fullname", None)
         except AttributeError:
             self.fullname = ""
