@@ -45,7 +45,6 @@ setup(
         "zope.annotation",
         "plone.transformchain",
         "Paste",
-        "six",
     ],
     extras_require={"test": ["plone.app.testing"]},
     entry_points="""

@@ -10,7 +10,6 @@ from zope.publisher.browser import BrowserView
 from zope.viewlet.viewlet import ViewletBase
 
 import re
-import six
 import threading
 import traceback
 
@@ -145,9 +144,7 @@ class TALESResponse(BrowserView):
         except Exception:
             output = "%s" % traceback.format_exc()
 
-        if isinstance(output, str) and six.PY2:
-            output = output.encode("ascii", "xmlcharrefreplace")
-        elif not isinstance(output, str):
+        if not isinstance(output, str):
             output = repr(output)
 
         return preserveWhitespace(output)
