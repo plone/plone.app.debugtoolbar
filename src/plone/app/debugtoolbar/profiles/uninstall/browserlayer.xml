@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <layers>
-    <layer
-        name="plone.app.debugtoolbar"
-        interface="plone.app.debugtoolbar.browser.interfaces.IDebugToolbarLayer"
-        remove="True"
-        />
+  <layer interface="plone.app.debugtoolbar.browser.interfaces.IDebugToolbarLayer"
+         name="plone.app.debugtoolbar"
+         remove="True"
+  />
 </layers>

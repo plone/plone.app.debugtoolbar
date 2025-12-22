@@ -1,175 +1,219 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    lang="en"
-    xmlns:tal="http://xml.zope.org/namespaces/tal"
-    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    i18n:domain="plone.app.debugtoolbar"
-    tal:omit-tag="">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      xml:lang="en"
+      tal:omit-tag=""
+      i18n:domain="plone.app.debugtoolbar"
+>
 
-<h2 class="debug-toolbar-header" id="debug-toolbar-context" i18n:translate="debug_toolbar_context_title">
-    Context <small>object</small>
-    <span class="label success" i18n:name="context_name" tal:content="context/__name__ | context/id | nothing" />
-</h2>
+  <h2 class="debug-toolbar-header"
+      id="debug-toolbar-context"
+      i18n:translate="debug_toolbar_context_title"
+  >
+    Context
+    <small>object</small>
+    <span class="label success"
+          tal:content="context/__name__ | context/id | nothing"
+          i18n:name="context_name"
+    ></span>
+  </h2>
 
-<div class="debug-toolbar-body" id="debug-toolbar-context-body">
+  <div class="debug-toolbar-body"
+       id="debug-toolbar-context-body"
+  >
 
-    <p class="debug-toolbar-help" i18n:translate="">
+    <p class="debug-toolbar-help"
+       i18n:translate=""
+    >
         This panel shows information about the context object
     </p>
 
     <h3 i18n:translate="">Object</h3>
 
     <table class="zebra-striped">
-        <tbody>
-            <tr>
-                <td i18n:translate="">URL</td>
-                <td><code tal:content="context/absolute_url | nothing" /></td>
-            </tr>
-            <tr>
-                <td i18n:translate="">Path</td>
-                <td><code tal:content="view/path | nothing" /></td>
-            </tr>
-            <tr>
-                <td i18n:translate="">Class</td>
-                <td><code tal:content="string:${view/cls/__module__}.${view/cls/__name__}" /></td>
-            </tr>
-            <tr>
-                <td i18n:translate="">Provided interfaces<br /><em>(*) Marker interfaces</em></td>
-                <td>
-                  <div tal:repeat="interface view/provided">
-                    <code tal:condition="interface/is_marker">(*)</code>
-                    <code tal:content="interface/dottedname" />
-                  </div>
-                </td>
-            </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <td i18n:translate="">URL</td>
+          <td><code tal:content="context/absolute_url | nothing"></code></td>
+        </tr>
+        <tr>
+          <td i18n:translate="">Path</td>
+          <td><code tal:content="view/path | nothing"></code></td>
+        </tr>
+        <tr>
+          <td i18n:translate="">Class</td>
+          <td><code tal:content="string:${view/cls/__module__}.${view/cls/__name__}"></code></td>
+        </tr>
+        <tr>
+          <td i18n:translate="">Provided interfaces<br /><em>(*) Marker interfaces</em></td>
+          <td>
+            <div tal:repeat="interface view/provided">
+              <code tal:condition="interface/is_marker">(*)</code>
+              <code tal:content="interface/dottedname"></code>
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
 
     <tal:block condition="nocall:view/fti">
-        <h3 i18n:translate="">Factory type information</h3>
+      <h3 i18n:translate="">Factory type information</h3>
 
-        <table class="zebra-striped">
-            <tbody>
-                <tr>
-                    <td i18n:translate="">Portal type</td>
-                    <td><code tal:content="view/fti/getId" /></td>
-                </tr>
-                <tr>
-                    <td i18n:translate="">Title</td>
-                    <td><code tal:content="view/fti/Title" /></td>
-                </tr>
-                <tr>
-                    <td i18n:translate="">Method aliases</td>
-                    <td>
-                        <dl>
-                            <tal:block repeat="alias view/methodAliases">
-                                <dt><code tal:content="python:alias[0]" /></dt>
-                                <dd><code tal:content="python:alias[1]" /></dd>
-                            </tal:block>
-                        </dl>
-                    </td>
-                </tr>
-                <tr>
-                    <td i18n:translate="">Actions</td>
-                    <td>
-                        <dl>
-                            <tal:block repeat="action view/fti/listActions">
-                                <dt><code tal:content="action/getId" /></dt>
-                                <dd><code tal:content="action/getActionExpression" /></dd>
-                            </tal:block>
-                        </dl>
-                    </td>
-                </tr>
-                <tr tal:condition="view/defaultView">
-                    <td i18n:translate="">Default view</td>
-                    <td><code tal:content="view/defaultView" /></td>
-                </tr>
-                <tr tal:condition="view/viewMethods">
-                    <td i18n:translate="">View methods</td>
-                    <td>
-                        <div tal:repeat="method view/viewMethods"><code tal:content="method" /></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <table class="zebra-striped">
+        <tbody>
+          <tr>
+            <td i18n:translate="">Portal type</td>
+            <td><code tal:content="view/fti/getId"></code></td>
+          </tr>
+          <tr>
+            <td i18n:translate="">Title</td>
+            <td><code tal:content="view/fti/Title"></code></td>
+          </tr>
+          <tr>
+            <td i18n:translate="">Method aliases</td>
+            <td>
+              <dl>
+                <tal:block repeat="alias view/methodAliases">
+                  <dt><code tal:content="python:alias[0]"></code></dt>
+                  <dd><code tal:content="python:alias[1]"></code></dd>
+                </tal:block>
+              </dl>
+            </td>
+          </tr>
+          <tr>
+            <td i18n:translate="">Actions</td>
+            <td>
+              <dl>
+                <tal:block repeat="action view/fti/listActions">
+                  <dt><code tal:content="action/getId"></code></dt>
+                  <dd><code tal:content="action/getActionExpression"></code></dd>
+                </tal:block>
+              </dl>
+            </td>
+          </tr>
+          <tr tal:condition="view/defaultView">
+            <td i18n:translate="">Default view</td>
+            <td><code tal:content="view/defaultView"></code></td>
+          </tr>
+          <tr tal:condition="view/viewMethods">
+            <td i18n:translate="">View methods</td>
+            <td>
+              <div tal:repeat="method view/viewMethods"><code tal:content="method"></code></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </tal:block>
 
-    <h3 class="debug-toolbar-section-header" id="debug-toolbar-context-methods">
-        <span tal:omit-tag="" i18n:translate="">Methods</span>
-        <label class="label default" i18n:translate="">Click to expand</label>
+    <h3 class="debug-toolbar-section-header"
+        id="debug-toolbar-context-methods"
+    >
+      <span tal:omit-tag=""
+            i18n:translate=""
+      >Methods</span>
+      <label class="label default"
+             i18n:translate=""
+      >Click to expand</label>
     </h3>
 
-    <table class="debug-toolbar-section-body" id="debug-toolbar-context-methods-body" class="zebra-striped">
-        <thead>
-            <tr>
-                <th i18n:translate="">Signature</th>
-                <th i18n:translate="">Documentation</th>
-                <th i18n:translate="">Filename</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr tal:repeat="method view/methods">
-                <td>
-                  <code tal:content="method/signature" />
-                  <tal:has_security tal:condition="method/secu_infos|nothing">
-                    <br /><span tal:content="method/secu_infos" />
-                  </tal:has_security>
-                </td>
-                <td tal:content="method/help" />
-                <td><code tal:content="method/filename" /></td>
-            </tr>
-        </tbody>
+    <table class="zebra-striped"
+           id="debug-toolbar-context-methods-body"
+    >
+      <thead>
+        <tr>
+          <th i18n:translate="">Signature</th>
+          <th i18n:translate="">Documentation</th>
+          <th i18n:translate="">Filename</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr tal:repeat="method view/methods">
+          <td>
+            <code tal:content="method/signature"></code>
+            <tal:has_security tal:condition="method/secu_infos|nothing">
+              <br /><span tal:content="method/secu_infos"></span>
+            </tal:has_security>
+          </td>
+          <td tal:content="method/help"></td>
+          <td><code tal:content="method/filename"></code></td>
+        </tr>
+      </tbody>
     </table>
 
-    <h3 class="debug-toolbar-section-header" id="debug-toolbar-context-variables">
-        <span tal:omit-tag="" i18n:translate=""> Variables</span>
-        <label class="label default" i18n:translate="">Click to expand</label>
+    <h3 class="debug-toolbar-section-header"
+        id="debug-toolbar-context-variables"
+    >
+      <span tal:omit-tag=""
+            i18n:translate=""
+      >
+        Variables</span>
+      <label class="label default"
+             i18n:translate=""
+      >Click to expand</label>
     </h3>
 
-    <table class="debug-toolbar-section-body" id="debug-toolbar-context-variables-body" class="zebra-striped">
-        <thead>
-            <tr>
-                <th i18n:translate="">Name</th>
-                <th i18n:translate="">Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr tal:repeat="var view/variables">
-                <td>
-                    <code tal:content="var/name" />
-                    <span class="label success" tal:condition="var/primitive" i18n:translate="">Primitive</span>
-                    <span class="label notice" tal:condition="not:var/primitive" i18n:translate="">Instance</span>
-                </td>
-                <td><code tal:content="var/value" /></td>
-            </tr>
-        </tbody>
+    <table class="zebra-striped"
+           id="debug-toolbar-context-variables-body"
+    >
+      <thead>
+        <tr>
+          <th i18n:translate="">Name</th>
+          <th i18n:translate="">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr tal:repeat="var view/variables">
+          <td>
+            <code tal:content="var/name"></code>
+            <span class="label success"
+                  tal:condition="var/primitive"
+                  i18n:translate=""
+            >Primitive</span>
+            <span class="label notice"
+                  tal:condition="not:var/primitive"
+                  i18n:translate=""
+            >Instance</span>
+          </td>
+          <td><code tal:content="var/value"></code></td>
+        </tr>
+      </tbody>
     </table>
 
-    <h3 class="debug-toolbar-section-header" id="debug-toolbar-context-views">
-        <span tal:omit-tag="" i18n:translate="">Views</span>
-        <label class="label default" i18n:translate="">Click to expand</label>
+    <h3 class="debug-toolbar-section-header"
+        id="debug-toolbar-context-views"
+    >
+      <span tal:omit-tag=""
+            i18n:translate=""
+      >Views</span>
+      <label class="label default"
+             i18n:translate=""
+      >Click to expand</label>
     </h3>
 
-    <table class="debug-toolbar-section-body" id="debug-toolbar-context-views-body" class="zebra-striped">
-        <thead>
-            <tr>
-                <th i18n:translate="">Name</th>
-                <th i18n:translate="">Class</th>
-                <th i18n:translate="">Template</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr tal:repeat="v view/views">
-                <td><code tal:content="v/name" /></td>
+    <table class="zebra-striped"
+           id="debug-toolbar-context-views-body"
+    >
+      <thead>
+        <tr>
+          <th i18n:translate="">Name</th>
+          <th i18n:translate="">Class</th>
+          <th i18n:translate="">Template</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr tal:repeat="v view/views">
+          <td><code tal:content="v/name"></code></td>
 
-                <td tal:condition="nocall:v/class"><code tal:content="string:${v/class/__module__}.${v/class/__name__}" /></td>
-                <td tal:condition="not:nocall:v/class"></td>
+          <td tal:condition="nocall:v/class"><code tal:content="string:${v/class/__module__}.${v/class/__name__}"></code></td>
+          <td tal:condition="not:nocall:v/class"></td>
 
-                <td tal:condition="nocall:v/template"><code tal:content="v/template" /></td>
-                <td tal:condition="not:nocall:v/template"></td>
+          <td tal:condition="nocall:v/template"><code tal:content="v/template"></code></td>
+          <td tal:condition="not:nocall:v/template"></td>
 
-            </tr>
-        </tbody>
+        </tr>
+      </tbody>
     </table>
 
-</div>
+  </div>
 </html>

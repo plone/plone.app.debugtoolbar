@@ -3,164 +3,171 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="plone">
+    i18n_domain="plone"
+    >
 
-    <include package="Products.CMFCore" file="permissions.zcml" />
+  <include
+      package="Products.CMFCore"
+      file="permissions.zcml"
+      />
 
-    <browser:resourceDirectory
-        name="plone.app.debugtoolbar"
-        directory="resources"
+  <browser:resourceDirectory
+      name="plone.app.debugtoolbar"
+      directory="resources"
+      />
+
+  <browser:viewlet
+      name="plone.app.debugtoolbar.toolbar"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".toolbar.ToolbarViewlet"
+      template="toolbar.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
+
+  <browser:viewletManager
+      name="plone.debugtoolbar"
+      provides=".interfaces.IDebugToolbarViewletManager"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
+
+  <configure zcml:condition="installed plone.app.standardtiles">
+    <include
+        package="plone.tiles"
+        file="meta.zcml"
         />
-
-    <browser:viewlet
+    <plone:tile
         name="plone.app.debugtoolbar.toolbar"
-        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-        class=".toolbar.ToolbarViewlet"
-        template="toolbar.pt"
+        for="*"
+        class=".tile.ToolbarTile"
         permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
         />
+  </configure>
 
-    <browser:viewletManager
-        name="plone.debugtoolbar"
-        provides=".interfaces.IDebugToolbarViewletManager"
-        permission="zope2.View"
-        class="plone.app.viewletmanager.manager.OrderedViewletManager"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <!-- Panels -->
 
-    <configure zcml:condition="installed plone.app.standardtiles">
-      <include package="plone.tiles" file="meta.zcml"/>
-      <plone:tile
-          name="plone.app.debugtoolbar.toolbar"
-          class=".tile.ToolbarTile"
-          for="*"
-          permission="zope2.View"
-          />
-    </configure>
+  <browser:viewlet
+      name="plone.app.debugtoolbar.request"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".request.RequestViewlet"
+      template="request.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <!-- Panels -->
+  <browser:viewlet
+      name="plone.app.debugtoolbar.response"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".response.ResponseViewlet"
+      template="response.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.request"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".request.RequestViewlet"
-        template="request.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.global"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".global.GlobalViewlet"
+      template="global.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.response"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".response.ResponseViewlet"
-        template="response.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.versions"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".versions.VersionsViewlet"
+      template="versions.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.global"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".global.GlobalViewlet"
-        template="global.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.user"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".user.UserViewlet"
+      template="user.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.versions"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".versions.VersionsViewlet"
-        template="versions.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.theme"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".theme.ThemeViewlet"
+      template="theme.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.user"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".user.UserViewlet"
-        template="user.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.workflow"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".workflow.WorkflowViewlet"
+      template="workflow.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.theme"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".theme.ThemeViewlet"
-        template="theme.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.published"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".published.PublishedViewlet"
+      template="published.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.workflow"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".workflow.WorkflowViewlet"
-        template="workflow.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.context"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".context.ContextViewlet"
+      template="context.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.published"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".published.PublishedViewlet"
-        template="published.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.interactive"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".interactive.InteractiveViewlet"
+      template="interactive.pt"
+      permission="cmf.ManagePortal"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.context"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".context.ContextViewlet"
-        template="context.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:view
+      name="plone.app.debugtoolbar.interactive.response"
+      class=".interactive.InteractiveResponse"
+      permission="cmf.ManagePortal"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:viewlet
-        name="plone.app.debugtoolbar.interactive"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".interactive.InteractiveViewlet"
-        template="interactive.pt"
-        permission="cmf.ManagePortal"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:view
+      name="plone.app.debugtoolbar.interactive.tales"
+      class=".interactive.TALESResponse"
+      permission="cmf.ManagePortal"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:view
-        name="plone.app.debugtoolbar.interactive.response"
-        class=".interactive.InteractiveResponse"
-        permission="cmf.ManagePortal"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.reload"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".reload.ReloadViewlet"
+      template="reload.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
-    <browser:view
-        name="plone.app.debugtoolbar.interactive.tales"
-        class=".interactive.TALESResponse"
-        permission="cmf.ManagePortal"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
-
-    <browser:viewlet
-        name="plone.app.debugtoolbar.reload"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".reload.ReloadViewlet"
-        template="reload.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
-
-    <browser:viewlet
-        name="plone.app.debugtoolbar.catalog"
-        manager=".interfaces.IDebugToolbarViewletManager"
-        class=".catalog.CatalogViewlet"
-        template="catalog.pt"
-        permission="zope2.View"
-        layer=".interfaces.IDebugToolbarLayer"
-        />
+  <browser:viewlet
+      name="plone.app.debugtoolbar.catalog"
+      manager=".interfaces.IDebugToolbarViewletManager"
+      class=".catalog.CatalogViewlet"
+      template="catalog.pt"
+      permission="zope2.View"
+      layer=".interfaces.IDebugToolbarLayer"
+      />
 
 </configure>
