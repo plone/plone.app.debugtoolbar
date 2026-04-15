@@ -170,10 +170,15 @@ class ContextViewlet(ViewletBase):
                         }
                     )
             else:
+                try:
+                    value_repr = str(attr)
+                except Exception:
+                    value_repr = attr.__repr__()
+
                 self.variables.append(
                     {
                         "name": name,
                         "primitive": False,
-                        "value": str(attr),
+                        "value": value_repr,
                     }
                 )
