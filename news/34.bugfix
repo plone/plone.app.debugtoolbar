@@ -1,0 +1,2 @@
+Fix FileNotFoundError on str(attr) when attr is <App.special_dtml.DTMLFile object at 0x109b2c530>
+[pbauer]
