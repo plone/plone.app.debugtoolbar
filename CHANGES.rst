@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.0 (2026-05-18)
+------------------
+
+Bug fixes:
+
+
+- Fix FileNotFoundError on str(attr) when attr is <App.special_dtml.DTMLFile object at 0x109b2c530>
+  [pbauer] (#34)
+
+
 2.0.0a1 (2025-12-23)
 --------------------
 
