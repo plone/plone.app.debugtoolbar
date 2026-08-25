@@ -1,7 +1,6 @@
+from importlib.metadata import distributions
 from Products.CMFCore.utils import getToolByName
 from zope.viewlet.viewlet import ViewletBase
-
-import pkg_resources
 
 
 class VersionsViewlet(ViewletBase):
@@ -10,8 +9,11 @@ class VersionsViewlet(ViewletBase):
         packages = []
         self.ploneVersion = None
 
-        for distribution in pkg_resources.working_set:
-            name = distribution.project_name
+        for distribution in distributions():
+            name = distribution.name
+            if name is None:
+                # broken/incomplete distribution metadata
+                continue
             packages.append(
                 {
                     "name": name,

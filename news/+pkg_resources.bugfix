@@ -1,0 +1,2 @@
+Replace deprecated ``pkg_resources`` with ``importlib.metadata`` in the versions viewlet.
+Fixes startup failure on environments without ``setuptools``/``pkg_resources``.
